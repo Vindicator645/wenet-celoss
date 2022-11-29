@@ -13,6 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 #ifndef DECODER_TORCH_ASR_MODEL_H_
 #define DECODER_TORCH_ASR_MODEL_H_
 
@@ -21,20 +22,24 @@
 #include <vector>
 
 #include "torch/script.h"
-#ifndef IOS
 #include "torch/torch.h"
-#endif
 
 #include "decoder/asr_model.h"
 #include "utils/utils.h"
 
 namespace wenet {
+struct Sequence {
+  std::vector<int> hyp;  // blank id
+  float score;
+  torch::Tensor h;
+  torch::Tensor c;
+};
 
 class TorchAsrModel : public AsrModel {
+
  public:
-#ifndef IOS
+  // Note: Do not call the InitEngineThreads function more than once.
   static void InitEngineThreads(int num_threads = 1);
-#endif
 
  public:
   using TorchModule = torch::jit::script::Module;
@@ -46,14 +51,19 @@ class TorchAsrModel : public AsrModel {
   void AttentionRescoring(const std::vector<std::vector<int>>& hyps,
                           float reverse_weight,
                           std::vector<float>* rescoring_score) override;
+  void RnntGreedySearch(std::vector<int>* hyp) override;
   std::shared_ptr<AsrModel> Copy() const override;
-
+  std::vector<torch::Tensor> GetEncoderOuts() {return encoder_outs_;};
+  void forward_decoder_one_step(const torch::Tensor &encoder_x,const torch::Tensor &pre_t,
+  const std::vector<torch::Tensor>&cache,torch::Tensor &logp,torch::Tensor &new_cache_h,torch::Tensor &new_cache_c);
+  wenet::Sequence getEmptySequence(int blank);
  protected:
   void ForwardEncoderFunc(const std::vector<std::vector<float>>& chunk_feats,
                           std::vector<std::vector<float>>* ctc_prob) override;
 
   float ComputeAttentionScore(const torch::Tensor& prob,
                               const std::vector<int>& hyp, int eos);
+
 
  private:
   std::shared_ptr<TorchModule> model_ = nullptr;

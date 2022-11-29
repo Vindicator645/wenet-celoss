@@ -15,6 +15,7 @@ from wenet.transformer.label_smoothing_loss import LabelSmoothingLoss
 from wenet.utils.common import (IGNORE_ID, add_blank, add_sos_eos,
                                 reverse_pad_list)
 
+from wenet.transformer.context_bias import ContextBias
 
 class Transducer(ASRModel):
     """Transducer-ctc-attention hybrid Encoder-Predictor-Decoder model"""
@@ -24,11 +25,13 @@ class Transducer(ASRModel):
         vocab_size: int,
         blank: int,
         encoder: nn.Module,
+        #non_causal_encoder: nn.Module,
         predictor: PredictorBase,
         joint: nn.Module,
         attention_decoder: Optional[Union[TransformerDecoder,
                                           BiTransformerDecoder]] = None,
         ctc: Optional[CTC] = None,
+        context_bias: ContextBias = None,
         ctc_weight: float = 0,
         ignore_id: int = IGNORE_ID,
         reverse_weight: float = 0.0,
@@ -46,11 +49,11 @@ class Transducer(ASRModel):
         self.blank = blank
         self.transducer_weight = transducer_weight
         self.attention_decoder_weight = 1 - self.transducer_weight - self.ctc_weight
-
+        #self.non_causal_encoder=non_causal_encoder 
+        self.context_bias = context_bias
         self.predictor = predictor
         self.joint = joint
         self.bs = None
-
         # Note(Mddct): decoder also means predictor in transducer,
         # but here decoder is attention decoder
         del self.criterion_att
@@ -68,6 +71,8 @@ class Transducer(ASRModel):
         speech_lengths: torch.Tensor,
         text: torch.Tensor,
         text_lengths: torch.Tensor,
+        context_list: torch.Tensor = torch.IntTensor([0]),
+        context_lengths: torch.Tensor = torch.IntTensor([0]),
     ) -> Dict[str, Optional[torch.Tensor]]:
         """Frontend + Encoder + predictor + joint + loss
 
@@ -77,18 +82,39 @@ class Transducer(ASRModel):
             text: (Batch, Length)
             text_lengths: (Batch,)
         """
+
         assert text_lengths.dim() == 1, text_lengths.shape
         # Check that batch_size is unified
         assert (speech.shape[0] == speech_lengths.shape[0] == text.shape[0] ==
                 text_lengths.shape[0]), (speech.shape, speech_lengths.shape,
                                          text.shape, text_lengths.shape)
 
+        # kxhuang
+        # get bias_hidden 获取热词隐向量
+
+        # bias_hidden = 0
+        # if context_list != 0:
+
+        bias_hidden = self.context_bias.forward_bias_hidden(context_list, context_lengths)
+
         # Encoder
         encoder_out, encoder_mask = self.encoder(speech, speech_lengths)
         encoder_out_lens = encoder_mask.squeeze(1).sum(1)
+
+        # kxhuang
+        # get encoder_out_bias
+        # if bias_hidden != 0:
+        #encoder_out=self.non_causal_encoder(encoder_out,speech_lengths)
+        encoder_out = self.context_bias.forward_encoder_bias(bias_hidden, encoder_out)
         # predictor
         ys_in_pad = add_blank(text, self.blank, self.ignore_id)
         predictor_out = self.predictor(ys_in_pad)
+
+        # kxhuang 
+        # get predictor_out_bias
+        # if bias_hidden !=0:
+        predictor_out = self.context_bias.forward_predictor_bias(bias_hidden, predictor_out)
+
         # joint
         joint_out = self.joint(encoder_out, predictor_out)
         # NOTE(Mddct): some loss implementation require pad valid is zero
@@ -104,8 +130,8 @@ class Transducer(ASRModel):
                                                rnnt_text_lengths,
                                                blank=self.blank,
                                                reduction="mean")
+        
         loss_rnnt = loss
-
         loss = self.transducer_weight * loss
         # optional attention decoder
         loss_att: Optional[torch.Tensor] = None

@@ -5,7 +5,8 @@
 
 #include <memory>
 #include <utility>
-
+#include "torch/script.h"
+#include "torch/torch.h"
 namespace wenet {
 
 int AsrModel::num_frames_for_chunk(bool start) const {
@@ -42,12 +43,13 @@ void AsrModel::CacheFeature(
 
 void AsrModel::ForwardEncoder(
     const std::vector<std::vector<float>>& chunk_feats,
-    std::vector<std::vector<float>>* ctc_prob) {
+    std::vector<std::vector<float>>* ctc_prob,std::vector<torch::Tensor> *encoder_out) {
   ctc_prob->clear();
   int num_frames = cached_feature_.size() + chunk_feats.size();
   if (num_frames >= right_context_ + 1) {
     this->ForwardEncoderFunc(chunk_feats, ctc_prob);
     this->CacheFeature(chunk_feats);
+    (*encoder_out)=this->GetEncoderOuts();
   }
 }
 

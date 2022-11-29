@@ -16,12 +16,14 @@
 
 #ifndef DECODER_ASR_DECODER_H_
 #define DECODER_ASR_DECODER_H_
-
 #include <memory>
 #include <string>
 #include <utility>
 #include <vector>
 
+
+#include "torch/script.h"
+#include "torch/torch.h"
 #include "fst/fstlib.h"
 #include "fst/symbol-table.h"
 
@@ -30,6 +32,8 @@
 #include "decoder/ctc_endpoint.h"
 #include "decoder/ctc_prefix_beam_search.h"
 #include "decoder/ctc_wfst_beam_search.h"
+#include "decoder/rnnt_greedy_search.h"
+#include "decoder/rnnt_prefix_beam_search.h"
 #include "decoder/search_interface.h"
 #include "frontend/feature_pipeline.h"
 #include "post_processor/post_processor.h"
@@ -55,9 +59,11 @@ struct DecodeOptions {
   float ctc_weight = 0.5;
   float rescoring_weight = 1.0;
   float reverse_weight = 0.0;
+  std::string method = "rnnt_greedy";
   CtcEndpointConfig ctc_endpoint_config;
   CtcPrefixBeamSearchOptions ctc_prefix_search_opts;
   CtcWfstBeamSearchOptions ctc_wfst_search_opts;
+  RnntPrefixBeamSearchOptions rnnt_prefix_search_opts;
 };
 
 struct WordPiece {

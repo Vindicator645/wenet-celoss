@@ -12,7 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
+#include "torch/script.h"
+#include "torch/torch.h"
 #ifndef DECODER_CTC_WFST_BEAM_SEARCH_H_
 #define DECODER_CTC_WFST_BEAM_SEARCH_H_
 
@@ -62,7 +63,9 @@ class CtcWfstBeamSearch : public SearchInterface {
   explicit CtcWfstBeamSearch(
       const fst::Fst<fst::StdArc>& fst, const CtcWfstBeamSearchOptions& opts,
       const std::shared_ptr<ContextGraph>& context_graph);
+  void Search(const std::vector<int>& hpy) override;
   void Search(const std::vector<std::vector<float>>& logp) override;
+  void Search(const std::vector<std::vector<float>>& logp,const std::vector<torch::Tensor> &encoder_outs) override;
   void Reset() override;
   void FinalizeSearch() override;
   SearchType Type() const override { return SearchType::kWfstBeamSearch; }

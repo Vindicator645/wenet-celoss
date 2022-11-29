@@ -39,17 +39,24 @@ AsrDecoder::AsrDecoder(std::shared_ptr<FeaturePipeline> feature_pipeline,
       unit_table_(resource->unit_table),
       opts_(opts),
       ctc_endpointer_(new CtcEndpoint(opts.ctc_endpoint_config)) {
+  // VLOG(1) << "decode using: " << opts_.method;
   if (opts_.reverse_weight > 0) {
     // Check if model has a right to left decoder
     CHECK(model_->is_bidirectional_decoder());
   }
-  if (nullptr == fst_) {
+  if (opts_.method == "rnnt_greedy") {
+      // VLOG(1) << "decode using: " << opts_.method;
+      searcher_.reset(new RnntGreedySearch());
+  }else if (opts_.method == "rnnt_beam_search") {
+      searcher_.reset(new RnntPrefixBeamSearch(opts.rnnt_prefix_search_opts,model_->Copy()));
+  } else if (nullptr == fst_) {
     searcher_.reset(new CtcPrefixBeamSearch(opts.ctc_prefix_search_opts,
                                             resource->context_graph));
   } else {
     searcher_.reset(new CtcWfstBeamSearch(*fst_, opts.ctc_wfst_search_opts,
                                           resource->context_graph));
   }
+  
   ctc_endpointer_->frame_shift_in_ms(frame_shift_in_ms());
 }
 
@@ -105,10 +112,21 @@ DecodeState AsrDecoder::AdvanceDecoding(bool block) {
           << chunk_feats.size();
   Timer timer;
   std::vector<std::vector<float>> ctc_log_probs;
-  model_->ForwardEncoder(chunk_feats, &ctc_log_probs);
+  std::vector<torch::Tensor> encoder_outs;
+  std::vector<int> hyp;
+  model_->ForwardEncoder(chunk_feats, &ctc_log_probs,&encoder_outs);
   int forward_time = timer.Elapsed();
   timer.Reset();
-  searcher_->Search(ctc_log_probs);
+  if (searcher_->Type() == SearchType::rnntGreedySearch){
+    model_->RnntGreedySearch(&hyp);
+    searcher_->Search(hyp);
+
+  }else if (searcher_->Type() == SearchType::rnntPrefixBeamSearch) {
+    searcher_->Search(ctc_log_probs,encoder_outs);
+  }else {
+    searcher_->Search(ctc_log_probs);
+  }
+
   int search_time = timer.Elapsed();
   VLOG(3) << "forward takes " << forward_time << " ms, search takes "
           << search_time << " ms";
@@ -190,9 +208,9 @@ void AsrDecoder::UpdateResult(bool finish) {
     result_.emplace_back(path);
   }
 
-  if (DecodedSomething()) {
-    VLOG(1) << "Partial CTC result " << result_[0].sentence;
-  }
+  // if (DecodedSomething()) {
+  //   VLOG(1) << "Partial CTC result " << result_[0].sentence;
+  // }
 }
 
 void AsrDecoder::AttentionRescoring() {

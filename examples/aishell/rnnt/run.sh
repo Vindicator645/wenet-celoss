@@ -7,9 +7,9 @@
 
 # Use this to control how many gpu you use, It's 1-gpu training if you specify
 # just 1gpu, otherwise it's is multiple gpu training based on DDP in pytorch
-export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
+export CUDA_VISIBLE_DEVICES="0  "
 
-stage=0 # start from 0 if you need to start from data preparation
+stage=1 # start from 0 if you need to start from data preparation
 stop_stage=5
 
 # The num of machines(nodes) for multi-machine training, 1 is for one machine.
@@ -22,7 +22,7 @@ num_nodes=1
 node_rank=0
 # The aishell dataset location, please change this to your own path
 # make sure of using absolute path. DO-NOT-USE relatvie path!
-data=/export/data/asr-data/OpenSLR/33/
+data=/home/work_nfs6/tyxu/data/
 data_url=www.openslr.org/resources/33
 
 nj=16

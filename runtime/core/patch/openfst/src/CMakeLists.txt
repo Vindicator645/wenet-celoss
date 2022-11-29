@@ -6,10 +6,7 @@ install(DIRECTORY include/ DESTINATION include/
         FILES_MATCHING PATTERN "*.h")
 
 add_subdirectory(lib)
-
-if(HAVE_SCRIPT)
-  add_subdirectory(script)
-endif(HAVE_SCRIPT)
+add_subdirectory(script)
 
 if(HAVE_BIN)
   add_subdirectory(bin)

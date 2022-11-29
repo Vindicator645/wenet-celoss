@@ -22,7 +22,8 @@
 
 #include "utils/log.h"
 #include "utils/utils.h"
-
+#include "torch/script.h"
+#include "torch/torch.h"
 namespace wenet {
 
 CtcPrefixBeamSearch::CtcPrefixBeamSearch(
@@ -231,5 +232,7 @@ void CtcPrefixBeamSearch::UpdateFinalContext() {
   // Update cur_hyps_ and get new result
   UpdateHypotheses(arr);
 }
+
+void CtcPrefixBeamSearch::Search(const std::vector<int>& hpy) {};
 
 }  // namespace wenet

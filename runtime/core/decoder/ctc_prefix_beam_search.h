@@ -15,11 +15,13 @@
 
 #ifndef DECODER_CTC_PREFIX_BEAM_SEARCH_H_
 #define DECODER_CTC_PREFIX_BEAM_SEARCH_H_
-
+#include "torch/script.h"
+#include "torch/torch.h"
 #include <memory>
 #include <unordered_map>
 #include <utility>
 #include <vector>
+#include "decoder/asr_model.h"
 
 #include "decoder/context_graph.h"
 #include "decoder/search_interface.h"
@@ -98,7 +100,10 @@ class CtcPrefixBeamSearch : public SearchInterface {
       const CtcPrefixBeamSearchOptions& opts,
       const std::shared_ptr<ContextGraph>& context_graph = nullptr);
 
+  void Search(const std::vector<int>& hpy) override;
   void Search(const std::vector<std::vector<float>>& logp) override;
+  void Search(const std::vector<std::vector<float>>& logp,const std::vector<torch::Tensor> &encoder_outs) override;
+
   void Reset() override;
   void FinalizeSearch() override;
   SearchType Type() const override { return SearchType::kPrefixBeamSearch; }

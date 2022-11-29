@@ -12,7 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
+#include "torch/script.h"
+#include "torch/torch.h"
 #include "decoder/ctc_wfst_beam_search.h"
 
 #include <utility>
@@ -196,5 +197,7 @@ void CtcWfstBeamSearch::RemoveContinuousTags(std::vector<int>* output) {
     }
   }
 }
+
+void CtcWfstBeamSearch::Search(const std::vector<int>& hpy) {};
 
 }  // namespace wenet

@@ -1,0 +1,16 @@
+I1010 16:42:52.274578 19473 params.h:137] Reading torch model /home/work_nfs6/yzli/workshop/wenet_rnnt_runtime/example/aishell/rnnt/exp/rnnt/final.zip
+I1010 16:42:52.402396 19473 torch_asr_model.cc:36] Num intra-op threads: 1
+I1010 16:42:52.402447 19473 torch_asr_model.cc:37] Num inter-op threads: 1
+I1010 16:42:56.247203 19473 torch_asr_model.cc:71] Torch Model Info:
+I1010 16:42:56.247267 19473 torch_asr_model.cc:72] 	subsampling_rate 4
+I1010 16:42:56.247272 19473 torch_asr_model.cc:73] 	right context 6
+I1010 16:42:56.247277 19473 torch_asr_model.cc:74] 	sos 4232
+I1010 16:42:56.247282 19473 torch_asr_model.cc:75] 	eos 4232
+I1010 16:42:56.247285 19473 torch_asr_model.cc:76] 	is bidirectional decoder 1
+I1010 16:42:56.247301 19473 params.h:147] Reading unit table /home/work_nfs6/yzli/workshop/wenet_rnnt_runtime/example/aishell/rnnt/exp/rnnt/unit.txt
+I1010 16:42:56.496007 19833 decoder_main.cc:54] num frames 418
+I1010 16:42:56.605355 19833 asr_decoder.cc:109] Required 67 get 67
+I1010 16:42:58.739251 19833 decoder_main.cc:72] Partial result: 甚至
+I1010 16:42:58.739327 19833 asr_decoder.cc:109] Required 64 get 64
+I1010 16:43:06.746596 19833 decoder_main.cc:72] Partial result: 甚至出席
+I1010 16:43:06.746696 19833 asr_decoder.cc:109] Required 64 get 64

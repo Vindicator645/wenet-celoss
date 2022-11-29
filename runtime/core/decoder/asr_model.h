@@ -9,11 +9,18 @@
 #include <string>
 #include <vector>
 
+#include "torch/script.h"
+#include "torch/torch.h"
 #include "utils/timer.h"
 #include "utils/utils.h"
 
 namespace wenet {
-
+struct Sequence {
+  std::vector<int> hyp;  // blank id
+  float score;
+  torch::Tensor h;
+  torch::Tensor c;
+};
 class AsrModel {
  public:
   virtual int right_context() const { return right_context_; }
@@ -37,18 +44,24 @@ class AsrModel {
 
   virtual void ForwardEncoder(
       const std::vector<std::vector<float>>& chunk_feats,
-      std::vector<std::vector<float>>* ctc_prob);
+      std::vector<std::vector<float>>* ctc_prob,
+      std::vector<torch::Tensor> *encoder_out);
 
   virtual void AttentionRescoring(const std::vector<std::vector<int>>& hyps,
                                   float reverse_weight,
                                   std::vector<float>* rescoring_score) = 0;
-
+  virtual void RnntGreedySearch(std::vector<int>* hyp) = 0;
   virtual std::shared_ptr<AsrModel> Copy() const = 0;
 
+  virtual std::vector<torch::Tensor> GetEncoderOuts()=0;
+  virtual void forward_decoder_one_step(const torch::Tensor &encoder_x,const torch::Tensor &pre_t,
+  const std::vector<torch::Tensor>&cache,torch::Tensor &logp,torch::Tensor &new_cache_h,torch::Tensor &new_cache_c)=0;
+  virtual wenet::Sequence getEmptySequence(int blank)=0;
  protected:
   virtual void ForwardEncoderFunc(
       const std::vector<std::vector<float>>& chunk_feats,
       std::vector<std::vector<float>>* ctc_prob) = 0;
+      
   virtual void CacheFeature(const std::vector<std::vector<float>>& chunk_feats);
 
   int right_context_ = 1;

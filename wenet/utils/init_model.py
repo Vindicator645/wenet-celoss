@@ -22,8 +22,8 @@ from wenet.transformer.cmvn import GlobalCMVN
 from wenet.transformer.ctc import CTC
 from wenet.transformer.decoder import BiTransformerDecoder, TransformerDecoder
 from wenet.transformer.encoder import ConformerEncoder, TransformerEncoder
-from wenet.squeezeformer.encoder import SqueezeformerEncoder
 from wenet.utils.cmvn import load_cmvn
+from wenet.transformer.context_bias import ContextBias
 
 
 def init_model(configs):
@@ -40,15 +40,20 @@ def init_model(configs):
 
     encoder_type = configs.get('encoder', 'conformer')
     decoder_type = configs.get('decoder', 'bitransformer')
+    context_type = configs.get('context','nobias')
+    context_bias = None
+    if context_type != 'nobias':
+        context_bias = ContextBias(input_size=configs['encoder_conf']['output_size'], 
+                                   output_size=configs['encoder_conf']['output_size'], 
+                                   vocab_size=vocab_size,
+                                   **configs['context_conf'])
+
 
     if encoder_type == 'conformer':
         encoder = ConformerEncoder(input_dim,
                                    global_cmvn=global_cmvn,
                                    **configs['encoder_conf'])
-    elif encoder_type == 'squeezeformer':
-        encoder = SqueezeformerEncoder(input_dim,
-                                       global_cmvn=global_cmvn,
-                                       **configs['encoder_conf'])
+
     else:
         encoder = TransformerEncoder(input_dim,
                                      global_cmvn=global_cmvn,
@@ -89,6 +94,8 @@ def init_model(configs):
                            blank=0,
                            predictor=predictor,
                            encoder=encoder,
+                        #    non_causal_encoder=non_causal_encoder,
+                           context_bias = context_bias,
                            attention_decoder=decoder,
                            joint=joint,
                            ctc=ctc,

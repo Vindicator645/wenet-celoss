@@ -13,27 +13,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 #include "decoder/torch_asr_model.h"
 
 #include <algorithm>
 #include <memory>
-#include <stdexcept>
 #include <utility>
+#include <stdexcept>
 
 #include "torch/script.h"
-#ifndef IOS
 #include "torch/torch.h"
-#endif
 
 namespace wenet {
 
-#ifndef IOS
 void TorchAsrModel::InitEngineThreads(int num_threads) {
   // For multi-thread performance
   at::set_num_threads(num_threads);
+  // Note: Do not call the set_num_interop_threads function more than once.
+  // Please see https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/
+  // ParallelThreadPoolNative.cpp#L54-L56
+  at::set_num_interop_threads(1);
   VLOG(1) << "Num intra-op threads: " << at::get_num_threads();
+  VLOG(1) << "Num inter-op threads: " << at::get_num_interop_threads();
 }
-#endif
 
 void TorchAsrModel::Read(const std::string& model_path) {
   torch::DeviceType device = at::kCPU;
@@ -101,14 +103,32 @@ std::shared_ptr<AsrModel> TorchAsrModel::Copy() const {
   return asr_model;
 }
 
+// void TorchAsrModel::forward_decoder_one_step(const torch::Tensor &encoder_x,const torch::Tensor &pre_t,
+//   const vector<torch::Tensor>&cache,torch::Tensor &logp,torch::Tensor &new_cache){
+//   std::vector<torch::jit::IValue> predictor_inputs={pre_t,cache};  
+//   torch::jit::IValue predictor_outputs =
+//       model_->get_method("forward_predictor_step")(predictor_inputs).toTuple()->elements();
+//   auto new_pre_t=predictor_outputs[0].to_tensor();
+//   new_cache=predictor_outputs[1].to_tensor();
+//   std::vector<torch::jit::IValue> joint_input={encoder_x,pre_t}
+//   torch::jit::IValue joint_outputs=
+//       model_->get_method("forward_joint_step")(joint_inputs).toTuple()->elements();
+//   logp=joint_outpust.to_tensor()
+//   torch::Tensor ctc_log_probs =
+//       model_->run_method("ctc_activation", chunk_out).toTensor()[0];
+// }
 void TorchAsrModel::Reset() {
   offset_ = 0;
   att_cache_ = std::move(torch::zeros({0, 0, 0, 0}));
   cnn_cache_ = std::move(torch::zeros({0, 0, 0, 0}));
   encoder_outs_.clear();
   cached_feature_.clear();
+  model_->run_method("reset_cache");
+  // VLOG(1) << "refresh rnnt cache";
 }
-
+std::vector<torch::Tensor> TorchAsrModel::GetEncoderOuts(){
+  return encoder_outs_;
+}
 void TorchAsrModel::ForwardEncoderFunc(
     const std::vector<std::vector<float>>& chunk_feats,
     std::vector<std::vector<float>>* out_prob) {
@@ -194,7 +214,9 @@ float TorchAsrModel::ComputeAttentionScore(const torch::Tensor& prob,
   score += accessor[hyp.size()][eos];
   return score;
 }
-
+forward_predictor_init_state(){
+  
+}
 void TorchAsrModel::AttentionRescoring(
     const std::vector<std::vector<int>>& hyps, float reverse_weight,
     std::vector<float>* rescoring_score) {
@@ -274,5 +296,29 @@ void TorchAsrModel::AttentionRescoring(
         score * (1 - reverse_weight) + r_score * reverse_weight;
   }
 }
+
+void TorchAsrModel::RnntGreedySearch(std::vector<int>* hyp) {
+  int length = encoder_outs_[encoder_outs_.size()-1].size(1);
+  auto encoder_out = encoder_outs_[encoder_outs_.size()-1];
+  
+  torch::Tensor encoder_out_lens = torch::zeros({1}, torch::kLong);
+  encoder_out_lens[0] = static_cast<int64_t>(length);
+
+  #ifdef USE_GPU
+    encoder_out = encoder_out.to(at::kCUDA);
+    encoder_out_lens = encoder_out_lens.to(at::kCUDA);
+  #endif
+
+  auto output = model_
+              ->run_method("forward_greedy_search", encoder_out, encoder_out_lens, 64)
+              .toList();
+
+  for (int i = 0; i < output.size(); ++i) {
+    hyp->push_back(std::move(output.get(i).toInt()));
+  }
+}
+
+
+
 
 }  // namespace wenet

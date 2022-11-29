@@ -12,6 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include "torch/script.h"
+#include "torch/torch.h"
+#include "decoder/asr_model.h"
+
 
 #ifndef DECODER_SEARCH_INTERFACE_H_
 #define DECODER_SEARCH_INTERFACE_H_
@@ -23,12 +27,16 @@ namespace wenet {
 enum SearchType {
   kPrefixBeamSearch = 0x00,
   kWfstBeamSearch = 0x01,
+  rnntGreedySearch = 0x02,
+  rnntPrefixBeamSearch = 0x03,
 };
 
 class SearchInterface {
  public:
   virtual ~SearchInterface() {}
   virtual void Search(const std::vector<std::vector<float>>& logp) = 0;
+  virtual void Search(const std::vector<std::vector<float>>& logp,const std::vector<torch::Tensor> &encoder_outs) = 0;
+  virtual void Search(const std::vector<int>& hyp) = 0;
   virtual void Reset() = 0;
   virtual void FinalizeSearch() = 0;
 
