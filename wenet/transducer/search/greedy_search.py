@@ -7,6 +7,8 @@ def basic_greedy_search(
     model: torch.nn.Module,
     encoder_out: torch.Tensor,
     encoder_out_lens: torch.Tensor,
+    context_list: torch.Tensor = torch.IntTensor([0]),
+    context_lengths: torch.Tensor = torch.IntTensor([0]),
     n_steps: int = 64,
 ) -> List[List[int]]:
     # fake padding
@@ -23,12 +25,16 @@ def basic_greedy_search(
     pred_out_step = None
     per_frame_max_noblk = n_steps
     per_frame_noblk = 0
+    bias_hidden = model.context_bias.forward_bias_hidden(context_list, context_lengths)
+    encoder_out = model.context_bias.forward_encoder_bias(bias_hidden, encoder_out)
+
     while t < encoder_out_lens:
         encoder_out_step = encoder_out[:, t:t + 1, :]  # [1, 1, E]
         if prev_out_nblk:
             step_outs = model.predictor.forward_step(pred_input_step, padding,
                                                      cache)  # [1, 1, P]
             pred_out_step, new_cache = step_outs[0], step_outs[1]
+            pred_out_step = model.context_bias.forward_predictor_bias(bias_hidden, pred_out_step)
 
         joint_out_step = model.joint(encoder_out_step,
                                      pred_out_step)  # [1,1,v]

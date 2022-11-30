@@ -223,6 +223,7 @@ class Transducer(ASRModel):
         self,
         speech: torch.Tensor,
         speech_lengths: torch.Tensor,
+        
         decoding_chunk_size: int = -1,
         beam_size: int = 5,
         num_decoding_left_chunks: int = -1,
@@ -409,6 +410,8 @@ class Transducer(ASRModel):
         num_decoding_left_chunks: int = -1,
         simulate_streaming: bool = False,
         n_steps: int = 64,
+        context_list: torch.Tensor = torch.IntTensor([0]),
+        context_lengths: torch.Tensor = torch.IntTensor([0]),
     ) -> List[List[int]]:
         """ greedy search
 
@@ -443,7 +446,10 @@ class Transducer(ASRModel):
         hyps = basic_greedy_search(self,
                                    encoder_out,
                                    encoder_out_lens,
-                                   n_steps=n_steps)
+                                   context_list,
+                                   context_lengths,
+                                   n_steps=n_steps,
+                                   )
 
         return hyps
 

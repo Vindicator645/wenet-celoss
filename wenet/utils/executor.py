@@ -54,7 +54,9 @@ class Executor:
             for batch_idx, batch in enumerate(data_loader):
                 # kxhuang
                 # add context_list, context_lengths
-                key, feats, target, feats_lengths, target_lengths, context_list, context_lengths = batch
+                #key, feats, target, feats_lengths, target_lengths, context_list, context_lengths  = batch
+                keys, feats, target, feats_lengths, target_lengths, context_list, context_lengths, context_label, context_label_lengths = batch
+
                 feats = feats.to(device)
                 target = target.to(device)
                 feats_lengths = feats_lengths.to(device)
@@ -136,7 +138,9 @@ class Executor:
             for batch_idx, batch in enumerate(data_loader):
                 # kxhuang
                 # add context_list, context_lengths
-                key, feats, target, feats_lengths, target_lengths, context_list,context_lengths = batch
+                #key, feats, target, feats_lengths, target_lengths, context_list,context_lengths = batch
+                keys, feats, target, feats_lengths, target_lengths, context_list, context_lengths, context_label = batch
+                
                 feats = feats.to(device)
                 target = target.to(device)
                 feats_lengths = feats_lengths.to(device)

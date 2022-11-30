@@ -6,10 +6,10 @@
 
 # Use this to control how many gpu you use, It's 1-gpu training if you specify
 # just 1gpu, otherwise it's is multiple gpu training based on DDP in pytorch
-export CUDA_VISIBLE_DEVICES="0,1,2,3"
+# export CUDA_VISIBLE_DEVICES="0,1,2,3"
 # export CUDA_VISIBLE_DEVICES="4, 5, 6, 7"
-# export CUDA_VISIBLE_DEVICES="-1"
-stage=4 # start from 0 if you need to start from data preparation
+export CUDA_VISIBLE_DEVICES="-1"
+stage=5 # start from 0 if you need to start from data preparation
 stop_stage=$stage
 # data
 data_url=www.openslr.org/resources/12
@@ -32,11 +32,11 @@ cmvn=true
 do_delta=false
 # use average_checkpoint will get better result
 average_checkpoint=false
-decode_checkpoint=$dir/87.pt
+decode_checkpoint=$dir/42.pt
 # maybe you can try to adjust it if you can not get close results as README.md
 average_num=8
 #decode_modes="attention_rescoring ctc_greedy_search ctc_prefix_beam_search attention"
-decode_modes="ctc_prefix_beam_search"
+decode_modes="rnnt_greedy_search"
 
 . tools/parse_options.sh || exit 1;
 
@@ -211,8 +211,8 @@ if [ ${stage} -le 5 ] && [ ${stop_stage} -ge 5 ]; then
           --penalty 0.0 \
           --result_file $test_dir/text_bpe \
           --ctc_weight $ctc_weight \
-          --context_list_path /home/work_nfs5_ssd/kxhuang/buffer/librispeech_context_bpe_list.txt \
-          --context_filter_mode "" \
+          # --context_list_path /home/work_nfs5_ssd/kxhuang/buffer/librispeech_context_bpe_list.txt \
+          # --context_filter_mode "" \
           ${decoding_chunk_size:+--decoding_chunk_size $decoding_chunk_size} 
 
         cut -f2- -d " " $test_dir/text_bpe > $test_dir/text_bpe_value_tmp

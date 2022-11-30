@@ -29,6 +29,7 @@ from wenet.utils.checkpoint import load_checkpoint
 from wenet.utils.file_utils import read_symbol_table, read_non_lang_symbols
 from wenet.utils.config import override_config
 from wenet.utils.init_model import init_model
+from wenet.utils.context_filter import ContextFilter
 
 def get_args():
     parser = argparse.ArgumentParser(description='recognize with your model')
@@ -164,6 +165,9 @@ def main():
     test_conf['spec_sub'] = False
     test_conf['shuffle'] = False
     test_conf['sort'] = False
+    test_conf['context_mode'] = 4
+    print("context_mode = ", test_conf['context_mode'])
+ 
     if 'fbank_conf' in test_conf:
         test_conf['fbank_conf']['dither'] = 0.0
     elif 'mfcc_conf' in test_conf:
@@ -197,11 +201,14 @@ def main():
     model.eval()
     with torch.no_grad(), open(args.result_file, 'w') as fout:
         for batch_idx, batch in enumerate(test_data_loader):
-            keys, feats, target, feats_lengths, target_lengths = batch
+            keys, feats, target, feats_lengths, target_lengths, context_list, context_lengths, context_label, context_label_lengths = batch
+
             feats = feats.to(device)
             target = target.to(device)
             feats_lengths = feats_lengths.to(device)
             target_lengths = target_lengths.to(device)
+            context_list = context_list.to(device)
+            context_lengths = context_lengths.to(device)
             if args.mode == 'attention':
                 hyps, _ = model.recognize(
                     feats,
@@ -226,7 +233,9 @@ def main():
                     feats_lengths,
                     decoding_chunk_size=args.decoding_chunk_size,
                     num_decoding_left_chunks=args.num_decoding_left_chunks,
-                    simulate_streaming=args.simulate_streaming)
+                    simulate_streaming=args.simulate_streaming,
+                    context_list=context_list,
+                    context_lengths=context_lengths)
             elif args.mode == 'rnnt_beam_search':
                 assert (feats.size(0) == 1)
                 assert 'predictor' in configs
@@ -238,7 +247,9 @@ def main():
                     num_decoding_left_chunks=args.num_decoding_left_chunks,
                     simulate_streaming=args.simulate_streaming,
                     ctc_weight=args.search_ctc_weight,
-                    transducer_weight=args.search_transducer_weight)
+                    transducer_weight=args.search_transducer_weight,
+                    context_list=context_list,
+                    context_lengths=context_lengths)
             elif args.mode == 'rnnt_beam_attn_rescoring':
                 assert (feats.size(0) == 1)
                 assert 'predictor' in configs
