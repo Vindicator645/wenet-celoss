@@ -6,3 +6,7 @@ export PATH=$PWD:${BUILD_DIR}/bin:${BUILD_DIR}/kaldi:${OPENFST_PREFIX_DIR}/bin:$
 # NOTE(kan-bayashi): Use UTF-8 in Python to avoid UnicodeDecodeError when LC_ALL=C
 export PYTHONIOENCODING=UTF-8
 export PYTHONPATH=../../../:$PYTHONPATH
+
+source /home/environment/tyxu/.bashrc
+conda activate wenet
+

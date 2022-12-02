@@ -95,6 +95,7 @@ class Transducer(ASRModel):
         # bias_hidden = 0
         # if context_list != 0:
 
+       
         bias_hidden = self.context_bias.forward_bias_hidden(context_list, context_lengths)
 
         # Encoder
