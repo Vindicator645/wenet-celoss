@@ -8,9 +8,10 @@
 # just 1gpu, otherwise it's is multiple gpu training based on DDP in pytorch
 #export CUDA_VISIBLE_DEVICES="0,1,2,3"
 #export CUDA_VISIBLE_DEVICES="0,1"
-#export CUDA_VISIBLE_DEVICES="4, 5, 6, 7"
-export CUDA_VISIBLE_DEVICES="-1"
-stage=5 # start from 0 if you need to start from data preparation
+export CUDA_VISIBLE_DEVICES="4, 5, 6, 7"
+export CUDA_VISIBLE_DEVICES="0,1,2,3,4, 5, 6, 7"
+#export CUDA_VISIBLE_DEVICES="-1"
+stage=4 # start from 0 if you need to start from data preparation
 stop_stage=$stage
 # data
 data_url=www.openslr.org/resources/12
@@ -18,24 +19,20 @@ data_url=www.openslr.org/resources/12
 datadir=./data
 # wav data dir
 wave_data=/home/work_nfs5_ssd/kxhuang/wenet-encoder_decoder_bias/examples/librispeech/s0/data
-dir=exp/1202_encoder_bias_30_0.1
-
+dir=exp/1204_encoder_bias_nobi_noatt
 # dir=exp/sp_CIP_encoder_bias_ctcloss
 # Optional train_config
 # 1. conf/train_transformer_large.yaml: Standard transformer
-train_config=conf/encoder_bias_conformer_rnnt.yaml
-checkpoint=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/exp/1116_encoder_bias_30_0.1/44.pt
-# checkpoint=exp/sp_baseline_CIP/50.pt
-#checkpoint=$dir/54.pt
-# checkpoint=exp/1112_baseline/50.pt
-# checkpoint=exp/sp_CIP_encoder_bias_ctcloss/70.pt
-
+train_config=conf/encoder_bias_conformer_rnnt_nobi_noatt.yaml
+#checkpoint=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/exp/1116_encoder_bias_30_0.1/44.pt
+checkpoint=$dir/20.pt
+#checkpoint=
 cmvn=true
 do_delta=false
 # use average_checkpoint will get better result
 average_checkpoint=false
-decode_checkpoint=$dir/11.pt
-# maybe you can try to adjust it if you can not get close results as README.md
+decode_checkpoint=$dir/42.pt
+# maybe you can try to adjust it if you can not get close result qs as README.md
 average_num=8
 #decode_modes="attention_rescoring ctc_greedy_search ctc_prefix_beam_search attention"
 decode_modes="rnnt_greedy_search"
@@ -196,7 +193,7 @@ if [ ${stage} -le 5 ] && [ ${stop_stage} -ge 5 ]; then
     for mode in ${decode_modes}; do
     {
       {
-        test_tag=mode2dict100
+        test_tag=mode2
         test_dir=$dir/${test}_${mode}_${test_tag}
         mkdir -p $test_dir
         gpu_id=$(echo $CUDA_VISIBLE_DEVICES | cut -d',' -f$[$idx+1])
@@ -206,7 +203,7 @@ if [ ${stage} -le 5 ] && [ ${stop_stage} -ge 5 ]; then
           --data_type raw \
           --dict $dict \
           --bpe_model ${bpemodel}.model \
-          --test_data $wave_data/$test/data_small.list \
+          --test_data $wave_data/$test/data.list \
           --checkpoint $decode_checkpoint \
           --beam_size 10 \
           --batch_size 1 \

@@ -54,18 +54,17 @@ decoder_conf:
   linear_units: 2048
   num_blocks: 3
   positional_dropout_rate: 0.1
-  r_num_blocks: 3
   self_attention_dropout_rate: 0.1
   src_attention_dropout_rate: 0.1
 
 # hybrid transducer+ctc+attention
 model_conf:
-    transducer_weight: 0.75
+    transducer_weight: 0.9
     ctc_weight: 0.1
-    attention_weight: 0
+    # attention_weight: 0
     lsm_weight: 0.1     # label smoothing option
     length_normalized_loss: false
-    reverse_weight: 0
+    # reverse_weight: 0.3
 
 dataset_conf:
     filter_conf:

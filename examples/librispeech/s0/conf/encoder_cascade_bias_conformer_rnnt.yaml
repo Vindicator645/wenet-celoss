@@ -63,25 +63,23 @@ context_conf:
     bias_encoder: False
     context_extractor: 'BLSTM'
 
-decoder: bitransformer
+decoder: transformer
 decoder_conf:
   attention_heads: 4
   dropout_rate: 0.1
   linear_units: 2048
-  num_blocks: 3
+  num_blocks: 6
   positional_dropout_rate: 0.1
-  r_num_blocks: 3
   self_attention_dropout_rate: 0.1
   src_attention_dropout_rate: 0.1
 
 # hybrid transducer+ctc+attention
 model_conf:
-    transducer_weight: 0.75
+    transducer_weight: 0.9
     ctc_weight: 0.1
-    attention_weight: 0.15
+    # attention_weight: 0.15
     lsm_weight: 0.1     # label smoothing option
     length_normalized_loss: false
-    reverse_weight: 0.3
 
 dataset_conf:
     filter_conf:
@@ -112,7 +110,7 @@ dataset_conf:
     batch_conf:
         batch_type: 'dynamic' # static or dynamic
         batch_size: 2
-        max_frames_in_batch: 8000
+        max_frames_in_batch: 1000
     context_mode: 1
     bpe_dict: 'data/lang_char/train_960_unigram5000_units.txt'
     context_dict: '/home/work_nfs5_ssd/kxhuang/wenet-encoder_decoder_bias/examples/librispeech/s0/data/context_dic/10.dic'

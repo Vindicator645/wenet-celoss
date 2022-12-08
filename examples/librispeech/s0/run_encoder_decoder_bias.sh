@@ -9,6 +9,7 @@
 #export CUDA_VISIBLE_DEVICES="0,1,2,3"
 #export CUDA_VISIBLE_DEVICES="0,1"
 export CUDA_VISIBLE_DEVICES="4, 5, 6, 7"
+export CUDA_VISIBLE_DEVICES="0,1,2,3,4, 5, 6, 7"
 #export CUDA_VISIBLE_DEVICES="-1"
 stage=4 # start from 0 if you need to start from data preparation
 stop_stage=$stage

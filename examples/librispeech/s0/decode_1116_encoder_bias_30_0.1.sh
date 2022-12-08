@@ -18,7 +18,7 @@ data_url=www.openslr.org/resources/12
 datadir=./data
 # wav data dir
 wave_data=/home/work_nfs5_ssd/kxhuang/wenet-encoder_decoder_bias/examples/librispeech/s0/data
-dir=exp/1202_encoder_bias_30_0.1
+dir=exp/1116_encoder_bias_30_0.1
 
 # dir=exp/sp_CIP_encoder_bias_ctcloss
 # Optional train_config
@@ -196,7 +196,7 @@ if [ ${stage} -le 5 ] && [ ${stop_stage} -ge 5 ]; then
     for mode in ${decode_modes}; do
     {
       {
-        test_tag=mode2dict100
+        test_tag=mode4dict100ep10large
         test_dir=$dir/${test}_${mode}_${test_tag}
         mkdir -p $test_dir
         gpu_id=$(echo $CUDA_VISIBLE_DEVICES | cut -d',' -f$[$idx+1])
@@ -206,7 +206,7 @@ if [ ${stage} -le 5 ] && [ ${stop_stage} -ge 5 ]; then
           --data_type raw \
           --dict $dict \
           --bpe_model ${bpemodel}.model \
-          --test_data $wave_data/$test/data_small.list \
+          --test_data $wave_data/$test/data.list \
           --checkpoint $decode_checkpoint \
           --beam_size 10 \
           --batch_size 1 \
