@@ -55,7 +55,13 @@ class Executor:
                 # kxhuang
                 # add context_list, context_lengths
                 #key, feats, target, feats_lengths, target_lengths, context_list, context_lengths  = batch
-                keys, feats, target, feats_lengths, target_lengths, context_list, context_lengths, context_label, context_label_lengths = batch
+                keys, feats, target, feats_lengths, target_lengths, context_list, context_lengths, context_label, context_label_lengths,context_decoder_labels_padded = batch
+
+                # print(context_label.shape)
+                # print(target[0])
+                # print(context_decoder_labels_padded[0])
+                # print(context_decoder_labels_padded.shape)
+                # print(context_label_lengths.shape)
 
                 feats = feats.to(device)
                 target = target.to(device)
@@ -63,6 +69,7 @@ class Executor:
                 target_lengths = target_lengths.to(device)
                 context_list = context_list.to(device)
                 context_lengths = context_lengths.to(device)
+                context_decoder_labels_padded=context_decoder_labels_padded.to(device)
                 num_utts = target_lengths.size(0)
                 if num_utts == 0:
                     continue
@@ -81,8 +88,13 @@ class Executor:
                     # The more details about amp can be found in
                     # https://pytorch.org/docs/stable/notes/amp_examples.html
                     with torch.cuda.amp.autocast(scaler is not None):
+                        # print("1 ------------")
+                        # print(context_list)
+                        # print(context_lengths)
+                        # print("1 ------------")
+
                         loss_dict = model(feats, feats_lengths, target,
-                                          target_lengths, context_list, context_lengths)
+                                          target_lengths, context_list, context_lengths,context_decoder_labels_padded)
                         loss = loss_dict['loss'] / accum_grad
                     if use_amp:
                         scaler.scale(loss).backward()
@@ -139,7 +151,7 @@ class Executor:
                 # kxhuang
                 # add context_list, context_lengths
                 #key, feats, target, feats_lengths, target_lengths, context_list,context_lengths = batch
-                keys, feats, target, feats_lengths, target_lengths, context_list, context_lengths, context_label, context_label_lengths = batch
+                keys, feats, target, feats_lengths, target_lengths, context_list, context_lengths, context_label, context_label_lengths,context_decoder_labels_padded = batch
                 
                 feats = feats.to(device)
                 target = target.to(device)
@@ -150,8 +162,8 @@ class Executor:
                 num_utts = target_lengths.size(0)
                 if num_utts == 0:
                     continue
-                loss_dict = loss_dict = model(feats, feats_lengths, target,
-                                target_lengths, context_list, context_lengths)
+                loss_dict = model(feats, feats_lengths, target,
+                                target_lengths, context_list, context_lengths,context_decoder_labels_padded)
                 loss = loss_dict['loss']
                 if torch.isfinite(loss):
                     num_seen_utts += num_utts

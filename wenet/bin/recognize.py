@@ -165,7 +165,7 @@ def main():
     test_conf['spec_sub'] = False
     test_conf['shuffle'] = False
     test_conf['sort'] = False
-    test_conf['context_mode'] = 4
+    test_conf['context_mode'] = 1
     print("context_mode = ", test_conf['context_mode'])
  
     if 'fbank_conf' in test_conf:

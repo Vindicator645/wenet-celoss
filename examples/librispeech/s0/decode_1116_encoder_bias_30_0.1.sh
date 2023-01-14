@@ -15,7 +15,7 @@ stop_stage=$stage
 # data
 data_url=www.openslr.org/resources/12
 # use your own data path
-datadir=./data
+datadir=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/data
 # wav data dir
 wave_data=/home/work_nfs5_ssd/kxhuang/wenet-encoder_decoder_bias/examples/librispeech/s0/data
 dir=exp/1116_encoder_bias_30_0.1
@@ -34,7 +34,7 @@ cmvn=true
 do_delta=false
 # use average_checkpoint will get better result
 average_checkpoint=false
-decode_checkpoint=$dir/11.pt
+decode_checkpoint=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/exp/1209_encoder_cascade_bias_finetune/0.pt
 # maybe you can try to adjust it if you can not get close results as README.md
 average_num=8
 #decode_modes="attention_rescoring ctc_greedy_search ctc_prefix_beam_search attention"

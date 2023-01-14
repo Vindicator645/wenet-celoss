@@ -272,6 +272,11 @@ class ContextBias(torch.nn.Module):
                 n_feat=self.embedding_size,
                 dropout_rate=0.0
             )
+            self.hw_bias=MultiHeadedAttention(
+                n_head=self.attention_heads,
+                n_feat=self.embedding_size,
+                dropout_rate=0.0
+            )
         self.encoder_norm = torch.nn.LayerNorm(self.embedding_size)
         self.encoder_bias_norm = torch.nn.LayerNorm(self.embedding_size)
         self.encoder_ffn = torch.nn.Linear(self.embedding_size * 2, self.output_size)
@@ -284,7 +289,8 @@ class ContextBias(torch.nn.Module):
         self.predictor_bias_combine = torch.nn.Linear(self.embedding_size * 2, self.embedding_size)
         self.predictor_bias_bias_norm = torch.nn.LayerNorm(self.embedding_size)
         self.predictor_bias_out_norm = torch.nn.LayerNorm(self.embedding_size)
-
+        self.hw_bias_norm= torch.nn.LayerNorm(self.embedding_size) 
+        self.hw_output_layer = torch.nn.Linear(self.embedding_size, vocab_size)
         
     
     def forward(self, context_list, context_lengths, h_enc):
@@ -344,6 +350,7 @@ class ContextBias(torch.nn.Module):
 
     # kxhuang
     def forward_encoder_bias(self, bias_hidden, encoder_out):
+
         bias_hidden = bias_hidden.expand(encoder_out.shape[0], -1, -1)
         encoder_out_bias, _ = self.encoder_bias(encoder_out, bias_hidden, bias_hidden)
         encoder_out_bias = self.encdoer_bias_bias_norm(encoder_out_bias)
@@ -357,4 +364,11 @@ class ContextBias(torch.nn.Module):
         predictor_out_bias = self.predictor_bias_bias_norm(predictor_out_bias)
         predictor_out = torch.cat([predictor_out, predictor_out_bias], dim=-1)
         predictor_out = self.predictor_bias_out_norm(self.predictor_bias_combine(predictor_out))
+
         return predictor_out
+    def forward_hw_pred(self, bias_hidden, predictor_out):
+        bias_hidden = bias_hidden.expand(predictor_out.shape[0], -1, -1)
+        h_hw_bias, _ = self.hw_bias(predictor_out, bias_hidden, bias_hidden)
+        h_hw_bias=self.hw_bias_norm(h_hw_bias)
+        h_hw_out = self.hw_output_layer(h_hw_bias)
+        return h_hw_out

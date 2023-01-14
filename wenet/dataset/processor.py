@@ -9,7 +9,7 @@
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
+# See the License for the specific language governing permissions and    
 # limitations under the License.
 
 import logging
@@ -26,6 +26,7 @@ import torch
 import torchaudio
 import torchaudio.compliance.kaldi as kaldi
 from torch.nn.utils.rnn import pad_sequence
+import random
 
 AUDIO_FORMAT_SETS = set(['flac', 'mp3', 'm4a', 'ogg', 'opus', 'wav', 'wma'])
 
@@ -591,8 +592,8 @@ def maintain_context_list(add_list=None,list_size=30):
     global context_list_over_all
     if len(context_list_over_all) + len(add_list) <= list_size:
         context_list_over_all.extend(add_list)
-    elif len(add_list) >= list_size:
-        context_list_over_all = add_list
+    # elif len(add_list) >= list_size:
+    #     context_list_over_all = add_list
     else:
         cut_num = len(context_list_over_all) + len(add_list) - list_size
         context_list_over_all.extend(add_list)
@@ -621,11 +622,11 @@ def context_generate(key_list, context_dic, label=None, context_len_min=1, conte
             context_list_file = context_list_valid
         if context_mode == 3:
             context_list_file = context_list_test 
-        f = open(context_list_file)
-        file_obj = f.readlines()
-        for item in file_obj:
-            context_list.append(torch.tensor([int(id) for id in item.split()]))
-        f.close()
+        # f = open(context_list_file)
+        # file_obj = f.readlines()
+        # for item in file_obj:
+        #     context_list.append(torch.tensor([int(id) for id in item.split()]))
+        # f.close()
     if context_mode == 4:
         raw_list = context_dic[key_list[0]]
         for raw_line in raw_list:
@@ -651,8 +652,8 @@ def context_generate(key_list, context_dic, label=None, context_len_min=1, conte
 
             st_bef = []
             en_bef = []
-
-            for _ in range(3):
+            num_context = random.randint(0, 4)
+            for _ in range(0, num_context):
                 random_len = random.randint(min(word_num, context_len_min), min(word_num, context_len_max)) #随机热词长度
                 random_index = random.randint(0, len(st_list) - random_len - 1) # 随机热词开始index
                 st_index = st_list[random_index] #热词开始index
@@ -664,13 +665,15 @@ def context_generate(key_list, context_dic, label=None, context_len_min=1, conte
                         flag = False
                     elif en_index > st_bef[i] and en_index <= en_bef[i]:
                         flag = False
+                    elif st_index < st_bef[i] and en_index > en_bef[i]:
+                        flag = False
                 if flag == True:
                     context_list.append(cur_phrase) #热词添加到热词列表
                     st_bef.append(st_index)
                     en_bef.append(en_index)
 
         context_num = int(len(context_list) / pos_per_bartch)
-        context_list = maintain_context_list(add_list=context_list)[::-1][:context_num]
+        # context_list = maintain_context_list(add_list=context_list)[::-1][:context_num]
     if context_mode == 0:
         return None,None
     context_list.insert(0, torch.tensor([0]))
@@ -704,6 +707,8 @@ def padding(data, context_len_min=2, context_len_max=4, context_mode=0, bpe_set=
             torch.tensor(sample[i]['label'], dtype=torch.int64) for i in order
         ]
         padded_context_list,context_lengths,context_end_idx,random_label_withcontext,random_label_withoutcontext, context_list = context_generate(key_list, context_dic, sorted_labels,context_len_min,context_len_max,context_mode,bpe_set,context_list_valid,context_list_test,pos_per_batch)
+        # ---------
+        # print(context_lengths)
         
         label_lengths = torch.tensor([x.size(0) for x in sorted_labels],
                                     dtype=torch.int32)
@@ -714,11 +719,10 @@ def padding(data, context_len_min=2, context_len_max=4, context_mode=0, bpe_set=
         padding_labels = pad_sequence(sorted_labels,
                                     batch_first=True,
                                     padding_value=-1)
-        padding_context_labels, context_label_lengths = context_label_generate(sorted_labels, context_list)
+        padding_context_labels, context_label_lengths, context_decoder_labels_padded = hw_label_generate(sorted_labels, context_list)
 
         yield (sorted_keys, padded_feats, padding_labels, feats_lengths,
-            label_lengths,padded_context_list,context_lengths, padding_context_labels, 
-            context_label_lengths)
+            label_lengths,padded_context_list,context_lengths, padding_context_labels, context_label_lengths, context_decoder_labels_padded)
 
 def context_label_generate(label=[], context_list=[]):
     """ generate context label
@@ -727,66 +731,67 @@ def context_label_generate(label=[], context_list=[]):
 
         Returns
     """
+
     context_labels = []
     context_length = []
+    context_decoder_labels = []
     for x in label:
         cur_len = len(x)
         context_label = []
+        context_decoder_label = torch.zeros_like(x)
         for i in range(cur_len):
             for j in range(1, len(context_list)):
                 if i + len(context_list[j]) > cur_len:
                     continue
                 if x[i:i + len(context_list[j])].equal(context_list[j]):
+                    context_decoder_label[i:i + len(context_list[j])] = context_list[j]
                     for bpe in context_list[j]:
                         context_label.append(bpe)
                     break
         context_length.append(len(context_label))
         context_label = torch.tensor(context_label, dtype=torch.int32)
         context_labels.append(context_label)
+        context_decoder_labels.append(context_decoder_label)
     context_labels_padded = pad_sequence(context_labels, batch_first=True, padding_value=0)
     context_lengths = torch.tensor(context_length, dtype=torch.int32)
-    return context_labels_padded, context_lengths
+    context_decoder_labels_padded = pad_sequence(context_decoder_labels, batch_first=True, padding_value=-1)
+    return context_labels_padded, context_lengths, context_decoder_labels_padded
 
-def context_frame_generate(sorted_keys, feats_lengths, alignments_dict={}, bpe_set={}, label=[],
-                             context_list=[]):
-    context_frames = []
-    for i in range(len(sorted_keys)):
-        context_frame = []
-        frame_length = feats_lengths[i].item() // 4
-        if sorted_keys[i] not in alignments_dict:
-            context_frames.append(context_frame)
-            continue
-        start = alignments_dict[sorted_keys[i]]["start"]
-        end = alignments_dict[sorted_keys[i]]["end"]
-        bpe2word = [0] * len(label[i])
-        for j in range(1, len(label[i])):
-            if label[i][j].item() in bpe_set:
-                bpe2word[j] = bpe2word[j - 1] + 1
-            else:
-                bpe2word[j] = bpe2word[j - 1]
-        
-        for j in range(len(label[i])):
-            for k in range(1, len(context_list)):
-                if j + len(context_list[k]) > len(label[i]):
+def hw_label_generate(label=[], context_list=[]):
+    """ generate context label
+
+        Args:
+
+        Returns
+    """
+    print(len(label))
+    print(label[0])
+    print(context_list[0])
+    print(context_list)
+    quit()
+    context_labels = []
+    context_length = []
+    context_decoder_labels = []
+    for x in label:
+        cur_len = len(x)
+        context_label = []
+        context_decoder_label = torch.zeros_like(x)
+        for i in range(cur_len):
+            for j in range(1, len(context_list)):
+                if i + len(context_list[j]) > cur_len:
                     continue
-                if label[i][j:j + len(context_list[k])].equal(context_list[k]):
-                    left = max(0, start[bpe2word[j]] - 1 - 5)
-                    right = min(frame_length, end[bpe2word[j + len(context_list[k]) - 1]] + 5)
-                    context_frame.append([left, right])
+                
+                if x[i:i + len(context_list[j])].equal(context_list[j]):
+                    context_decoder_label[i:i + len(context_list[j])] = context_list[j]
+                    for bpe in context_list[j]:
+                        context_label.append(bpe)
                     break
-        context_frame = sorted(context_frame, key=lambda x:x[0])
-        merge_cnt = 0
-        for i in range(1, len(context_frame)):
-            i = i - merge_cnt
-            if context_frame[i][0] < context_frame[i - 1][1]:
-                context_frame[i - 1][1] = context_frame[i][1]
-                del context_frame[i]
-                merge_cnt += 1
-        context_frames.append(context_frame)
-        # print(label[i])
-        # print(context_list)
-        # print(start)
-        # print(end)
-        # print(context_frame)
-    
-    return context_frames
+        context_length.append(len(context_label))
+        context_label = torch.tensor(context_label, dtype=torch.int32)
+        context_labels.append(context_label)
+        context_decoder_labels.append(context_decoder_label)
+    context_labels_padded = pad_sequence(context_labels, batch_first=True, padding_value=0)
+    context_lengths = torch.tensor(context_length, dtype=torch.int32)
+    context_decoder_labels_padded = pad_sequence(context_decoder_labels, batch_first=True, padding_value=-1)
+    return context_labels_padded, context_lengths, context_decoder_labels_padded
+

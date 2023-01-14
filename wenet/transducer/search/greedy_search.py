@@ -40,6 +40,7 @@ def basic_greedy_search(
 
         joint_out_step = model.joint(encoder_out_step,
                                      pred_out_step)  # [1,1,v]
+        # print(joint_out_step.shape)
         joint_out_probs = joint_out_step.log_softmax(dim=-1)
 
         joint_out_max = joint_out_probs.argmax(dim=-1).squeeze()  # []

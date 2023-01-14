@@ -39,6 +39,7 @@ class Transducer(ASRModel):
         length_normalized_loss: bool = False,
         transducer_weight: float = 1.0,
         attention_weight: float = 0.0,
+        hw_weight: float = 0.2,
     ) -> None:
         assert check_argument_types()
         assert attention_weight + ctc_weight + transducer_weight == 1.0
@@ -54,6 +55,9 @@ class Transducer(ASRModel):
         self.predictor = predictor
         self.joint = joint
         self.bs = None
+        self.hw_weight=hw_weight
+        self.hw_criterion=nn.CrossEntropyLoss()
+
         # Note(Mddct): decoder also means predictor in transducer,
         # but here decoder is attention decoder
         del self.criterion_att
@@ -73,6 +77,7 @@ class Transducer(ASRModel):
         text_lengths: torch.Tensor,
         context_list: torch.Tensor = torch.IntTensor([0]),
         context_lengths: torch.Tensor = torch.IntTensor([0]),
+        hw_label= torch.IntTensor([0]),
     ) -> Dict[str, Optional[torch.Tensor]]:
         """Frontend + Encoder + predictor + joint + loss
 
@@ -101,7 +106,8 @@ class Transducer(ASRModel):
         # Encoder
         encoder_out, encoder_mask = self.encoder(speech, speech_lengths)
         encoder_out_lens = encoder_mask.squeeze(1).sum(1)
-
+        # print(encoder_out)
+        # print(encoder_out.shape)torch.Size([4, 315, 256])
         # kxhuang
         # get encoder_out_bias
         # if bias_hidden != 0:
@@ -109,15 +115,14 @@ class Transducer(ASRModel):
         encoder_out = self.context_bias.forward_encoder_bias(bias_hidden, encoder_out)
         # predictor
         ys_in_pad = add_blank(text, self.blank, self.ignore_id)
+        
         predictor_out = self.predictor(ys_in_pad)
-
-        # kxhuang 
-        # get predictor_out_bias
-        # if bias_hidden !=0:
         predictor_out = self.context_bias.forward_predictor_bias(bias_hidden, predictor_out)
-
+        predictor_out_unbiased = predictor_out.clone()
         # joint
         joint_out = self.joint(encoder_out, predictor_out)
+        # print(joint_out)
+        # print(joint_out.shape)
         # NOTE(Mddct): some loss implementation require pad valid is zero
         # torch.int32 rnnt_loss required
         rnnt_text = text.to(torch.int64)
@@ -152,12 +157,22 @@ class Transducer(ASRModel):
             loss = loss + self.ctc_weight * loss_ctc.sum()
         if loss_att is not None:
             loss = loss + self.attention_decoder_weight * loss_att.sum()
+        #hw_loss
+
+        hw_output = self.context_bias.forward_hw_pred(bias_hidden,predictor_out_unbiased)
+
+        hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
+
+        hw_output = hw_output.permute(0, 2, 1)
+        hw_loss = self.hw_criterion(hw_output, hw_label_pad)
+        loss = loss + self.hw_weight * hw_loss
         # NOTE: 'loss' must be in dict
         return {
             'loss': loss,
             'loss_att': loss_att,
             'loss_ctc': loss_ctc,
             'loss_rnnt': loss_rnnt,
+            'hw_loss':hw_loss,
         }
 
     def init_bs(self):
