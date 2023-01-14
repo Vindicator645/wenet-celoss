@@ -764,11 +764,11 @@ def hw_label_generate(label=[], context_list=[]):
 
         Returns
     """
-    print(len(label))
-    print(label[0])
-    print(context_list[0])
-    print(context_list)
-    quit()
+    # print(len(label))
+    # print(label[0])
+    # print(context_list[0])
+    # print(context_list)
+    # quit()
     context_labels = []
     context_length = []
     context_decoder_labels = []
