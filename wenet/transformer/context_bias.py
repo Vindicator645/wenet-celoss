@@ -290,7 +290,7 @@ class ContextBias(torch.nn.Module):
         self.predictor_bias_bias_norm = torch.nn.LayerNorm(self.embedding_size)
         self.predictor_bias_out_norm = torch.nn.LayerNorm(self.embedding_size)
         self.hw_bias_norm= torch.nn.LayerNorm(self.embedding_size) 
-        self.hw_output_layer = torch.nn.Linear(self.embedding_size, vocab_size)
+        self.hw_output_layer = torch.nn.Linear(self.embedding_size, 30)
         
     
     def forward(self, context_list, context_lengths, h_enc):

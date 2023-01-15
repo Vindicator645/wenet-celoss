@@ -592,8 +592,8 @@ def maintain_context_list(add_list=None,list_size=30):
     global context_list_over_all
     if len(context_list_over_all) + len(add_list) <= list_size:
         context_list_over_all.extend(add_list)
-    # elif len(add_list) >= list_size:
-    #     context_list_over_all = add_list
+    elif len(add_list) >= list_size:
+        context_list_over_all = add_list
     else:
         cut_num = len(context_list_over_all) + len(add_list) - list_size
         context_list_over_all.extend(add_list)
@@ -673,7 +673,7 @@ def context_generate(key_list, context_dic, label=None, context_len_min=1, conte
                     en_bef.append(en_index)
 
         context_num = int(len(context_list) / pos_per_bartch)
-        # context_list = maintain_context_list(add_list=context_list)[::-1][:context_num]
+        context_list = maintain_context_list(add_list=context_list)[::-1][:context_num]
     if context_mode == 0:
         return None,None
     context_list.insert(0, torch.tensor([0]))
@@ -782,7 +782,8 @@ def hw_label_generate(label=[], context_list=[]):
                     continue
                 
                 if x[i:i + len(context_list[j])].equal(context_list[j]):
-                    context_decoder_label[i:i + len(context_list[j])] = context_list[j]
+                    # context_decoder_label[i:i + len(context_list[j])] = context_list[j]
+                    context_decoder_label[i:i + len(context_list[j])] = j
                     for bpe in context_list[j]:
                         context_label.append(bpe)
                     break
