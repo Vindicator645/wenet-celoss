@@ -71,6 +71,7 @@ class Executor:
                 context_lengths = context_lengths.to(device)
                 context_decoder_labels_padded=context_decoder_labels_padded.to(device)
                 num_utts = target_lengths.size(0)
+                
                 if num_utts == 0:
                     continue
                 context = None
@@ -159,6 +160,8 @@ class Executor:
                 target_lengths = target_lengths.to(device)
                 context_list = context_list.to(device)
                 context_lengths = context_lengths.to(device)
+                context_decoder_labels_padded=context_decoder_labels_padded.to(device)
+
                 num_utts = target_lengths.size(0)
                 if num_utts == 0:
                     continue
