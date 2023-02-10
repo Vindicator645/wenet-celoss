@@ -22,17 +22,17 @@ dir=exp/1_13_rnnt_bias_loss
 # dir=exp/sp_CIP_encoder_bias_ctcloss
 # Optional train_config
 # 1. conf/train_transformer_large.yaml: Standard transformer
-train_config=conf/encoder_bias_conformer_rnnt_4_head.yaml
+train_config=conf/encoder_bias_conformer_rnnt_4_head_bi_1_layer.yaml
 #checkpoint=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/exp/1116_encoder_bias_30_0.1/44.pt
-#checkpoint=$dir/10.pt
-checkpoint=
+checkpoint=$dir/34.pt
+# checkpoint=
 cmvn=true
 do_delta=false
 # use average_checkpoint will get better result
 average_checkpoint=false
 decode_checkpoint=$dir/42.pt 
 # maybe you can try to adjust it if you can not get close results as README.md
-average_num=8
+average_num=8 
 #decode_modes="attention_rescoring ctc_greedy_search ctc_prefix_beam_search attention"
 decode_modes="rnnt_greedy_search"
 

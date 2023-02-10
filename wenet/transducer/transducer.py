@@ -39,7 +39,7 @@ class Transducer(ASRModel):
         length_normalized_loss: bool = False,
         transducer_weight: float = 1.0,
         attention_weight: float = 0.0,
-        hw_weight: float = 0.2,
+        hw_weight: float = 0.4,
     ) -> None:
         assert check_argument_types()
         assert attention_weight + ctc_weight + transducer_weight == 1.0
@@ -56,7 +56,11 @@ class Transducer(ASRModel):
         self.joint = joint
         self.bs = None
         self.hw_weight=hw_weight
-        self.hw_criterion=nn.CrossEntropyLoss()
+        first=0.01
+        start = torch.tensor([first], dtype=torch.float)
+        rest = torch.full((30,), (1-first)/30, dtype=torch.float)
+        weights = torch.cat((start, rest))
+        self.hw_criterion=nn.CrossEntropyLoss(weight=weights)
 
         # Note(Mddct): decoder also means predictor in transducer,
         # but here decoder is attention decoder
@@ -159,13 +163,52 @@ class Transducer(ASRModel):
             loss = loss + self.attention_decoder_weight * loss_att.sum()
         #hw_loss
 
-        hw_output = self.context_bias.forward_hw_pred(bias_hidden,predictor_out_unbiased)
+        hw_loss : Optional[torch.Tensor] = None
+        if self.hw_weight !=0.0:
+            hw_output = self.context_bias.forward_hw_pred(bias_hidden,predictor_out_unbiased)
+            hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
+            hw_output = hw_output.permute(0, 2, 1)
+            hw_loss = self.hw_criterion(hw_output, hw_label_pad)
 
-        hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
+            # hw_output = hw_output.permute(0, 2, 1)
+            # print("-------")
+      
+            # print(hw_output.shape) #  6,31,17
+            # print(hw_label_pad)# 6,17
 
-        hw_output = hw_output.permute(0, 2, 1)
-        hw_loss = self.hw_criterion(hw_output, hw_label_pad)
-        loss = loss + self.hw_weight * hw_loss
+
+            # for batch in range(hw_label_pad.shape[0]):
+
+            #     for frame in range(hw_label_pad.shape[1]):
+            #         other_posterior=0.0
+            #         cur_posterior=0.0
+            #         cnt_cur_label=0
+            #         cur_label=int(hw_label_pad[batch][frame].item())
+            #         # print(hw_output[batch][cur_label])
+            #         for label in range(hw_output.shape[2]):
+            #             # print(hw_output[batch][label][frame].item())
+            #             if label==cur_label:
+            #                 cur_posterior+=float(hw_output[batch][frame][label].item())
+            #                 cnt_cur_label+=1    
+            #             else:
+            #                 other_posterior+=float(hw_output[batch][frame][label].item())
+            #         if cur_label<10 :
+            #             continue
+            #         print("begin-----------")
+            #         print(hw_output.permute(0, 2, 1)[batch][cur_label])
+            #         print("cur label:")
+            #         print(cur_posterior)
+            #         print("other:")
+            #         print(other_posterior/30)  
+            #         # print("ratio:")
+            #         # print(cur_posterior/other_posterior)
+            #         print(hw_output[batch][frame])
+            #         print(hw_label_pad[batch][frame])
+            #         # print(int(frame.item()))
+            #         print("end-----------")
+
+            # print("-------")
+            loss = loss + self.hw_weight * hw_loss
         # NOTE: 'loss' must be in dict
         return {
             'loss': loss,

@@ -588,12 +588,12 @@ def batch(data, batch_type='static', batch_size=16, max_frames_in_batch=12000):
 
 
 context_list_over_all = []
-def maintain_context_list(add_list=None,list_size=30):
+def maintain_context_list(add_list=None,list_size=50):
     global context_list_over_all
     if len(context_list_over_all) + len(add_list) <= list_size:
         context_list_over_all.extend(add_list)
-    elif len(add_list) >= list_size:
-        context_list_over_all = add_list
+    # elif len(add_list) >= list_size:
+    #     context_list_over_all = add_list
     else:
         cut_num = len(context_list_over_all) + len(add_list) - list_size
         context_list_over_all.extend(add_list)
@@ -652,7 +652,7 @@ def context_generate(key_list, context_dic, label=None, context_len_min=1, conte
 
             st_bef = []
             en_bef = []
-            num_context = random.randint(0, 4)
+            num_context = random.randint(0, 6)
             for _ in range(0, num_context):
                 random_len = random.randint(min(word_num, context_len_min), min(word_num, context_len_max)) #随机热词长度
                 random_index = random.randint(0, len(st_list) - random_len - 1) # 随机热词开始index
@@ -674,6 +674,8 @@ def context_generate(key_list, context_dic, label=None, context_len_min=1, conte
 
         context_num = int(len(context_list) / pos_per_bartch)
         context_list = maintain_context_list(add_list=context_list)[::-1][:context_num]
+        # if random.random()<0.1:
+        #     context_list=[]
     if context_mode == 0:
         return None,None
     context_list.insert(0, torch.tensor([0]))
