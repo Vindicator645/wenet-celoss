@@ -47,7 +47,7 @@ context_conf:
     bias_encoder: False
     # context_extractor: 'transformer'
     context_extractor: 'BLSTM'
-
+    num_labels: 2 
 decoder: bitransformer
 decoder_conf:
   attention_heads: 4

@@ -785,7 +785,7 @@ def hw_label_generate(label=[], context_list=[]):
                 
                 if x[i:i + len(context_list[j])].equal(context_list[j]):
                     # context_decoder_label[i:i + len(context_list[j])] = context_list[j]
-                    context_decoder_label[i:i + len(context_list[j])] = j
+                    context_decoder_label[i:i + len(context_list[j])] = 1
                     for bpe in context_list[j]:
                         context_label.append(bpe)
                     break

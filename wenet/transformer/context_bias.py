@@ -170,7 +170,8 @@ class ContextBias(torch.nn.Module):
         dropout_rate: float = 0.0,
         bias_encoder_type: str = "linear",
         bias_encoder: bool = True,
-        context_extractor: str = "BLSTM"
+        context_extractor: str = "BLSTM",
+        num_labels: int = 2,
     ):
         assert check_argument_types()
         super().__init__()
@@ -186,6 +187,7 @@ class ContextBias(torch.nn.Module):
         self.encoder_type = bias_encoder_type
         self.if_bias_encoder = bias_encoder
         self.context_extractor = context_extractor
+        self.num_labels=num_labels
         if self.context_extractor == 'BLSTM':
             self.context_extractor = BLSTM(
                 self.vocab_size, self.embedding_size, self.num_layers)
@@ -290,7 +292,8 @@ class ContextBias(torch.nn.Module):
         self.predictor_bias_bias_norm = torch.nn.LayerNorm(self.embedding_size)
         self.predictor_bias_out_norm = torch.nn.LayerNorm(self.embedding_size)
         self.hw_bias_norm= torch.nn.LayerNorm(self.embedding_size) 
-        self.hw_output_layer = torch.nn.Linear(self.embedding_size, 31)
+        self.hw_output_layer = torch.nn.Linear(self.embedding_size, self.num_labels)
+        # self.hw_output_layer = torch.nn.Linear(self.embedding_size, 31)
         
     
     def forward(self, context_list, context_lengths, h_enc):

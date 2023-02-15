@@ -18,13 +18,13 @@ data_url=www.openslr.org/resources/12
 datadir=./data
 # wav data dir
 wave_data=/home/work_nfs5_ssd/kxhuang/wenet-encoder_decoder_bias/examples/librispeech/s0/data
-dir=exp/1_13_rnnt_bias_loss
+dir=exp/2_10_rnnt_bias_loss
 # dir=exp/sp_CIP_encoder_bias_ctcloss
 # Optional train_config
 # 1. conf/train_transformer_large.yaml: Standard transformer
 train_config=conf/encoder_bias_conformer_rnnt_4_head_bi_1_layer.yaml
 #checkpoint=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/exp/1116_encoder_bias_30_0.1/44.pt
-checkpoint=$dir/34.pt
+checkpoint=$dir/35.pt
 # checkpoint=
 cmvn=true
 do_delta=false
