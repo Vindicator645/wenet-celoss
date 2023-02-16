@@ -359,7 +359,7 @@ class ContextBias(torch.nn.Module):
         encoder_out_bias = self.encdoer_bias_bias_norm(encoder_out_bias)
         encoder_out = torch.cat([encoder_out, encoder_out_bias], dim=-1)
         encoder_out = self.encdoer_bias_out_norm(self.encoder_bias_combine(encoder_out))
-        return encoder_out
+        return encoder_out , encoder_out_bias
 
     def forward_predictor_bias(self, bias_hidden, predictor_out):
         bias_hidden = bias_hidden.expand(predictor_out.shape[0], -1, -1)
@@ -367,11 +367,14 @@ class ContextBias(torch.nn.Module):
         predictor_out_bias = self.predictor_bias_bias_norm(predictor_out_bias)
         predictor_out = torch.cat([predictor_out, predictor_out_bias], dim=-1)
         predictor_out = self.predictor_bias_out_norm(self.predictor_bias_combine(predictor_out))
-
-        return predictor_out
+        return predictor_out ,predictor_out_bias
     def forward_hw_pred(self, bias_hidden, predictor_out):
         bias_hidden = bias_hidden.expand(predictor_out.shape[0], -1, -1)
         h_hw_bias, _ = self.hw_bias(predictor_out, bias_hidden, bias_hidden)
         h_hw_bias=self.hw_bias_norm(h_hw_bias)
         h_hw_out = self.hw_output_layer(h_hw_bias)
+        return h_hw_out
+    def forward_hw_pred_both(self, h_enc_hw_output, h_dec_hw_output):
+        h_hw_bias , _ = self.hw_bias(h_dec_hw_output, h_enc_hw_output, h_enc_hw_output)
+        h_hw_out = self.hw_output_layer(self.hw_bias_norm(h_hw_bias))
         return h_hw_out

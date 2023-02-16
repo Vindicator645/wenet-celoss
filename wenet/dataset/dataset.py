@@ -22,7 +22,6 @@ import pickle
 import wenet.dataset.processor as processor
 from wenet.utils.file_utils import read_lists
 
-
 class Processor(IterableDataset):
     def __init__(self, source, f, *args, **kw):
         assert callable(f)
@@ -211,6 +210,8 @@ def Dataset(data_type,
         with open(context_dict_file,'rb') as f:
             context_dic = pickle.load(f)
     context_mode = conf.get('context_mode',1)
+    num_labels = conf.get('num_labels',2)
+
     pad_conf = conf.get('pad_conf', {})
-    dataset = Processor(dataset, processor.padding, context_mode=context_mode, bpe_set=bpe_set, context_dic=context_dic,**pad_conf)
+    dataset = Processor(dataset, processor.padding, context_mode=context_mode, bpe_set=bpe_set, context_dic=context_dic,num_labels=num_labels,**pad_conf)
     return dataset

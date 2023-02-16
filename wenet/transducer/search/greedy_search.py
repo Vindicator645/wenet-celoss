@@ -28,7 +28,13 @@ def basic_greedy_search(
     # print(context_list)
     # quit()
     bias_hidden = model.context_bias.forward_bias_hidden(context_list, context_lengths)
-    encoder_out = model.context_bias.forward_encoder_bias(bias_hidden, encoder_out)
+    context_list_empty=context_list[0]
+    context_list_empty=context_list_empty.unsqueeze(0)
+    context_lengths_empty=context_lengths[0]
+    context_lengths_empty=context_lengths_empty.unsqueeze(0)
+    bias_hidden_empty = model.context_bias.forward_bias_hidden(context_list_empty, context_lengths_empty)
+
+    encoder_out , encoder_out_bias= model.context_bias.forward_encoder_bias(bias_hidden, encoder_out)
 
     while t < encoder_out_lens:
         encoder_out_step = encoder_out[:, t:t + 1, :]  # [1, 1, E]
@@ -36,8 +42,19 @@ def basic_greedy_search(
             step_outs = model.predictor.forward_step(pred_input_step, padding,
                                                      cache)  # [1, 1, P]
             pred_out_step, new_cache = step_outs[0], step_outs[1]
-            pred_out_step = model.context_bias.forward_predictor_bias(bias_hidden, pred_out_step)
+            if 0:
+                hw_output = model.context_bias.forward_hw_pred(bias_hidden,pred_out_step)
+                hw_output=hw_output.squeeze()
+                values, indices = hw_output.topk(1)
+                
+                if (int (indices.item()))==0:
+                    pred_out_step, predictor_out_bias_step = model.context_bias.forward_predictor_bias(bias_hidden, pred_out_step)
+                else:
+                    pred_out_step, predictor_out_bias_step = model.context_bias.forward_predictor_bias(bias_hidden_empty, pred_out_step)
+            else:
+                pred_out_step, predictor_out_bias_step = model.context_bias.forward_predictor_bias(bias_hidden, pred_out_step)
 
+        
         joint_out_step = model.joint(encoder_out_step,
                                      pred_out_step)  # [1,1,v]
         # print(joint_out_step.shape)

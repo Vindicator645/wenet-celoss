@@ -39,7 +39,8 @@ class Transducer(ASRModel):
         length_normalized_loss: bool = False,
         transducer_weight: float = 1.0,
         attention_weight: float = 0.0,
-        hw_weight: float = 4,
+        hw_weight: float = 0.4,
+        loss_mode: str = 'both',
     ) -> None:
         assert check_argument_types()
         assert attention_weight + ctc_weight + transducer_weight == 1.0
@@ -56,6 +57,7 @@ class Transducer(ASRModel):
         self.joint = joint
         self.bs = None
         self.hw_weight=hw_weight
+        self.loss_mode=loss_mode
         first=0.02
         start = torch.tensor([first], dtype=torch.float)
         rest = torch.full((50,), (1-first)/50, dtype=torch.float)
@@ -115,14 +117,14 @@ class Transducer(ASRModel):
         # print(encoder_out.shape)torch.Size([4, 315, 256])
         # kxhuang
         # get encoder_out_bias
-        # if bias_hidden != 0:
+        # if bias_hidden != 0:+
         #encoder_out=self.non_causal_encoder(encoder_out,speech_lengths)
-        encoder_out = self.context_bias.forward_encoder_bias(bias_hidden, encoder_out)
+        encoder_out,encoder_out_bias = self.context_bias.forward_encoder_bias(bias_hidden, encoder_out)
         # predictor
         ys_in_pad = add_blank(text, self.blank, self.ignore_id)
         
         predictor_out = self.predictor(ys_in_pad)
-        predictor_out = self.context_bias.forward_predictor_bias(bias_hidden, predictor_out)
+        predictor_out,  predictor_out_bias = self.context_bias.forward_predictor_bias(bias_hidden, predictor_out)
         predictor_out_unbiased = predictor_out.clone()
         # joint
         joint_out = self.joint(encoder_out, predictor_out)
@@ -166,22 +168,26 @@ class Transducer(ASRModel):
 
         hw_loss : Optional[torch.Tensor] = None
         if self.hw_weight !=0.0:
-            hw_output = self.context_bias.forward_hw_pred(bias_hidden,predictor_out_unbiased)
-            hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
-            hw_output = hw_output.permute(0, 2, 1)
-            hw_loss = self.hw_criterion(hw_output, hw_label_pad)
+            if self.loss_mode == 'pred':
+                hw_output = self.context_bias.forward_hw_pred(bias_hidden,predictor_out_unbiased)
+                hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
+                hw_output = hw_output.permute(0, 2, 1)
+                hw_loss = self.hw_criterion(hw_output, hw_label_pad)
+            else: #self.loss_mode == 'both':    
+                hw_output = self.context_bias.forward_hw_pred_both(encoder_out_bias,predictor_out_bias)
+                hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
+                hw_output = hw_output.permute(0, 2, 1)
+                hw_loss = self.hw_criterion(hw_output, hw_label_pad)
             
-            
-            
-            debugflag=0
-            if debugflag==1:
+            debugflag=1
+            if 0:
                 print("-------")
                 hw_output = hw_output.permute(0, 2, 1)
-                values, indices = hw_output.topk(3)
+                values, indices = hw_output.topk(1)
 
         
-                # print(hw_output.shape) #  6,31,17
-                # print(hw_label_pad)# 6,17
+                print(hw_output.shape) #  6,31,17
+                print(hw_label_pad.shape)# 6,17
 
 
                 for batch in range(hw_label_pad.shape[0]):
@@ -199,7 +205,7 @@ class Transducer(ASRModel):
                                 cnt_cur_label+=1    
                             else:
                                 other_posterior+=float(hw_output[batch][frame][label].item())
-                        if cur_label<=10 :
+                        if cur_label<=-1 :
                             continue
                     # for label in range(hw_output.shape[2]):
                     #     bucket=[0]*hw_output.shape[2]

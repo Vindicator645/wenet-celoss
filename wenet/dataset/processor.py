@@ -622,11 +622,11 @@ def context_generate(key_list, context_dic, label=None, context_len_min=1, conte
             context_list_file = context_list_valid
         if context_mode == 3:
             context_list_file = context_list_test 
-        # f = open(context_list_file)
-        # file_obj = f.readlines()
-        # for item in file_obj:
-        #     context_list.append(torch.tensor([int(id) for id in item.split()]))
-        # f.close()
+        f = open(context_list_file)
+        file_obj = f.readlines()
+        for item in file_obj:
+            context_list.append(torch.tensor([int(id) for id in item.split()]))
+        f.close()
     if context_mode == 4:
         raw_list = context_dic[key_list[0]]
         for raw_line in raw_list:
@@ -652,7 +652,8 @@ def context_generate(key_list, context_dic, label=None, context_len_min=1, conte
 
             st_bef = []
             en_bef = []
-            num_context = random.randint(0, 6)
+            # num_context = random.randint(0, 6)
+            num_context = 3
             for _ in range(0, num_context):
                 random_len = random.randint(min(word_num, context_len_min), min(word_num, context_len_max)) #随机热词长度
                 random_index = random.randint(0, len(st_list) - random_len - 1) # 随机热词开始index
@@ -686,7 +687,7 @@ def context_generate(key_list, context_dic, label=None, context_len_min=1, conte
     
     return context_list_padded, context_lengths, context_end, random_label_withcontext, random_label_withoutcontext, context_list
 
-def padding(data, context_len_min=2, context_len_max=4, context_mode=0, bpe_set=None, context_dic=None, alignments_dict=None, context_list_valid=None, context_list_test=None, pos_per_batch=1.0):
+def padding(data, context_len_min=2, context_len_max=4, context_mode=0, bpe_set=None, context_dic=None, alignments_dict=None, context_list_valid=None, context_list_test=None, pos_per_batch=1.0,num_labels=2):
     """ Padding the data into training data
 
         Args:
@@ -759,7 +760,7 @@ def context_label_generate(label=[], context_list=[]):
     context_decoder_labels_padded = pad_sequence(context_decoder_labels, batch_first=True, padding_value=-1)
     return context_labels_padded, context_lengths, context_decoder_labels_padded
 
-def hw_label_generate(label=[], context_list=[]):
+def hw_label_generate(label=[], context_list=[],num_labels=2):
     """ generate context label
 
         Args:
@@ -785,7 +786,11 @@ def hw_label_generate(label=[], context_list=[]):
                 
                 if x[i:i + len(context_list[j])].equal(context_list[j]):
                     # context_decoder_label[i:i + len(context_list[j])] = context_list[j]
-                    context_decoder_label[i:i + len(context_list[j])] = 1
+                    if num_labels==2:
+                        context_decoder_label[i:i + len(context_list[j])] = 1
+                    else:
+                        context_decoder_label[i:i + len(context_list[j])] = j
+
                     for bpe in context_list[j]:
                         context_label.append(bpe)
                     break

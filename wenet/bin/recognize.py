@@ -30,6 +30,7 @@ from wenet.utils.file_utils import read_symbol_table, read_non_lang_symbols
 from wenet.utils.config import override_config
 from wenet.utils.init_model import init_model
 from wenet.utils.context_filter import ContextFilter
+from torch.nn.utils.rnn import pad_sequence
 
 def get_args():
     parser = argparse.ArgumentParser(description='recognize with your model')
@@ -127,6 +128,14 @@ def get_args():
                         default='',
                         type=str,
                         help='used to connect the output characters')
+    parser.add_argument('--context_mode',
+                        default=4,
+                        type=int,
+                        help='context mode')
+    parser.add_argument('--context_dic',
+                        default='100',
+                        type=str,
+                        help='context dic')                    
 
     args = parser.parse_args()
     print(args)
@@ -165,9 +174,13 @@ def main():
     test_conf['spec_sub'] = False
     test_conf['shuffle'] = False
     test_conf['sort'] = False
-    test_conf['context_mode'] = 1
+    test_conf['context_mode'] = args.context_mode
+    dic = test_conf['context_dict'].split('/')
+    dic[-1] = args.context_dic + '.dic'
+    dic = '/'.join(dic)
+    test_conf['context_dict'] = dic
     print("context_mode = ", test_conf['context_mode'])
- 
+    print("context_dict = ", test_conf['context_dict'])
     if 'fbank_conf' in test_conf:
         test_conf['fbank_conf']['dither'] = 0.0
     elif 'mfcc_conf' in test_conf:
@@ -197,11 +210,32 @@ def main():
     use_cuda = args.gpu >= 0 and torch.cuda.is_available()
     device = torch.device('cuda' if use_cuda else 'cpu')
     model = model.to(device)
+    all_time = 0
+    all_context = 0
+    time_cnt = 0
+
+    context_list_recog = []
+    if test_conf['context_mode'] == 2 or test_conf['context_mode'] == 3:
+        if test_conf['context_mode'] == 2:
+            context_list_file = test_conf['pad_conf']['context_list_valid']
+        if test_conf['context_mode'] == 3:
+            context_list_file = test_conf['pad_conf']['context_list_test'] 
+        f = open(context_list_file)
+        file_obj = f.readlines()
+        for item in file_obj:
+            context_list_recog.append(torch.tensor([int(id) for id in item.split()]))
+        f.close()
+    context_list_recog.insert(0, torch.tensor([0]))
+    context_lengths_recog = torch.tensor([x.size(0) for x in context_list_recog],dtype=torch.int32)
+    context_list_recog = pad_sequence(context_list_recog,
+                                    batch_first=True,
+                                    padding_value=-1)
 
     model.eval()
     with torch.no_grad(), open(args.result_file, 'w') as fout:
         for batch_idx, batch in enumerate(test_data_loader):
-            keys, feats, target, feats_lengths, target_lengths, context_list, context_lengths, context_label, context_label_lengths = batch
+            keys, feats, target, feats_lengths, target_lengths, context_list, context_lengths, context_label, context_label_lengths,context_decoder_labels_padded = batch
+
 
             feats = feats.to(device)
             target = target.to(device)
@@ -209,6 +243,8 @@ def main():
             target_lengths = target_lengths.to(device)
             context_list = context_list.to(device)
             context_lengths = context_lengths.to(device)
+            context_decoder_labels_padded=context_decoder_labels_padded.to(device)
+
             # for word in 
             # print(target)
             if args.mode == 'attention':

@@ -67,6 +67,7 @@ model_conf:
     lsm_weight: 0.1     # label smoothing option
     length_normalized_loss: false
     reverse_weight: 0.3
+    loss_mode: pred
 
 dataset_conf:
     filter_conf:
