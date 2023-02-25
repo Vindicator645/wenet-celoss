@@ -170,9 +170,7 @@ class ContextBias(torch.nn.Module):
         dropout_rate: float = 0.0,
         bias_encoder_type: str = "linear",
         bias_encoder: bool = True,
-        context_extractor: str = "BLSTM",
-        num_labels: int = 2,
-        unified_hw_odim: int =100,
+        context_extractor: str = "BLSTM"
     ):
         assert check_argument_types()
         super().__init__()
@@ -188,9 +186,6 @@ class ContextBias(torch.nn.Module):
         self.encoder_type = bias_encoder_type
         self.if_bias_encoder = bias_encoder
         self.context_extractor = context_extractor
-        self.num_labels=num_labels
-        self.unified_hw_odim=unified_hw_odim
-        # self.unified_hw_odim=256
         if self.context_extractor == 'BLSTM':
             self.context_extractor = BLSTM(
                 self.vocab_size, self.embedding_size, self.num_layers)
@@ -277,11 +272,6 @@ class ContextBias(torch.nn.Module):
                 n_feat=self.embedding_size,
                 dropout_rate=0.0
             )
-            self.hw_bias=MultiHeadedAttention(
-                n_head=self.attention_heads,
-                n_feat=self.unified_hw_odim,
-                dropout_rate=0.0
-            )
         self.encoder_norm = torch.nn.LayerNorm(self.embedding_size)
         self.encoder_bias_norm = torch.nn.LayerNorm(self.embedding_size)
         self.encoder_ffn = torch.nn.Linear(self.embedding_size * 2, self.output_size)
@@ -294,11 +284,8 @@ class ContextBias(torch.nn.Module):
         self.predictor_bias_combine = torch.nn.Linear(self.embedding_size * 2, self.embedding_size)
         self.predictor_bias_bias_norm = torch.nn.LayerNorm(self.embedding_size)
         self.predictor_bias_out_norm = torch.nn.LayerNorm(self.embedding_size)
-        self.hw_bias_norm= torch.nn.LayerNorm(self.unified_hw_odim) 
-        self.hw_output_layer = torch.nn.Linear(self.unified_hw_odim, self.num_labels)
-        # self.hw_output_layer = torch.nn.Linear(self.embedding_size, 31)
-        self.hw_output_layer_enc = torch.nn.Linear(self.embedding_size, self.unified_hw_odim)
-        self.hw_output_layer_dec = torch.nn.Linear(self.embedding_size, self.unified_hw_odim)
+
+        
     
     def forward(self, context_list, context_lengths, h_enc):
         bias_vector = self.context_extractor(context_list,context_lengths)
@@ -357,13 +344,12 @@ class ContextBias(torch.nn.Module):
 
     # kxhuang
     def forward_encoder_bias(self, bias_hidden, encoder_out):
-
         bias_hidden = bias_hidden.expand(encoder_out.shape[0], -1, -1)
         encoder_out_bias, _ = self.encoder_bias(encoder_out, bias_hidden, bias_hidden)
         encoder_out_bias = self.encdoer_bias_bias_norm(encoder_out_bias)
         encoder_out = torch.cat([encoder_out, encoder_out_bias], dim=-1)
         encoder_out = self.encdoer_bias_out_norm(self.encoder_bias_combine(encoder_out))
-        return encoder_out , encoder_out_bias
+        return encoder_out
 
     def forward_predictor_bias(self, bias_hidden, predictor_out):
         bias_hidden = bias_hidden.expand(predictor_out.shape[0], -1, -1)
@@ -371,22 +357,4 @@ class ContextBias(torch.nn.Module):
         predictor_out_bias = self.predictor_bias_bias_norm(predictor_out_bias)
         predictor_out = torch.cat([predictor_out, predictor_out_bias], dim=-1)
         predictor_out = self.predictor_bias_out_norm(self.predictor_bias_combine(predictor_out))
-        return predictor_out ,predictor_out_bias
-    def forward_hw_pred(self, bias_hidden, predictor_out):
-        bias_hidden = bias_hidden.expand(predictor_out.shape[0], -1, -1)
-        h_hw_bias, _ = self.hw_bias(predictor_out, bias_hidden, bias_hidden)
-        h_hw_bias=self.hw_bias_norm(h_hw_bias)
-        h_hw_out = self.hw_output_layer(h_hw_bias)
-        return h_hw_out
-    def forward_hw_pred_both(self, h_enc_bias, h_dec_bias):
-        h_enc_hw_output=self.hw_output_layer_enc(h_enc_bias)
-        h_dec_hw_output = self.hw_output_layer_dec(h_dec_bias)
-        # h_hw_bias , _ = self.hw_bias( h_dec_bias, h_enc_bias, h_enc_bias)
-        h_hw_bias , _ = self.hw_bias(h_dec_hw_output, h_enc_hw_output, h_enc_hw_output)
-        h_hw_out = self.hw_output_layer(self.hw_bias_norm(h_hw_bias))
-        return h_hw_out
-    def forward_hw_pred_both_sep(self, h_enc_bias, h_dec_bias):
-        h_enc_hw_output=self.hw_output_layer_enc(h_enc_bias)
-        h_dec_hw_output = self.hw_output_layer_dec(h_dec_bias)
-
-        return h_enc_hw_output,h_dec_hw_output
+        return predictor_out

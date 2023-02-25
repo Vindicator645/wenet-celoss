@@ -143,6 +143,7 @@ class Transducer(ASRModel):
                                                rnnt_text_lengths,
                                                blank=self.blank,
                                                reduction="mean")
+        
         loss_rnnt = loss
         loss = self.transducer_weight * loss
         # optional attention decoder
@@ -172,38 +173,27 @@ class Transducer(ASRModel):
                 hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
                 hw_output = hw_output.permute(0, 2, 1)
                 hw_loss = self.hw_criterion(hw_output, hw_label_pad)
-
-            elif self.loss_mode == 'both':    
+            else: #self.loss_mode == 'both':    
                 hw_output = self.context_bias.forward_hw_pred_both(encoder_out_bias,predictor_out_bias)
                 hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
                 hw_output = hw_output.permute(0, 2, 1)
                 hw_loss = self.hw_criterion(hw_output, hw_label_pad)
-            else:
-                hw_output_enc,hw_output_dec= self.context_bias.forward_hw_pred_both_sep(encoder_out_bias,predictor_out_bias)
-                hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
-                hw_output_dec = hw_output_dec.permute(0, 2, 1)
-                # hw_output_enc= hw_output_enc.permute(0, 2, 1)
-                # print(hw_output_enc.shape)
-                # print(hw_output_dec.shape)
+            
+            debugflag=1
+            if 0:
+                print("-------")
+                hw_output = hw_output.permute(0, 2, 1)
+                values, indices = hw_output.topk(1)
 
-                # hw_loss_enc = self.hw_criterion(hw_output_enc, hw_label_pad)
-                hw_loss_dec = self.hw_criterion(hw_output_dec, hw_label_pad)
-                hw_loss=hw_loss_dec
-            # debugflag=1
-            # if 0:
-            #     print("-------")
-            #     hw_output = hw_output.permute(0, 2, 1)
-            #     values, indices = hw_output.topk(1)
+                indices=indices.squeeze(-1)
+                print("st-------")
 
-            #     indices=indices.squeeze(-1)
-            #     print("st-------")
-
-            #     print(hw_output.shape) #  6,31,17
-            #     print(hw_label_pad.shape)# 6,17
-            #     print(indices.shape)
-            #     print(hw_label_pad)# 6,17
-            #     print(indices)
-            #     print("ed-------")
+                print(hw_output.shape) #  6,31,17
+                print(hw_label_pad.shape)# 6,17
+                print(indices.shape)
+                print(hw_label_pad)# 6,17
+                print(indices)
+                print("ed-------")
 
                 # for batch in range(hw_label_pad.shape[0]):
 
@@ -245,7 +235,7 @@ class Transducer(ASRModel):
                 #         # print("ratio:")【
                 #         print("end-----------")
 
-                # print("-------")
+                print("-------")
             loss = loss + self.hw_weight * hw_loss
         # NOTE: 'loss' must be in dict
         return {

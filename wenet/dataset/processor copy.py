@@ -717,7 +717,8 @@ def padding(data, context_len_min=2, context_len_max=4, context_mode=0, bpe_set=
         padding_context_labels, context_label_lengths = context_label_generate(sorted_labels, context_list)
 
         yield (sorted_keys, padded_feats, padding_labels, feats_lengths,
-            label_lengths,padded_context_list,context_lengths, padding_context_labels, context_label_lengths)
+            label_lengths,padded_context_list,context_lengths, padding_context_labels, 
+            context_label_lengths)
 
 def context_label_generate(label=[], context_list=[]):
     """ generate context label
