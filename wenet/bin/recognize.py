@@ -136,7 +136,10 @@ def get_args():
                         default='100',
                         type=str,
                         help='context dic')                    
-
+    parser.add_argument('--context_filter_state',
+                        default='on',
+                        type=str,
+                        help='context filter')
     args = parser.parse_args()
     print(args)
     return args
@@ -175,11 +178,13 @@ def main():
     test_conf['shuffle'] = False
     test_conf['sort'] = False
     test_conf['context_mode'] = args.context_mode
+    # test_conf['context_filter_state']=args.context_filter_state
     dic = test_conf['context_dict'].split('/')
     dic[-1] = args.context_dic + '.dic'
     dic = '/'.join(dic)
     test_conf['context_dict'] = dic
     print("context_mode = ", test_conf['context_mode'])
+    print("context_mode = ", args.context_filter_state)
     print("context_dict = ", test_conf['context_dict'])
     if 'fbank_conf' in test_conf:
         test_conf['fbank_conf']['dither'] = 0.0
@@ -273,7 +278,9 @@ def main():
                     num_decoding_left_chunks=args.num_decoding_left_chunks,
                     simulate_streaming=args.simulate_streaming,
                     context_list=context_list,
-                    context_lengths=context_lengths)
+                    context_lengths=context_lengths,
+                    context_filter_state=args.context_filter_state,
+                    )
             elif args.mode == 'rnnt_beam_search':
                 assert (feats.size(0) == 1)
                 assert 'predictor' in configs

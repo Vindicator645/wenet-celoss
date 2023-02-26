@@ -10,11 +10,13 @@ def basic_greedy_search(
     context_list: torch.Tensor = torch.IntTensor([0]),
     context_lengths: torch.Tensor = torch.IntTensor([0]),
     n_steps: int = 64,
+    context_filter_state: str= 'off',
+
 ) -> List[List[int]]:
     # fake padding
     padding = torch.zeros(1, 1).to(encoder_out.device)
     # sos
-    pred_input_step = torch.tensor([model.blank]).reshape(1, 1)
+    pred_input_step = torch.tensor([model.blank]).reshape(1, 1).to(encoder_out.device)
     cache = model.predictor.init_state(1,
                                        method="zero",
                                        device=encoder_out.device)
@@ -43,7 +45,7 @@ def basic_greedy_search(
             step_outs = model.predictor.forward_step(pred_input_step, padding,
                                                      cache)  # [1, 1, P]
             pred_out_step, new_cache = step_outs[0], step_outs[1]
-            if 0:
+            if context_filter_state=='on':
                 hw_output = model.context_bias.forward_hw_pred(bias_hidden,pred_out_step)
                 hw_output=hw_output.squeeze()
                 values, indices = hw_output.topk(1)
@@ -88,11 +90,13 @@ def basic_greedy_search_both(
     context_list: torch.Tensor = torch.IntTensor([0]),
     context_lengths: torch.Tensor = torch.IntTensor([0]),
     n_steps: int = 64,
+    context_filter_state: str= 'off',
+
 ) -> List[List[int]]:
     # fake padding
     padding = torch.zeros(1, 1).to(encoder_out.device)
     # sos
-    pred_input_step = torch.tensor([model.blank]).reshape(1, 1)
+    pred_input_step = torch.tensor([model.blank]).reshape(1, 1).to(encoder_out.device)
     cache = model.predictor.init_state(1,
                                        method="zero",
                                        device=encoder_out.device)

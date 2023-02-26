@@ -509,6 +509,7 @@ class Transducer(ASRModel):
         n_steps: int = 64,
         context_list: torch.Tensor = torch.IntTensor([0]),
         context_lengths: torch.Tensor = torch.IntTensor([0]),
+        context_filter_state: str ='on',
     ) -> List[List[int]]:
         """ greedy search
 
@@ -547,6 +548,16 @@ class Transducer(ASRModel):
                                     context_list,
                                     context_lengths,
                                     n_steps=n_steps,
+                                    context_filter_state=context_filter_state,
+                                    )
+        elif self.loss_mode=='both':
+            hyps = basic_greedy_search_both(self,
+                                    encoder_out,
+                                    encoder_out_lens,
+                                    context_list,
+                                    context_lengths,
+                                    n_steps=n_steps,
+                                    context_filter_state=context_filter_state,
                                     )
         else:
             hyps = basic_greedy_search_both(self,
@@ -555,6 +566,7 @@ class Transducer(ASRModel):
                                     context_list,
                                     context_lengths,
                                     n_steps=n_steps,
+                                    context_filter_state=context_filter_state,
                                     )
         return hyps
 
