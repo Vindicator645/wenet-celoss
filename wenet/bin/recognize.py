@@ -136,7 +136,10 @@ def get_args():
                         default='100',
                         type=str,
                         help='context dic')                    
-
+    parser.add_argument('--context_filter_state',
+                        default='on',
+                        type=str,
+                        help='context filter')
     args = parser.parse_args()
     print(args)
     return args
@@ -175,11 +178,13 @@ def main():
     test_conf['shuffle'] = False
     test_conf['sort'] = False
     test_conf['context_mode'] = args.context_mode
+    # test_conf['context_filter_state']=args.context_filter_state
     dic = test_conf['context_dict'].split('/')
     dic[-1] = args.context_dic + '.dic'
     dic = '/'.join(dic)
     test_conf['context_dict'] = dic
     print("context_mode = ", test_conf['context_mode'])
+    print("context_mode = ", args.context_filter_state)
     print("context_dict = ", test_conf['context_dict'])
     if 'fbank_conf' in test_conf:
         test_conf['fbank_conf']['dither'] = 0.0
@@ -233,6 +238,8 @@ def main():
 
     model.eval()
     with torch.no_grad(), open(args.result_file, 'w') as fout:
+        total_len=0
+        dist=0
         for batch_idx, batch in enumerate(test_data_loader):
             keys, feats, target, feats_lengths, target_lengths, context_list, context_lengths, context_label, context_label_lengths,context_decoder_labels_padded = batch
 
@@ -247,6 +254,7 @@ def main():
 
             # for word in 
             # print(target)
+            # print(target.shape)
             if args.mode == 'attention':
                 hyps, _ = model.recognize(
                     feats,
@@ -266,14 +274,19 @@ def main():
             elif args.mode == 'rnnt_greedy_search':
                 assert (feats.size(0) == 1)
                 assert 'predictor' in configs
-                hyps = model.greedy_search(
+                hyps ,dist_= model.greedy_search(
                     feats,
                     feats_lengths,
                     decoding_chunk_size=args.decoding_chunk_size,
                     num_decoding_left_chunks=args.num_decoding_left_chunks,
                     simulate_streaming=args.simulate_streaming,
                     context_list=context_list,
-                    context_lengths=context_lengths)
+                    context_lengths=context_lengths,
+                    context_filter_state=args.context_filter_state,
+                    context_decoder_labels_padded=context_decoder_labels_padded,
+                    )
+                dist+=dist_
+                total_len+=target.shape[1]
             elif args.mode == 'rnnt_beam_search':
                 assert (feats.size(0) == 1)
                 assert 'predictor' in configs
@@ -354,6 +367,9 @@ def main():
                     content.append(char_dict[w])
                 logging.info('{} {}'.format(key, args.connect_symbol.join(content)))
                 fout.write('{} {}\n'.format(key, args.connect_symbol.join(content)))
+            print(dist)
+            print(total_len)
+            print(dist/total_len)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,11 @@
+/home/work_nfs5_ssd/kxhuang/wenet-encoder_decoder_bias/examples/librispeech/s0/data/lang_char/train_960_unigram5000
+dictionary: /home/work_nfs5_ssd/kxhuang/wenet-encoder_decoder_bias/examples/librispeech/s0/data/lang_char/train_960_unigram5000_units.txt
+run_2_27_rnnt_bias_both_finetune.sh: init method is file:///home/work_nfs6/tyxu/workspace/wenet-bias-celoss/examples/librispeech/s0/exp/2_27_rnnt_bias_loss_2_class_both_finetune_correct/ddp_init
+2023-02-28 20:15:19,266 INFO training on multiple gpus, this gpu 1
+2023-02-28 20:15:19,266 INFO training on multiple gpus, this gpu 7
+2023-02-28 20:15:19,271 INFO training on multiple gpus, this gpu 2
+2023-02-28 20:15:19,271 INFO training on multiple gpus, this gpu 3
+2023-02-28 20:15:19,274 INFO training on multiple gpus, this gpu 4
+2023-02-28 20:15:19,277 INFO training on multiple gpus, this gpu 6
+2023-02-28 20:15:19,281 INFO training on multiple gpus, this gpu 0
+2023-02-28 20:15:19,284 INFO training on multiple gpus, this gpu 5

@@ -7,7 +7,8 @@
 # Use this to control how many gpu you use, It's 1-gpu training if you specify
 # just 1gpu, otherwise it's is multiple gpu training based on DDP in pytorch
 #export CUDA_VISIBLE_DEVICES="0,1,2,3"
-export CUDA_VISIBLE_DEVICES="6,7"
+export CUDA_VISIBLE_DEVICES="0"
+# export CUDA_VISIBLE_DEVICES="3,4,5,6,7"
 # export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
 #export CUDA_VISIBLE_DEVICES="-1"
 stage=4 # start from 0 if you need to start from data preparation
@@ -25,7 +26,7 @@ dir=exp/2_25_rnnt_bias_sepeate_2_class_3word_finetune
 # 1. conf/train_transformer_large.yaml: Standard transformer
 train_config=conf/encoder_bias_conformer_rnnt_4_head_bi_1_layer_seperate.yaml
 #checkpoint=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/exp/1116_encoder_bias_30_0.1/44.pt
-checkpoint=$dir/10.pt
+checkpoint=$dir/44.pt
 # checkpoint=
 cmvn=true
 do_delta=false

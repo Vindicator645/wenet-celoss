@@ -34,12 +34,13 @@ cmvn=true
 do_delta=false
 # use average_checkpoint will get better result
 average_checkpoint=false
-decode_checkpoint=$dir/16.pt
+decode_checkpoint=$dir/60.pt
 # maybe you can try to adjust it if you can not get close results as README.md
 average_num=8
 #decode_modes="attention_rescoring ctc_greedy_search ctc_prefix_beam_search attention"
 decode_modes="rnnt_greedy_search"
-context_modes="1 2 3 4"
+context_modes="1"
+context_filter_state="on off"
 . tools/parse_options.sh || exit 1;
 
 # bpemode (unigram or bpe)
@@ -197,44 +198,51 @@ if [ ${stage} -le 5 ] && [ ${stop_stage} -ge 5 ]; then
     {
       for context_mode in ${context_modes}; do
       {
-        {
-          test_tag=mode1dict100ep10large_off
-          # context_mode=1
-          test_dir=$dir/${test}_${mode}_ep16_context${context_mode}_small_on
-          mkdir -p $test_dir
-          gpu_id=$(echo $CUDA_VISIBLE_DEVICES | cut -d',' -f$[$idx+1])
-          python wenet/bin/recognize.py --gpu $gpu_id \
-            --mode $mode \
-            --config $dir/train.yaml \
-            --data_type raw \
-            --dict $dict \
-            --bpe_model ${bpemodel}.model \
-            --test_data $wave_data/$test/data_small.list \
-            --checkpoint $decode_checkpoint \
-            --beam_size 10 \
-            --batch_size 1 \
-            --penalty 0.0 \
-            --result_file $test_dir/text_bpe \
-            --ctc_weight $ctc_weight \
-            --context_mode $context_mode\
-            # --context_list_path /home/work_nfs5_ssd/kxhuang/buffer/librispeech_context_bpe_list.txt \
-            # --context_filter_mode "" \
-            ${decoding_chunk_size:+--decoding_chunk_size $decoding_chunk_size} 
+          for cf_state in ${context_filter_state};do
+          {
+            {
 
-          cut -f2- -d " " $test_dir/text_bpe > $test_dir/text_bpe_value_tmp
-          cut -f1 -d " " $test_dir/text_bpe > $test_dir/text_bpe_key_tmp
-          tools/spm_decode --model=${bpemodel}.model --input_format=piece \
-            < $test_dir/text_bpe_value_tmp | sed -e "s/▁/ /g" > $test_dir/text_value_tmp
-          paste -d " " $test_dir/text_bpe_key_tmp $test_dir/text_value_tmp > $test_dir/text
+            test_tag=mode1dict100ep10large_off
+            # context_mode=1
+            test_dir=$dir/new2_${test}_${mode}_${decode_checkpoint}_context${context_mode}_small_${cf_state}
+            mkdir -p $test_dir
+            gpu_id=$(echo $CUDA_VISIBLE_DEVICES | cut -d',' -f$[$idx+1])
+            python wenet/bin/recognize.py --gpu $gpu_id \
+              --mode $mode \
+              --config $dir/train.yaml \
+              --data_type raw \
+              --dict $dict \
+              --bpe_model ${bpemodel}.model \
+              --test_data $wave_data/$test/data_small.list \
+              --checkpoint $decode_checkpoint \
+              --beam_size 10 \
+              --batch_size 1 \
+              --penalty 0.0 \
+              --result_file $test_dir/text_bpe \
+              --ctc_weight $ctc_weight \
+              --context_mode $context_mode\
+              --context_filter_state $cf_state\
+              # --context_list_path /home/work_nfs5_ssd/kxhuang/buffer/librispeech_context_bpe_list.txt \
+              # --context_filter_mode "" \
+              ${decoding_chunk_size:+--decoding_chunk_size $decoding_chunk_size} 
 
-          python tools/compute-wer.py --char=1 --v=1 \
-            $wave_data/$test/text $test_dir/text > $test_dir/wer
-        } &
+            cut -f2- -d " " $test_dir/text_bpe > $test_dir/text_bpe_value_tmp
+            cut -f1 -d " " $test_dir/text_bpe > $test_dir/text_bpe_key_tmp
+            tools/spm_decode --model=${bpemodel}.model --input_format=piece \
+              < $test_dir/text_bpe_value_tmp | sed -e "s/▁/ /g" > $test_dir/text_value_tmp
+            paste -d " " $test_dir/text_bpe_key_tmp $test_dir/text_value_tmp > $test_dir/text
 
-        ((idx+=1))
-        if [ $idx -eq $num_gpus ]; then
-          idx=0
-        fi
+            python tools/compute-wer.py --char=1 --v=1 \
+              $wave_data/$test/text $test_dir/text > $test_dir/wer
+            } &
+
+          ((idx+=1))
+          if [ $idx -eq $num_gpus ]; then
+            idx=0
+          fi            
+          }
+          done
+
       }
       done
     }

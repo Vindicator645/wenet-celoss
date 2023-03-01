@@ -173,6 +173,7 @@ class ContextBias(torch.nn.Module):
         context_extractor: str = "BLSTM",
         num_labels: int = 2,
         unified_hw_odim: int =100,
+        unified_hw_heads:int =4,
     ):
         assert check_argument_types()
         super().__init__()
@@ -190,6 +191,7 @@ class ContextBias(torch.nn.Module):
         self.context_extractor = context_extractor
         self.num_labels=num_labels
         self.unified_hw_odim=unified_hw_odim
+        self.unified_hw_heads=unified_hw_heads
         # self.unified_hw_odim=256
         if self.context_extractor == 'BLSTM':
             self.context_extractor = BLSTM(
@@ -279,6 +281,11 @@ class ContextBias(torch.nn.Module):
             )
             self.hw_bias=MultiHeadedAttention(
                 n_head=self.attention_heads,
+                n_feat=self.unified_hw_odim,
+                dropout_rate=0.0
+            )
+            self.hw_bias=MultiHeadedAttention(
+                n_head=self.unified_hw_heads,
                 n_feat=self.unified_hw_odim,
                 dropout_rate=0.0
             )
