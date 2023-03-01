@@ -549,8 +549,9 @@ class Transducer(ASRModel):
             num_decoding_left_chunks,
         )
         encoder_out_lens = encoder_mask.squeeze(1).sum()
+        dist=0
         if self.loss_mode=='pred':
-            hyps = basic_greedy_search(self,
+            hyps ,dist= basic_greedy_search(self,
                                     encoder_out,
                                     encoder_out_lens,
                                     context_list,
@@ -577,7 +578,7 @@ class Transducer(ASRModel):
                                     n_steps=n_steps,
                                     context_filter_state=context_filter_state,
                                     )
-        return hyps
+        return hyps,dist
 
     @torch.jit.export
     def forward_encoder_chunk(

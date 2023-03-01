@@ -29089,3 +29089,812 @@ the number of model params: 58200743
 2023-03-01 15:27:07,056 DEBUG TRAIN Batch 52/26500 loss 8.607402 loss_att 9.234814 loss_ctc 13.835889 loss_rnnt 7.640731 hw_loss 0.270106 lr 0.00024878 rank 3
 2023-03-01 15:27:07,060 DEBUG TRAIN Batch 52/26500 loss 5.204866 loss_att 5.472479 loss_ctc 7.336918 loss_rnnt 4.826445 hw_loss 0.076172 lr 0.00024882 rank 6
 2023-03-01 15:27:07,117 DEBUG TRAIN Batch 52/26500 loss 1.412018 loss_att 2.575824 loss_ctc 1.701401 loss_rnnt 0.910881 hw_loss 0.430860 lr 0.00024883 rank 0
+2023-03-01 15:28:00,999 DEBUG TRAIN Batch 52/26600 loss 2.791267 loss_att 6.395335 loss_ctc 9.825632 loss_rnnt 0.912239 hw_loss 0.413060 lr 0.00024878 rank 1
+2023-03-01 15:28:01,004 DEBUG TRAIN Batch 52/26600 loss 2.595421 loss_att 5.036298 loss_ctc 6.262921 loss_rnnt 1.455472 hw_loss 0.305201 lr 0.00024881 rank 5
+2023-03-01 15:28:01,005 DEBUG TRAIN Batch 52/26600 loss 1.075307 loss_att 3.031843 loss_ctc 2.509336 loss_rnnt 0.156882 hw_loss 0.629840 lr 0.00024881 rank 4
+2023-03-01 15:28:01,008 DEBUG TRAIN Batch 52/26600 loss 1.078064 loss_att 3.939258 loss_ctc 1.082666 loss_rnnt 0.291372 hw_loss 0.400949 lr 0.00024882 rank 0
+2023-03-01 15:28:01,013 DEBUG TRAIN Batch 52/26600 loss 4.693649 loss_att 7.552081 loss_ctc 7.476894 loss_rnnt 3.581871 hw_loss 0.316861 lr 0.00024880 rank 6
+2023-03-01 15:28:01,040 DEBUG TRAIN Batch 52/26600 loss 0.863352 loss_att 2.570642 loss_ctc 1.535260 loss_rnnt 0.227415 hw_loss 0.384172 lr 0.00024876 rank 3
+2023-03-01 15:28:01,045 DEBUG TRAIN Batch 52/26600 loss 21.086824 loss_att 21.170301 loss_ctc 29.533411 loss_rnnt 19.736874 hw_loss 0.388210 lr 0.00024882 rank 2
+2023-03-01 15:28:01,066 DEBUG TRAIN Batch 52/26600 loss 2.350253 loss_att 4.554721 loss_ctc 3.656513 loss_rnnt 1.634959 hw_loss 0.187935 lr 0.00024876 rank 7
+2023-03-01 15:28:55,637 DEBUG TRAIN Batch 52/26700 loss 16.893238 loss_att 20.374674 loss_ctc 44.735790 loss_rnnt 12.125476 hw_loss 0.673377 lr 0.00024880 rank 4
+2023-03-01 15:28:55,637 DEBUG TRAIN Batch 52/26700 loss 1.197238 loss_att 4.682412 loss_ctc 2.513475 loss_rnnt 0.146809 hw_loss 0.333555 lr 0.00024875 rank 3
+2023-03-01 15:28:55,638 DEBUG TRAIN Batch 52/26700 loss 3.076704 loss_att 9.006305 loss_ctc 12.012865 loss_rnnt 0.699230 hw_loss 0.000122 lr 0.00024874 rank 7
+2023-03-01 15:28:55,642 DEBUG TRAIN Batch 52/26700 loss 9.821192 loss_att 14.594009 loss_ctc 14.882417 loss_rnnt 8.133435 hw_loss 0.109429 lr 0.00024876 rank 1
+2023-03-01 15:28:55,643 DEBUG TRAIN Batch 52/26700 loss 9.336234 loss_att 15.158434 loss_ctc 40.623848 loss_rnnt 3.768806 hw_loss 0.433700 lr 0.00024880 rank 0
+2023-03-01 15:28:55,646 DEBUG TRAIN Batch 52/26700 loss 6.944150 loss_att 11.559916 loss_ctc 14.283723 loss_rnnt 4.930651 hw_loss 0.209506 lr 0.00024879 rank 5
+2023-03-01 15:28:55,649 DEBUG TRAIN Batch 52/26700 loss 10.390655 loss_att 10.847945 loss_ctc 12.101034 loss_rnnt 9.962322 hw_loss 0.204045 lr 0.00024880 rank 2
+2023-03-01 15:28:55,651 DEBUG TRAIN Batch 52/26700 loss 19.273815 loss_att 18.241096 loss_ctc 25.293829 loss_rnnt 18.519852 hw_loss 0.295948 lr 0.00024879 rank 6
+2023-03-01 15:29:50,373 DEBUG TRAIN Batch 52/26800 loss 8.213265 loss_att 11.712233 loss_ctc 15.456049 loss_rnnt 6.451853 hw_loss 0.179840 lr 0.00024875 rank 1
+2023-03-01 15:29:50,377 DEBUG TRAIN Batch 52/26800 loss 5.073053 loss_att 10.824032 loss_ctc 13.519585 loss_rnnt 2.650146 hw_loss 0.274702 lr 0.00024878 rank 4
+2023-03-01 15:29:50,378 DEBUG TRAIN Batch 52/26800 loss 6.988556 loss_att 8.099285 loss_ctc 15.421593 loss_rnnt 5.522745 hw_loss 0.223614 lr 0.00024873 rank 7
+2023-03-01 15:29:50,379 DEBUG TRAIN Batch 52/26800 loss 4.016709 loss_att 6.081355 loss_ctc 6.407620 loss_rnnt 3.072931 hw_loss 0.397613 lr 0.00024878 rank 2
+2023-03-01 15:29:50,381 DEBUG TRAIN Batch 52/26800 loss 4.536991 loss_att 8.882673 loss_ctc 6.059782 loss_rnnt 3.464758 hw_loss 0.000106 lr 0.00024873 rank 3
+2023-03-01 15:29:50,381 DEBUG TRAIN Batch 52/26800 loss 18.457079 loss_att 19.283226 loss_ctc 21.819624 loss_rnnt 17.721748 hw_loss 0.228300 lr 0.00024878 rank 5
+2023-03-01 15:29:50,384 DEBUG TRAIN Batch 52/26800 loss 1.353648 loss_att 3.265512 loss_ctc 1.525252 loss_rnnt 0.948373 hw_loss 0.000042 lr 0.00024877 rank 6
+2023-03-01 15:29:50,441 DEBUG TRAIN Batch 52/26800 loss 0.724828 loss_att 2.586597 loss_ctc 1.110490 loss_rnnt 0.132590 hw_loss 0.315868 lr 0.00024879 rank 0
+2023-03-01 15:30:46,027 DEBUG TRAIN Batch 52/26900 loss 7.953600 loss_att 8.485978 loss_ctc 9.328360 loss_rnnt 7.458169 hw_loss 0.385601 lr 0.00024873 rank 1
+2023-03-01 15:30:46,028 DEBUG TRAIN Batch 52/26900 loss 3.723371 loss_att 7.789131 loss_ctc 7.493380 loss_rnnt 2.407521 hw_loss 0.000054 lr 0.00024871 rank 7
+2023-03-01 15:30:46,030 DEBUG TRAIN Batch 52/26900 loss 4.010927 loss_att 5.240950 loss_ctc 6.852896 loss_rnnt 3.179045 hw_loss 0.388029 lr 0.00024877 rank 4
+2023-03-01 15:30:46,031 DEBUG TRAIN Batch 52/26900 loss 4.004656 loss_att 5.186049 loss_ctc 5.482651 loss_rnnt 3.474522 hw_loss 0.181481 lr 0.00024872 rank 3
+2023-03-01 15:30:46,033 DEBUG TRAIN Batch 52/26900 loss 4.455324 loss_att 6.357755 loss_ctc 7.488745 loss_rnnt 3.670362 hw_loss 0.000036 lr 0.00024877 rank 0
+2023-03-01 15:30:46,033 DEBUG TRAIN Batch 52/26900 loss 15.727571 loss_att 12.834153 loss_ctc 21.941532 loss_rnnt 15.367289 hw_loss 0.207069 lr 0.00024876 rank 5
+2023-03-01 15:30:46,035 DEBUG TRAIN Batch 52/26900 loss 4.915882 loss_att 6.095628 loss_ctc 6.685902 loss_rnnt 4.248044 hw_loss 0.367285 lr 0.00024876 rank 6
+2023-03-01 15:30:46,035 DEBUG TRAIN Batch 52/26900 loss 13.659458 loss_att 20.562174 loss_ctc 27.110910 loss_rnnt 10.461752 hw_loss 0.044318 lr 0.00024877 rank 2
+2023-03-01 15:31:39,611 DEBUG TRAIN Batch 52/27000 loss 10.019884 loss_att 11.752431 loss_ctc 10.850582 loss_rnnt 9.405457 hw_loss 0.294668 lr 0.00024870 rank 7
+2023-03-01 15:31:39,613 DEBUG TRAIN Batch 52/27000 loss 9.100762 loss_att 10.558867 loss_ctc 9.239371 loss_rnnt 8.592686 hw_loss 0.371201 lr 0.00024874 rank 6
+2023-03-01 15:31:39,613 DEBUG TRAIN Batch 52/27000 loss 8.290781 loss_att 12.309072 loss_ctc 13.039520 loss_rnnt 6.773047 hw_loss 0.151706 lr 0.00024872 rank 1
+2023-03-01 15:31:39,614 DEBUG TRAIN Batch 52/27000 loss 13.517991 loss_att 18.179155 loss_ctc 18.149460 loss_rnnt 11.968138 hw_loss 0.000171 lr 0.00024875 rank 4
+2023-03-01 15:31:39,615 DEBUG TRAIN Batch 52/27000 loss 5.569045 loss_att 11.809906 loss_ctc 10.271811 loss_rnnt 3.542372 hw_loss 0.283997 lr 0.00024870 rank 3
+2023-03-01 15:31:39,617 DEBUG TRAIN Batch 52/27000 loss 26.792158 loss_att 29.116293 loss_ctc 27.660994 loss_rnnt 26.096127 hw_loss 0.216297 lr 0.00024875 rank 0
+2023-03-01 15:31:39,618 DEBUG TRAIN Batch 52/27000 loss 10.078119 loss_att 11.023374 loss_ctc 15.783130 loss_rnnt 8.970077 hw_loss 0.296856 lr 0.00024875 rank 2
+2023-03-01 15:31:39,625 DEBUG TRAIN Batch 52/27000 loss 4.363010 loss_att 7.082071 loss_ctc 10.434834 loss_rnnt 2.964144 hw_loss 0.085269 lr 0.00024875 rank 5
+2023-03-01 15:32:33,663 DEBUG TRAIN Batch 52/27100 loss 5.298562 loss_att 6.861866 loss_ctc 5.793992 loss_rnnt 4.918301 hw_loss 0.002893 lr 0.00024874 rank 0
+2023-03-01 15:32:33,663 DEBUG TRAIN Batch 52/27100 loss 15.980296 loss_att 17.799170 loss_ctc 22.321646 loss_rnnt 14.767600 hw_loss 0.006392 lr 0.00024870 rank 1
+2023-03-01 15:32:33,665 DEBUG TRAIN Batch 52/27100 loss 4.080150 loss_att 6.826049 loss_ctc 1.755975 loss_rnnt 3.840809 hw_loss 0.000096 lr 0.00024868 rank 7
+2023-03-01 15:32:33,668 DEBUG TRAIN Batch 52/27100 loss 12.668986 loss_att 13.302557 loss_ctc 11.811311 loss_rnnt 12.492888 hw_loss 0.307014 lr 0.00024873 rank 4
+2023-03-01 15:32:33,672 DEBUG TRAIN Batch 52/27100 loss 2.578064 loss_att 4.420499 loss_ctc 8.259891 loss_rnnt 1.451940 hw_loss 0.000114 lr 0.00024874 rank 2
+2023-03-01 15:32:33,672 DEBUG TRAIN Batch 52/27100 loss 1.403463 loss_att 3.343442 loss_ctc 1.282194 loss_rnnt 0.828580 hw_loss 0.380731 lr 0.00024873 rank 6
+2023-03-01 15:32:33,673 DEBUG TRAIN Batch 52/27100 loss 1.120933 loss_att 2.685289 loss_ctc 0.817601 loss_rnnt 0.784097 hw_loss 0.120767 lr 0.00024873 rank 5
+2023-03-01 15:32:33,674 DEBUG TRAIN Batch 52/27100 loss 15.392896 loss_att 15.579945 loss_ctc 25.520325 loss_rnnt 14.005071 hw_loss 0.000170 lr 0.00024868 rank 3
+2023-03-01 15:33:28,718 DEBUG TRAIN Batch 52/27200 loss 11.033939 loss_att 14.662922 loss_ctc 15.768063 loss_rnnt 9.570082 hw_loss 0.200334 lr 0.00024867 rank 3
+2023-03-01 15:33:28,720 DEBUG TRAIN Batch 52/27200 loss 9.586441 loss_att 10.793417 loss_ctc 12.165975 loss_rnnt 8.767648 hw_loss 0.437735 lr 0.00024866 rank 7
+2023-03-01 15:33:28,721 DEBUG TRAIN Batch 52/27200 loss 12.363660 loss_att 12.376077 loss_ctc 10.837638 loss_rnnt 12.564634 hw_loss 0.000021 lr 0.00024872 rank 0
+2023-03-01 15:33:28,725 DEBUG TRAIN Batch 52/27200 loss 0.541706 loss_att 2.472377 loss_ctc 0.374855 loss_rnnt 0.118677 hw_loss 0.110889 lr 0.00024871 rank 5
+2023-03-01 15:33:28,728 DEBUG TRAIN Batch 52/27200 loss 13.170716 loss_att 14.267963 loss_ctc 19.362667 loss_rnnt 11.938422 hw_loss 0.351096 lr 0.00024872 rank 4
+2023-03-01 15:33:28,729 DEBUG TRAIN Batch 52/27200 loss 9.815057 loss_att 13.735781 loss_ctc 15.227115 loss_rnnt 8.188903 hw_loss 0.225752 lr 0.00024869 rank 1
+2023-03-01 15:33:28,734 DEBUG TRAIN Batch 52/27200 loss 0.692650 loss_att 2.204986 loss_ctc 0.530461 loss_rnnt 0.121128 hw_loss 0.545025 lr 0.00024871 rank 6
+2023-03-01 15:33:28,734 DEBUG TRAIN Batch 52/27200 loss 15.823407 loss_att 17.462612 loss_ctc 26.151045 loss_rnnt 14.041910 hw_loss 0.143692 lr 0.00024872 rank 2
+2023-03-01 15:34:25,017 DEBUG TRAIN Batch 52/27300 loss 17.041199 loss_att 19.413641 loss_ctc 29.009693 loss_rnnt 14.915520 hw_loss 0.103859 lr 0.00024871 rank 2
+2023-03-01 15:34:25,017 DEBUG TRAIN Batch 52/27300 loss 0.835589 loss_att 2.418295 loss_ctc 1.738232 loss_rnnt 0.146427 hw_loss 0.473004 lr 0.00024870 rank 4
+2023-03-01 15:34:25,020 DEBUG TRAIN Batch 52/27300 loss 15.442007 loss_att 16.479240 loss_ctc 26.744432 loss_rnnt 13.524632 hw_loss 0.380506 lr 0.00024867 rank 1
+2023-03-01 15:34:25,022 DEBUG TRAIN Batch 52/27300 loss 29.894207 loss_att 32.109879 loss_ctc 56.052185 loss_rnnt 25.794724 hw_loss 0.316156 lr 0.00024871 rank 0
+2023-03-01 15:34:25,022 DEBUG TRAIN Batch 52/27300 loss 13.836909 loss_att 16.273886 loss_ctc 15.886821 loss_rnnt 13.029759 hw_loss 0.087061 lr 0.00024865 rank 3
+2023-03-01 15:34:25,023 DEBUG TRAIN Batch 52/27300 loss 7.787173 loss_att 11.116684 loss_ctc 11.715300 loss_rnnt 6.443593 hw_loss 0.288615 lr 0.00024870 rank 6
+2023-03-01 15:34:25,027 DEBUG TRAIN Batch 52/27300 loss 11.779434 loss_att 16.746769 loss_ctc 26.268890 loss_rnnt 8.794005 hw_loss 0.112564 lr 0.00024865 rank 7
+2023-03-01 15:34:25,080 DEBUG TRAIN Batch 52/27300 loss 5.340239 loss_att 8.529846 loss_ctc 18.431425 loss_rnnt 2.850514 hw_loss 0.199336 lr 0.00024870 rank 5
+2023-03-01 15:35:18,885 DEBUG TRAIN Batch 52/27400 loss 2.301494 loss_att 3.525673 loss_ctc 5.934252 loss_rnnt 1.364970 hw_loss 0.388726 lr 0.00024865 rank 1
+2023-03-01 15:35:18,896 DEBUG TRAIN Batch 52/27400 loss 2.777211 loss_att 6.906241 loss_ctc 3.858532 loss_rnnt 1.625401 hw_loss 0.340928 lr 0.00024864 rank 3
+2023-03-01 15:35:18,900 DEBUG TRAIN Batch 52/27400 loss 31.617735 loss_att 34.598515 loss_ctc 61.960049 loss_rnnt 26.876839 hw_loss 0.185807 lr 0.00024868 rank 5
+2023-03-01 15:35:18,902 DEBUG TRAIN Batch 52/27400 loss 1.280635 loss_att 2.470189 loss_ctc 1.097373 loss_rnnt 0.846872 hw_loss 0.413038 lr 0.00024868 rank 6
+2023-03-01 15:35:18,902 DEBUG TRAIN Batch 52/27400 loss 13.262514 loss_att 16.230534 loss_ctc 29.218058 loss_rnnt 10.541478 hw_loss 0.000047 lr 0.00024869 rank 0
+2023-03-01 15:35:18,903 DEBUG TRAIN Batch 52/27400 loss 0.414463 loss_att 1.529210 loss_ctc 0.131142 loss_rnnt 0.033544 hw_loss 0.367023 lr 0.00024869 rank 4
+2023-03-01 15:35:18,909 DEBUG TRAIN Batch 52/27400 loss 3.288272 loss_att 4.790672 loss_ctc 3.370847 loss_rnnt 2.976746 hw_loss 0.000066 lr 0.00024869 rank 2
+2023-03-01 15:35:18,960 DEBUG TRAIN Batch 52/27400 loss 5.032290 loss_att 14.334147 loss_ctc 15.291083 loss_rnnt 1.602878 hw_loss 0.377252 lr 0.00024863 rank 7
+2023-03-01 15:36:13,484 DEBUG TRAIN Batch 52/27500 loss 6.309812 loss_att 11.937883 loss_ctc 3.455477 loss_rnnt 5.545736 hw_loss 0.035700 lr 0.00024864 rank 1
+2023-03-01 15:36:13,486 DEBUG TRAIN Batch 52/27500 loss 9.433370 loss_att 12.316312 loss_ctc 11.134748 loss_rnnt 8.590851 hw_loss 0.073276 lr 0.00024868 rank 2
+2023-03-01 15:36:13,490 DEBUG TRAIN Batch 52/27500 loss 3.079094 loss_att 5.019552 loss_ctc 3.820014 loss_rnnt 2.541788 hw_loss 0.094547 lr 0.00024867 rank 4
+2023-03-01 15:36:13,492 DEBUG TRAIN Batch 52/27500 loss 2.417002 loss_att 4.250169 loss_ctc 7.251986 loss_rnnt 1.304366 hw_loss 0.190009 lr 0.00024862 rank 7
+2023-03-01 15:36:13,494 DEBUG TRAIN Batch 52/27500 loss 0.573246 loss_att 2.377272 loss_ctc 0.439171 loss_rnnt 0.106102 hw_loss 0.232906 lr 0.00024862 rank 3
+2023-03-01 15:36:13,495 DEBUG TRAIN Batch 52/27500 loss 4.228014 loss_att 7.433276 loss_ctc 5.300322 loss_rnnt 3.443946 hw_loss 0.000076 lr 0.00024868 rank 0
+2023-03-01 15:36:13,496 DEBUG TRAIN Batch 52/27500 loss 10.685466 loss_att 15.130201 loss_ctc 24.029581 loss_rnnt 7.981407 hw_loss 0.067305 lr 0.00024867 rank 5
+2023-03-01 15:36:13,500 DEBUG TRAIN Batch 52/27500 loss 1.854431 loss_att 4.877832 loss_ctc 5.543612 loss_rnnt 0.720903 hw_loss 0.069296 lr 0.00024867 rank 6
+2023-03-01 15:37:07,885 DEBUG TRAIN Batch 52/27600 loss 22.192415 loss_att 25.268841 loss_ctc 30.196890 loss_rnnt 20.402386 hw_loss 0.201524 lr 0.00024860 rank 7
+2023-03-01 15:37:07,889 DEBUG TRAIN Batch 52/27600 loss 8.090043 loss_att 8.263800 loss_ctc 5.190285 loss_rnnt 8.441799 hw_loss 0.000238 lr 0.00024861 rank 3
+2023-03-01 15:37:07,891 DEBUG TRAIN Batch 52/27600 loss 5.082286 loss_att 11.303771 loss_ctc 12.168241 loss_rnnt 2.717318 hw_loss 0.329770 lr 0.00024866 rank 0
+2023-03-01 15:37:07,891 DEBUG TRAIN Batch 52/27600 loss 8.352294 loss_att 11.432826 loss_ctc 14.119491 loss_rnnt 6.796124 hw_loss 0.320818 lr 0.00024862 rank 1
+2023-03-01 15:37:07,893 DEBUG TRAIN Batch 52/27600 loss 6.873801 loss_att 7.760684 loss_ctc 9.455841 loss_rnnt 6.300527 hw_loss 0.096798 lr 0.00024865 rank 6
+2023-03-01 15:37:07,893 DEBUG TRAIN Batch 52/27600 loss 2.760500 loss_att 5.612199 loss_ctc 3.101058 loss_rnnt 2.144684 hw_loss 0.000129 lr 0.00024866 rank 4
+2023-03-01 15:37:07,893 DEBUG TRAIN Batch 52/27600 loss 1.508847 loss_att 2.953756 loss_ctc 0.815987 loss_rnnt 1.127012 hw_loss 0.347316 lr 0.00024865 rank 5
+2023-03-01 15:37:07,951 DEBUG TRAIN Batch 52/27600 loss 8.764289 loss_att 9.635495 loss_ctc 17.956554 loss_rnnt 7.364326 hw_loss 0.000164 lr 0.00024866 rank 2
+2023-03-01 15:38:03,132 DEBUG TRAIN Batch 52/27700 loss 2.508029 loss_att 7.840820 loss_ctc 6.774438 loss_rnnt 0.809362 hw_loss 0.118601 lr 0.00024864 rank 4
+2023-03-01 15:38:03,134 DEBUG TRAIN Batch 52/27700 loss 11.231509 loss_att 15.796026 loss_ctc 17.616898 loss_rnnt 9.289172 hw_loss 0.333841 lr 0.00024859 rank 3
+2023-03-01 15:38:03,135 DEBUG TRAIN Batch 52/27700 loss 3.253369 loss_att 8.108120 loss_ctc 6.716424 loss_rnnt 1.785677 hw_loss 0.065627 lr 0.00024864 rank 5
+2023-03-01 15:38:03,141 DEBUG TRAIN Batch 52/27700 loss 7.830545 loss_att 12.645401 loss_ctc 14.470174 loss_rnnt 5.732802 hw_loss 0.467791 lr 0.00024865 rank 0
+2023-03-01 15:38:03,142 DEBUG TRAIN Batch 52/27700 loss 9.081255 loss_att 15.113980 loss_ctc 20.456467 loss_rnnt 6.221899 hw_loss 0.255217 lr 0.00024865 rank 2
+2023-03-01 15:38:03,144 DEBUG TRAIN Batch 52/27700 loss 13.240515 loss_att 21.271294 loss_ctc 22.847855 loss_rnnt 10.196811 hw_loss 0.293570 lr 0.00024863 rank 6
+2023-03-01 15:38:03,199 DEBUG TRAIN Batch 52/27700 loss 3.118720 loss_att 4.977840 loss_ctc 5.164486 loss_rnnt 2.253448 hw_loss 0.413772 lr 0.00024861 rank 1
+2023-03-01 15:38:57,495 DEBUG TRAIN Batch 52/27800 loss 3.201005 loss_att 6.554142 loss_ctc 8.528046 loss_rnnt 1.676255 hw_loss 0.269721 lr 0.00024862 rank 6
+2023-03-01 15:39:08,101 DEBUG CV Batch 52/0 loss 2.905888 loss_att 2.131553 loss_ctc 4.570933 loss_rnnt 2.571532 hw_loss 0.501032 history loss 2.663731 rank 1
+2023-03-01 15:39:08,112 DEBUG CV Batch 52/0 loss 2.905888 loss_att 2.131553 loss_ctc 4.570933 loss_rnnt 2.571532 hw_loss 0.501032 history loss 2.663731 rank 3
+2023-03-01 15:39:08,112 DEBUG CV Batch 52/0 loss 2.905888 loss_att 2.131553 loss_ctc 4.570933 loss_rnnt 2.571532 hw_loss 0.501032 history loss 2.663731 rank 6
+2023-03-01 15:39:08,116 DEBUG CV Batch 52/0 loss 2.905888 loss_att 2.131553 loss_ctc 4.570933 loss_rnnt 2.571532 hw_loss 0.501032 history loss 2.663731 rank 4
+2023-03-01 15:39:08,123 DEBUG CV Batch 52/0 loss 2.905888 loss_att 2.131553 loss_ctc 4.570933 loss_rnnt 2.571532 hw_loss 0.501032 history loss 2.663731 rank 7
+2023-03-01 15:39:08,124 DEBUG CV Batch 52/0 loss 2.905888 loss_att 2.131553 loss_ctc 4.570933 loss_rnnt 2.571532 hw_loss 0.501032 history loss 2.663731 rank 2
+2023-03-01 15:39:08,134 DEBUG CV Batch 52/0 loss 2.905888 loss_att 2.131553 loss_ctc 4.570933 loss_rnnt 2.571532 hw_loss 0.501032 history loss 2.663731 rank 5
+2023-03-01 15:39:08,140 DEBUG CV Batch 52/0 loss 2.905888 loss_att 2.131553 loss_ctc 4.570933 loss_rnnt 2.571532 hw_loss 0.501032 history loss 2.663731 rank 0
+2023-03-01 15:39:17,061 DEBUG CV Batch 52/100 loss 8.580649 loss_att 5.869658 loss_ctc 7.365202 loss_rnnt 9.146185 hw_loss 0.260103 history loss 3.072359 rank 3
+2023-03-01 15:39:17,135 DEBUG CV Batch 52/100 loss 8.580649 loss_att 5.869658 loss_ctc 7.365202 loss_rnnt 9.146185 hw_loss 0.260103 history loss 3.072359 rank 1
+2023-03-01 15:39:17,223 DEBUG CV Batch 52/100 loss 8.580649 loss_att 5.869658 loss_ctc 7.365202 loss_rnnt 9.146185 hw_loss 0.260103 history loss 3.072359 rank 4
+2023-03-01 15:39:17,313 DEBUG CV Batch 52/100 loss 8.580649 loss_att 5.869658 loss_ctc 7.365202 loss_rnnt 9.146185 hw_loss 0.260103 history loss 3.072359 rank 0
+2023-03-01 15:39:17,470 DEBUG CV Batch 52/100 loss 8.580649 loss_att 5.869658 loss_ctc 7.365202 loss_rnnt 9.146185 hw_loss 0.260103 history loss 3.072359 rank 2
+2023-03-01 15:39:17,584 DEBUG CV Batch 52/100 loss 8.580649 loss_att 5.869658 loss_ctc 7.365202 loss_rnnt 9.146185 hw_loss 0.260103 history loss 3.072359 rank 6
+2023-03-01 15:39:17,720 DEBUG CV Batch 52/100 loss 8.580649 loss_att 5.869658 loss_ctc 7.365202 loss_rnnt 9.146185 hw_loss 0.260103 history loss 3.072359 rank 7
+2023-03-01 15:39:17,800 DEBUG CV Batch 52/100 loss 8.580649 loss_att 5.869658 loss_ctc 7.365202 loss_rnnt 9.146185 hw_loss 0.260103 history loss 3.072359 rank 5
+2023-03-01 15:39:29,402 DEBUG CV Batch 52/200 loss 2.258873 loss_att 1.378458 loss_ctc 1.928051 loss_rnnt 2.291805 hw_loss 0.351113 history loss 3.354176 rank 3
+2023-03-01 15:39:29,519 DEBUG CV Batch 52/200 loss 2.258873 loss_att 1.378458 loss_ctc 1.928051 loss_rnnt 2.291805 hw_loss 0.351113 history loss 3.354176 rank 1
+2023-03-01 15:39:29,731 DEBUG CV Batch 52/200 loss 2.258873 loss_att 1.378458 loss_ctc 1.928051 loss_rnnt 2.291805 hw_loss 0.351113 history loss 3.354176 rank 4
+2023-03-01 15:39:29,846 DEBUG CV Batch 52/200 loss 2.258873 loss_att 1.378458 loss_ctc 1.928051 loss_rnnt 2.291805 hw_loss 0.351113 history loss 3.354176 rank 0
+2023-03-01 15:39:29,977 DEBUG CV Batch 52/200 loss 2.258873 loss_att 1.378458 loss_ctc 1.928051 loss_rnnt 2.291805 hw_loss 0.351113 history loss 3.354176 rank 2
+2023-03-01 15:39:30,126 DEBUG CV Batch 52/200 loss 2.258873 loss_att 1.378458 loss_ctc 1.928051 loss_rnnt 2.291805 hw_loss 0.351113 history loss 3.354176 rank 6
+2023-03-01 15:39:30,283 DEBUG CV Batch 52/200 loss 2.258873 loss_att 1.378458 loss_ctc 1.928051 loss_rnnt 2.291805 hw_loss 0.351113 history loss 3.354176 rank 7
+2023-03-01 15:39:31,122 DEBUG CV Batch 52/200 loss 2.258873 loss_att 1.378458 loss_ctc 1.928051 loss_rnnt 2.291805 hw_loss 0.351113 history loss 3.354176 rank 5
+2023-03-01 15:39:38,324 DEBUG CV Batch 52/300 loss 3.220728 loss_att 4.437357 loss_ctc 1.791207 loss_rnnt 3.007345 hw_loss 0.301236 history loss 3.182213 rank 3
+2023-03-01 15:39:38,529 DEBUG CV Batch 52/300 loss 3.220728 loss_att 4.437357 loss_ctc 1.791207 loss_rnnt 3.007345 hw_loss 0.301236 history loss 3.182213 rank 1
+2023-03-01 15:39:38,620 DEBUG CV Batch 52/300 loss 3.220728 loss_att 4.437357 loss_ctc 1.791207 loss_rnnt 3.007345 hw_loss 0.301236 history loss 3.182213 rank 4
+2023-03-01 15:39:38,846 DEBUG CV Batch 52/300 loss 3.220728 loss_att 4.437357 loss_ctc 1.791207 loss_rnnt 3.007345 hw_loss 0.301236 history loss 3.182213 rank 2
+2023-03-01 15:39:38,946 DEBUG CV Batch 52/300 loss 3.220728 loss_att 4.437357 loss_ctc 1.791207 loss_rnnt 3.007345 hw_loss 0.301236 history loss 3.182213 rank 0
+2023-03-01 15:39:39,446 DEBUG CV Batch 52/300 loss 3.220728 loss_att 4.437357 loss_ctc 1.791207 loss_rnnt 3.007345 hw_loss 0.301236 history loss 3.182213 rank 6
+2023-03-01 15:39:39,515 DEBUG CV Batch 52/300 loss 3.220728 loss_att 4.437357 loss_ctc 1.791207 loss_rnnt 3.007345 hw_loss 0.301236 history loss 3.182213 rank 7
+2023-03-01 15:39:40,616 DEBUG CV Batch 52/300 loss 3.220728 loss_att 4.437357 loss_ctc 1.791207 loss_rnnt 3.007345 hw_loss 0.301236 history loss 3.182213 rank 5
+2023-03-01 15:39:50,547 DEBUG CV Batch 52/400 loss 3.363602 loss_att 3.086747 loss_ctc 2.690807 loss_rnnt 3.240540 hw_loss 0.502761 history loss 3.479660 rank 3
+2023-03-01 15:39:50,992 DEBUG CV Batch 52/400 loss 3.363602 loss_att 3.086747 loss_ctc 2.690807 loss_rnnt 3.240540 hw_loss 0.502761 history loss 3.479660 rank 1
+2023-03-01 15:39:51,033 DEBUG CV Batch 52/400 loss 3.363602 loss_att 3.086747 loss_ctc 2.690807 loss_rnnt 3.240540 hw_loss 0.502761 history loss 3.479660 rank 4
+2023-03-01 15:39:51,140 DEBUG CV Batch 52/400 loss 3.363602 loss_att 3.086747 loss_ctc 2.690807 loss_rnnt 3.240540 hw_loss 0.502761 history loss 3.479660 rank 2
+2023-03-01 15:39:51,411 DEBUG CV Batch 52/400 loss 3.363602 loss_att 3.086747 loss_ctc 2.690807 loss_rnnt 3.240540 hw_loss 0.502761 history loss 3.479660 rank 0
+2023-03-01 15:39:51,786 DEBUG CV Batch 52/400 loss 3.363602 loss_att 3.086747 loss_ctc 2.690807 loss_rnnt 3.240540 hw_loss 0.502761 history loss 3.479660 rank 6
+2023-03-01 15:39:52,692 DEBUG CV Batch 52/400 loss 3.363602 loss_att 3.086747 loss_ctc 2.690807 loss_rnnt 3.240540 hw_loss 0.502761 history loss 3.479660 rank 7
+2023-03-01 15:39:53,255 DEBUG CV Batch 52/400 loss 3.363602 loss_att 3.086747 loss_ctc 2.690807 loss_rnnt 3.240540 hw_loss 0.502761 history loss 3.479660 rank 5
+2023-03-01 15:39:59,806 DEBUG CV Batch 52/500 loss 15.369438 loss_att 17.820320 loss_ctc 20.808636 loss_rnnt 14.011796 hw_loss 0.266697 history loss 3.574164 rank 3
+2023-03-01 15:40:00,353 DEBUG CV Batch 52/500 loss 15.369438 loss_att 17.820320 loss_ctc 20.808636 loss_rnnt 14.011796 hw_loss 0.266697 history loss 3.574164 rank 2
+2023-03-01 15:40:00,445 DEBUG CV Batch 52/500 loss 15.369438 loss_att 17.820320 loss_ctc 20.808636 loss_rnnt 14.011796 hw_loss 0.266697 history loss 3.574164 rank 4
+2023-03-01 15:40:00,531 DEBUG CV Batch 52/500 loss 15.369438 loss_att 17.820320 loss_ctc 20.808636 loss_rnnt 14.011796 hw_loss 0.266697 history loss 3.574164 rank 1
+2023-03-01 15:40:00,657 DEBUG CV Batch 52/500 loss 15.369438 loss_att 17.820320 loss_ctc 20.808636 loss_rnnt 14.011796 hw_loss 0.266697 history loss 3.574164 rank 0
+2023-03-01 15:40:01,236 DEBUG CV Batch 52/500 loss 15.369438 loss_att 17.820320 loss_ctc 20.808636 loss_rnnt 14.011796 hw_loss 0.266697 history loss 3.574164 rank 6
+2023-03-01 15:40:02,700 DEBUG CV Batch 52/500 loss 15.369438 loss_att 17.820320 loss_ctc 20.808636 loss_rnnt 14.011796 hw_loss 0.266697 history loss 3.574164 rank 7
+2023-03-01 15:40:03,005 DEBUG CV Batch 52/500 loss 15.369438 loss_att 17.820320 loss_ctc 20.808636 loss_rnnt 14.011796 hw_loss 0.266697 history loss 3.574164 rank 5
+2023-03-01 15:40:14,803 DEBUG CV Batch 52/600 loss 0.376258 loss_att 0.936965 loss_ctc 0.473036 loss_rnnt 0.096543 hw_loss 0.290006 history loss 3.699352 rank 3
+2023-03-01 15:40:15,269 DEBUG CV Batch 52/600 loss 0.376258 loss_att 0.936965 loss_ctc 0.473036 loss_rnnt 0.096543 hw_loss 0.290006 history loss 3.699352 rank 2
+2023-03-01 15:40:15,562 DEBUG CV Batch 52/600 loss 0.376258 loss_att 0.936965 loss_ctc 0.473036 loss_rnnt 0.096543 hw_loss 0.290006 history loss 3.699352 rank 4
+2023-03-01 15:40:15,654 DEBUG CV Batch 52/600 loss 0.376258 loss_att 0.936965 loss_ctc 0.473036 loss_rnnt 0.096543 hw_loss 0.290006 history loss 3.699352 rank 1
+2023-03-01 15:40:15,812 DEBUG CV Batch 52/600 loss 0.376258 loss_att 0.936965 loss_ctc 0.473036 loss_rnnt 0.096543 hw_loss 0.290006 history loss 3.699352 rank 0
+2023-03-01 15:40:16,302 DEBUG CV Batch 52/600 loss 0.376258 loss_att 0.936965 loss_ctc 0.473036 loss_rnnt 0.096543 hw_loss 0.290006 history loss 3.699352 rank 6
+2023-03-01 15:40:17,835 DEBUG CV Batch 52/600 loss 0.376258 loss_att 0.936965 loss_ctc 0.473036 loss_rnnt 0.096543 hw_loss 0.290006 history loss 3.699352 rank 7
+2023-03-01 15:40:18,154 DEBUG CV Batch 52/600 loss 0.376258 loss_att 0.936965 loss_ctc 0.473036 loss_rnnt 0.096543 hw_loss 0.290006 history loss 3.699352 rank 5
+2023-03-01 15:40:24,113 DEBUG CV Batch 52/700 loss 18.431997 loss_att 19.067617 loss_ctc 30.959389 loss_rnnt 16.634472 hw_loss 0.000159 history loss 3.862649 rank 3
+2023-03-01 15:40:24,526 DEBUG CV Batch 52/700 loss 18.431997 loss_att 19.067617 loss_ctc 30.959389 loss_rnnt 16.634472 hw_loss 0.000159 history loss 3.862649 rank 2
+2023-03-01 15:40:24,970 DEBUG CV Batch 52/700 loss 18.431997 loss_att 19.067617 loss_ctc 30.959389 loss_rnnt 16.634472 hw_loss 0.000159 history loss 3.862649 rank 1
+2023-03-01 15:40:25,061 DEBUG CV Batch 52/700 loss 18.431997 loss_att 19.067617 loss_ctc 30.959389 loss_rnnt 16.634472 hw_loss 0.000159 history loss 3.862649 rank 4
+2023-03-01 15:40:25,301 DEBUG CV Batch 52/700 loss 18.431997 loss_att 19.067617 loss_ctc 30.959389 loss_rnnt 16.634472 hw_loss 0.000159 history loss 3.862649 rank 0
+2023-03-01 15:40:25,812 DEBUG CV Batch 52/700 loss 18.431997 loss_att 19.067617 loss_ctc 30.959389 loss_rnnt 16.634472 hw_loss 0.000159 history loss 3.862649 rank 6
+2023-03-01 15:40:27,491 DEBUG CV Batch 52/700 loss 18.431997 loss_att 19.067617 loss_ctc 30.959389 loss_rnnt 16.634472 hw_loss 0.000159 history loss 3.862649 rank 7
+2023-03-01 15:40:27,830 DEBUG CV Batch 52/700 loss 18.431997 loss_att 19.067617 loss_ctc 30.959389 loss_rnnt 16.634472 hw_loss 0.000159 history loss 3.862649 rank 5
+2023-03-01 15:40:36,988 DEBUG CV Batch 52/800 loss 2.011807 loss_att 2.609169 loss_ctc 2.401596 loss_rnnt 1.699048 hw_loss 0.264966 history loss 3.899539 rank 3
+2023-03-01 15:40:37,530 DEBUG CV Batch 52/800 loss 2.011807 loss_att 2.609169 loss_ctc 2.401596 loss_rnnt 1.699048 hw_loss 0.264966 history loss 3.899539 rank 2
+2023-03-01 15:40:37,761 DEBUG CV Batch 52/800 loss 2.011807 loss_att 2.609169 loss_ctc 2.401596 loss_rnnt 1.699048 hw_loss 0.264966 history loss 3.899539 rank 1
+2023-03-01 15:40:38,174 DEBUG CV Batch 52/800 loss 2.011807 loss_att 2.609169 loss_ctc 2.401596 loss_rnnt 1.699048 hw_loss 0.264966 history loss 3.899539 rank 4
+2023-03-01 15:40:38,512 DEBUG CV Batch 52/800 loss 2.011807 loss_att 2.609169 loss_ctc 2.401596 loss_rnnt 1.699048 hw_loss 0.264966 history loss 3.899539 rank 0
+2023-03-01 15:40:38,720 DEBUG CV Batch 52/800 loss 2.011807 loss_att 2.609169 loss_ctc 2.401596 loss_rnnt 1.699048 hw_loss 0.264966 history loss 3.899539 rank 6
+2023-03-01 15:40:40,348 DEBUG CV Batch 52/800 loss 2.011807 loss_att 2.609169 loss_ctc 2.401596 loss_rnnt 1.699048 hw_loss 0.264966 history loss 3.899539 rank 7
+2023-03-01 15:40:40,977 DEBUG CV Batch 52/800 loss 2.011807 loss_att 2.609169 loss_ctc 2.401596 loss_rnnt 1.699048 hw_loss 0.264966 history loss 3.899539 rank 5
+2023-03-01 15:40:46,667 DEBUG CV Batch 52/900 loss 21.113926 loss_att 18.236996 loss_ctc 32.415733 loss_rnnt 19.984066 hw_loss 0.371883 history loss 4.034505 rank 3
+2023-03-01 15:40:47,340 DEBUG CV Batch 52/900 loss 21.113926 loss_att 18.236996 loss_ctc 32.415733 loss_rnnt 19.984066 hw_loss 0.371883 history loss 4.034505 rank 2
+2023-03-01 15:40:47,415 DEBUG CV Batch 52/900 loss 21.113926 loss_att 18.236996 loss_ctc 32.415733 loss_rnnt 19.984066 hw_loss 0.371883 history loss 4.034505 rank 1
+2023-03-01 15:40:47,884 DEBUG CV Batch 52/900 loss 21.113926 loss_att 18.236996 loss_ctc 32.415733 loss_rnnt 19.984066 hw_loss 0.371883 history loss 4.034505 rank 4
+2023-03-01 15:40:48,528 DEBUG CV Batch 52/900 loss 21.113926 loss_att 18.236996 loss_ctc 32.415733 loss_rnnt 19.984066 hw_loss 0.371883 history loss 4.034505 rank 0
+2023-03-01 15:40:48,554 DEBUG CV Batch 52/900 loss 21.113926 loss_att 18.236996 loss_ctc 32.415733 loss_rnnt 19.984066 hw_loss 0.371883 history loss 4.034505 rank 6
+2023-03-01 15:40:50,264 DEBUG CV Batch 52/900 loss 21.113926 loss_att 18.236996 loss_ctc 32.415733 loss_rnnt 19.984066 hw_loss 0.371883 history loss 4.034505 rank 7
+2023-03-01 15:40:51,133 DEBUG CV Batch 52/900 loss 21.113926 loss_att 18.236996 loss_ctc 32.415733 loss_rnnt 19.984066 hw_loss 0.371883 history loss 4.034505 rank 5
+2023-03-01 15:40:56,630 DEBUG CV Batch 52/1000 loss 4.209960 loss_att 5.716107 loss_ctc 6.226583 loss_rnnt 3.567311 hw_loss 0.136007 history loss 4.228812 rank 3
+2023-03-01 15:40:57,528 DEBUG CV Batch 52/1000 loss 4.209960 loss_att 5.716107 loss_ctc 6.226583 loss_rnnt 3.567311 hw_loss 0.136007 history loss 4.228812 rank 2
+2023-03-01 15:40:57,711 DEBUG CV Batch 52/1000 loss 4.209960 loss_att 5.716107 loss_ctc 6.226583 loss_rnnt 3.567311 hw_loss 0.136007 history loss 4.228812 rank 1
+2023-03-01 15:40:57,921 DEBUG CV Batch 52/1000 loss 4.209960 loss_att 5.716107 loss_ctc 6.226583 loss_rnnt 3.567311 hw_loss 0.136007 history loss 4.228812 rank 4
+2023-03-01 15:40:58,993 DEBUG CV Batch 52/1000 loss 4.209960 loss_att 5.716107 loss_ctc 6.226583 loss_rnnt 3.567311 hw_loss 0.136007 history loss 4.228812 rank 6
+2023-03-01 15:41:00,172 DEBUG CV Batch 52/1000 loss 4.209960 loss_att 5.716107 loss_ctc 6.226583 loss_rnnt 3.567311 hw_loss 0.136007 history loss 4.228812 rank 0
+2023-03-01 15:41:00,533 DEBUG CV Batch 52/1000 loss 4.209960 loss_att 5.716107 loss_ctc 6.226583 loss_rnnt 3.567311 hw_loss 0.136007 history loss 4.228812 rank 7
+2023-03-01 15:41:01,708 DEBUG CV Batch 52/1000 loss 4.209960 loss_att 5.716107 loss_ctc 6.226583 loss_rnnt 3.567311 hw_loss 0.136007 history loss 4.228812 rank 5
+2023-03-01 15:41:07,365 DEBUG CV Batch 52/1100 loss 69.918411 loss_att 72.551643 loss_ctc 143.123642 loss_rnnt 59.630989 hw_loss 0.000159 history loss 4.708819 rank 3
+2023-03-01 15:41:08,166 DEBUG CV Batch 52/1100 loss 69.918411 loss_att 72.551643 loss_ctc 143.123642 loss_rnnt 59.630989 hw_loss 0.000159 history loss 4.708819 rank 2
+2023-03-01 15:41:08,400 DEBUG CV Batch 52/1100 loss 69.918411 loss_att 72.551643 loss_ctc 143.123642 loss_rnnt 59.630989 hw_loss 0.000159 history loss 4.708819 rank 1
+2023-03-01 15:41:08,428 DEBUG CV Batch 52/1100 loss 69.918411 loss_att 72.551643 loss_ctc 143.123642 loss_rnnt 59.630989 hw_loss 0.000159 history loss 4.708819 rank 4
+2023-03-01 15:41:10,023 DEBUG CV Batch 52/1100 loss 69.918411 loss_att 72.551643 loss_ctc 143.123642 loss_rnnt 59.630989 hw_loss 0.000159 history loss 4.708819 rank 6
+2023-03-01 15:41:11,260 DEBUG CV Batch 52/1100 loss 69.918411 loss_att 72.551643 loss_ctc 143.123642 loss_rnnt 59.630989 hw_loss 0.000159 history loss 4.708819 rank 0
+2023-03-01 15:41:11,563 DEBUG CV Batch 52/1100 loss 69.918411 loss_att 72.551643 loss_ctc 143.123642 loss_rnnt 59.630989 hw_loss 0.000159 history loss 4.708819 rank 7
+2023-03-01 15:41:12,436 DEBUG CV Batch 52/1100 loss 69.918411 loss_att 72.551643 loss_ctc 143.123642 loss_rnnt 59.630989 hw_loss 0.000159 history loss 4.708819 rank 5
+2023-03-01 15:41:16,945 DEBUG CV Batch 52/1200 loss 14.667642 loss_att 11.573029 loss_ctc 16.765181 loss_rnnt 14.892769 hw_loss 0.213981 history loss 5.121963 rank 3
+2023-03-01 15:41:18,067 DEBUG CV Batch 52/1200 loss 14.667642 loss_att 11.573029 loss_ctc 16.765181 loss_rnnt 14.892769 hw_loss 0.213981 history loss 5.121963 rank 1
+2023-03-01 15:41:18,160 DEBUG CV Batch 52/1200 loss 14.667642 loss_att 11.573029 loss_ctc 16.765181 loss_rnnt 14.892769 hw_loss 0.213981 history loss 5.121963 rank 2
+2023-03-01 15:41:18,237 DEBUG CV Batch 52/1200 loss 14.667642 loss_att 11.573029 loss_ctc 16.765181 loss_rnnt 14.892769 hw_loss 0.213981 history loss 5.121963 rank 4
+2023-03-01 15:41:20,134 DEBUG CV Batch 52/1200 loss 14.667642 loss_att 11.573029 loss_ctc 16.765181 loss_rnnt 14.892769 hw_loss 0.213981 history loss 5.121963 rank 6
+2023-03-01 15:41:21,219 DEBUG CV Batch 52/1200 loss 14.667642 loss_att 11.573029 loss_ctc 16.765181 loss_rnnt 14.892769 hw_loss 0.213981 history loss 5.121963 rank 0
+2023-03-01 15:41:21,717 DEBUG CV Batch 52/1200 loss 14.667642 loss_att 11.573029 loss_ctc 16.765181 loss_rnnt 14.892769 hw_loss 0.213981 history loss 5.121963 rank 7
+2023-03-01 15:41:22,632 DEBUG CV Batch 52/1200 loss 14.667642 loss_att 11.573029 loss_ctc 16.765181 loss_rnnt 14.892769 hw_loss 0.213981 history loss 5.121963 rank 5
+2023-03-01 15:41:28,314 DEBUG CV Batch 52/1300 loss 3.443179 loss_att 3.866135 loss_ctc 5.706805 loss_rnnt 2.854951 hw_loss 0.378413 history loss 5.388107 rank 3
+2023-03-01 15:41:29,700 DEBUG CV Batch 52/1300 loss 3.443179 loss_att 3.866135 loss_ctc 5.706805 loss_rnnt 2.854951 hw_loss 0.378413 history loss 5.388107 rank 2
+2023-03-01 15:41:29,726 DEBUG CV Batch 52/1300 loss 3.443179 loss_att 3.866135 loss_ctc 5.706805 loss_rnnt 2.854951 hw_loss 0.378413 history loss 5.388107 rank 1
+2023-03-01 15:41:29,823 DEBUG CV Batch 52/1300 loss 3.443179 loss_att 3.866135 loss_ctc 5.706805 loss_rnnt 2.854951 hw_loss 0.378413 history loss 5.388107 rank 4
+2023-03-01 15:41:31,500 DEBUG CV Batch 52/1300 loss 3.443179 loss_att 3.866135 loss_ctc 5.706805 loss_rnnt 2.854951 hw_loss 0.378413 history loss 5.388107 rank 6
+2023-03-01 15:41:32,689 DEBUG CV Batch 52/1300 loss 3.443179 loss_att 3.866135 loss_ctc 5.706805 loss_rnnt 2.854951 hw_loss 0.378413 history loss 5.388107 rank 0
+2023-03-01 15:41:33,491 DEBUG CV Batch 52/1300 loss 3.443179 loss_att 3.866135 loss_ctc 5.706805 loss_rnnt 2.854951 hw_loss 0.378413 history loss 5.388107 rank 7
+2023-03-01 15:41:34,210 DEBUG CV Batch 52/1300 loss 3.443179 loss_att 3.866135 loss_ctc 5.706805 loss_rnnt 2.854951 hw_loss 0.378413 history loss 5.388107 rank 5
+2023-03-01 15:41:37,289 DEBUG CV Batch 52/1400 loss 1.062153 loss_att 2.379973 loss_ctc 1.148249 loss_rnnt 0.666129 hw_loss 0.226840 history loss 5.345752 rank 3
+2023-03-01 15:41:38,889 DEBUG CV Batch 52/1400 loss 1.062153 loss_att 2.379973 loss_ctc 1.148249 loss_rnnt 0.666129 hw_loss 0.226840 history loss 5.345752 rank 1
+2023-03-01 15:41:38,958 DEBUG CV Batch 52/1400 loss 1.062153 loss_att 2.379973 loss_ctc 1.148249 loss_rnnt 0.666129 hw_loss 0.226840 history loss 5.345752 rank 2
+2023-03-01 15:41:39,031 DEBUG CV Batch 52/1400 loss 1.062153 loss_att 2.379973 loss_ctc 1.148249 loss_rnnt 0.666129 hw_loss 0.226840 history loss 5.345752 rank 4
+2023-03-01 15:41:40,647 DEBUG CV Batch 52/1400 loss 1.062153 loss_att 2.379973 loss_ctc 1.148249 loss_rnnt 0.666129 hw_loss 0.226840 history loss 5.345752 rank 6
+2023-03-01 15:41:42,099 DEBUG CV Batch 52/1400 loss 1.062153 loss_att 2.379973 loss_ctc 1.148249 loss_rnnt 0.666129 hw_loss 0.226840 history loss 5.345752 rank 0
+2023-03-01 15:41:43,101 DEBUG CV Batch 52/1400 loss 1.062153 loss_att 2.379973 loss_ctc 1.148249 loss_rnnt 0.666129 hw_loss 0.226840 history loss 5.345752 rank 7
+2023-03-01 15:41:43,915 DEBUG CV Batch 52/1400 loss 1.062153 loss_att 2.379973 loss_ctc 1.148249 loss_rnnt 0.666129 hw_loss 0.226840 history loss 5.345752 rank 5
+2023-03-01 15:41:48,311 DEBUG CV Batch 52/1500 loss 17.989162 loss_att 15.032547 loss_ctc 33.038101 loss_rnnt 16.396069 hw_loss 0.333547 history loss 5.579341 rank 3
+2023-03-01 15:41:49,801 DEBUG CV Batch 52/1500 loss 17.989162 loss_att 15.032547 loss_ctc 33.038101 loss_rnnt 16.396069 hw_loss 0.333547 history loss 5.579341 rank 1
+2023-03-01 15:41:50,158 DEBUG CV Batch 52/1500 loss 17.989162 loss_att 15.032547 loss_ctc 33.038101 loss_rnnt 16.396069 hw_loss 0.333547 history loss 5.579341 rank 4
+2023-03-01 15:41:50,264 DEBUG CV Batch 52/1500 loss 17.989162 loss_att 15.032547 loss_ctc 33.038101 loss_rnnt 16.396069 hw_loss 0.333547 history loss 5.579341 rank 2
+2023-03-01 15:41:51,640 DEBUG CV Batch 52/1500 loss 17.989162 loss_att 15.032547 loss_ctc 33.038101 loss_rnnt 16.396069 hw_loss 0.333547 history loss 5.579341 rank 6
+2023-03-01 15:41:53,113 DEBUG CV Batch 52/1500 loss 17.989162 loss_att 15.032547 loss_ctc 33.038101 loss_rnnt 16.396069 hw_loss 0.333547 history loss 5.579341 rank 0
+2023-03-01 15:41:54,224 DEBUG CV Batch 52/1500 loss 17.989162 loss_att 15.032547 loss_ctc 33.038101 loss_rnnt 16.396069 hw_loss 0.333547 history loss 5.579341 rank 7
+2023-03-01 15:41:55,638 DEBUG CV Batch 52/1500 loss 17.989162 loss_att 15.032547 loss_ctc 33.038101 loss_rnnt 16.396069 hw_loss 0.333547 history loss 5.579341 rank 5
+2023-03-01 15:41:57,655 DEBUG CV Batch 52/1600 loss 10.535091 loss_att 8.289999 loss_ctc 12.023295 loss_rnnt 10.601395 hw_loss 0.345541 history loss 6.022269 rank 3
+2023-03-01 15:41:59,415 DEBUG CV Batch 52/1600 loss 10.535091 loss_att 8.289999 loss_ctc 12.023295 loss_rnnt 10.601395 hw_loss 0.345541 history loss 6.022269 rank 1
+2023-03-01 15:41:59,666 DEBUG CV Batch 52/1600 loss 10.535091 loss_att 8.289999 loss_ctc 12.023295 loss_rnnt 10.601395 hw_loss 0.345541 history loss 6.022269 rank 4
+2023-03-01 15:41:59,881 DEBUG CV Batch 52/1600 loss 10.535091 loss_att 8.289999 loss_ctc 12.023295 loss_rnnt 10.601395 hw_loss 0.345541 history loss 6.022269 rank 2
+2023-03-01 15:42:01,231 DEBUG CV Batch 52/1600 loss 10.535091 loss_att 8.289999 loss_ctc 12.023295 loss_rnnt 10.601395 hw_loss 0.345541 history loss 6.022269 rank 6
+2023-03-01 15:42:02,642 DEBUG CV Batch 52/1600 loss 10.535091 loss_att 8.289999 loss_ctc 12.023295 loss_rnnt 10.601395 hw_loss 0.345541 history loss 6.022269 rank 0
+2023-03-01 15:42:03,795 DEBUG CV Batch 52/1600 loss 10.535091 loss_att 8.289999 loss_ctc 12.023295 loss_rnnt 10.601395 hw_loss 0.345541 history loss 6.022269 rank 7
+2023-03-01 15:42:05,355 DEBUG CV Batch 52/1600 loss 10.535091 loss_att 8.289999 loss_ctc 12.023295 loss_rnnt 10.601395 hw_loss 0.345541 history loss 6.022269 rank 5
+2023-03-01 15:42:08,865 DEBUG CV Batch 52/1700 loss 8.572250 loss_att 9.593622 loss_ctc 17.652815 loss_rnnt 7.129062 hw_loss 0.052825 history loss 6.316471 rank 3
+2023-03-01 15:42:10,882 DEBUG CV Batch 52/1700 loss 8.572250 loss_att 9.593622 loss_ctc 17.652815 loss_rnnt 7.129062 hw_loss 0.052825 history loss 6.316471 rank 1
+2023-03-01 15:42:11,135 DEBUG CV Batch 52/1700 loss 8.572250 loss_att 9.593622 loss_ctc 17.652815 loss_rnnt 7.129062 hw_loss 0.052825 history loss 6.316471 rank 4
+2023-03-01 15:42:11,296 DEBUG CV Batch 52/1700 loss 8.572250 loss_att 9.593622 loss_ctc 17.652815 loss_rnnt 7.129062 hw_loss 0.052825 history loss 6.316471 rank 2
+2023-03-01 15:42:12,548 DEBUG CV Batch 52/1700 loss 8.572250 loss_att 9.593622 loss_ctc 17.652815 loss_rnnt 7.129062 hw_loss 0.052825 history loss 6.316471 rank 6
+2023-03-01 15:42:14,139 DEBUG CV Batch 52/1700 loss 8.572250 loss_att 9.593622 loss_ctc 17.652815 loss_rnnt 7.129062 hw_loss 0.052825 history loss 6.316471 rank 0
+2023-03-01 15:42:15,349 DEBUG CV Batch 52/1700 loss 8.572250 loss_att 9.593622 loss_ctc 17.652815 loss_rnnt 7.129062 hw_loss 0.052825 history loss 6.316471 rank 7
+2023-03-01 15:42:16,903 DEBUG CV Batch 52/1700 loss 8.572250 loss_att 9.593622 loss_ctc 17.652815 loss_rnnt 7.129062 hw_loss 0.052825 history loss 6.316471 rank 5
+2023-03-01 15:42:19,114 DEBUG CV Batch 52/1800 loss 3.820731 loss_att 3.815633 loss_ctc 7.812599 loss_rnnt 3.030803 hw_loss 0.485059 history loss 6.556083 rank 3
+2023-03-01 15:42:21,260 DEBUG CV Batch 52/1800 loss 3.820731 loss_att 3.815633 loss_ctc 7.812599 loss_rnnt 3.030803 hw_loss 0.485059 history loss 6.556083 rank 1
+2023-03-01 15:42:21,280 DEBUG CV Batch 52/1800 loss 3.820731 loss_att 3.815633 loss_ctc 7.812599 loss_rnnt 3.030803 hw_loss 0.485059 history loss 6.556083 rank 4
+2023-03-01 15:42:21,505 DEBUG CV Batch 52/1800 loss 3.820731 loss_att 3.815633 loss_ctc 7.812599 loss_rnnt 3.030803 hw_loss 0.485059 history loss 6.556083 rank 2
+2023-03-01 15:42:22,723 DEBUG CV Batch 52/1800 loss 3.820731 loss_att 3.815633 loss_ctc 7.812599 loss_rnnt 3.030803 hw_loss 0.485059 history loss 6.556083 rank 6
+2023-03-01 15:42:24,304 DEBUG CV Batch 52/1800 loss 3.820731 loss_att 3.815633 loss_ctc 7.812599 loss_rnnt 3.030803 hw_loss 0.485059 history loss 6.556083 rank 0
+2023-03-01 15:42:25,999 DEBUG CV Batch 52/1800 loss 3.820731 loss_att 3.815633 loss_ctc 7.812599 loss_rnnt 3.030803 hw_loss 0.485059 history loss 6.556083 rank 7
+2023-03-01 15:42:27,067 DEBUG CV Batch 52/1800 loss 3.820731 loss_att 3.815633 loss_ctc 7.812599 loss_rnnt 3.030803 hw_loss 0.485059 history loss 6.556083 rank 5
+2023-03-01 15:42:28,085 DEBUG CV Batch 52/1900 loss 50.036438 loss_att 39.276001 loss_ctc 73.500740 loss_rnnt 48.880207 hw_loss 0.337016 history loss 6.766982 rank 3
+2023-03-01 15:42:30,373 DEBUG CV Batch 52/1900 loss 50.036438 loss_att 39.276001 loss_ctc 73.500740 loss_rnnt 48.880207 hw_loss 0.337016 history loss 6.766982 rank 1
+2023-03-01 15:42:30,439 DEBUG CV Batch 52/1900 loss 50.036438 loss_att 39.276001 loss_ctc 73.500740 loss_rnnt 48.880207 hw_loss 0.337016 history loss 6.766982 rank 4
+2023-03-01 15:42:30,725 DEBUG CV Batch 52/1900 loss 50.036438 loss_att 39.276001 loss_ctc 73.500740 loss_rnnt 48.880207 hw_loss 0.337016 history loss 6.766982 rank 2
+2023-03-01 15:42:32,156 DEBUG CV Batch 52/1900 loss 50.036438 loss_att 39.276001 loss_ctc 73.500740 loss_rnnt 48.880207 hw_loss 0.337016 history loss 6.766982 rank 6
+2023-03-01 15:42:33,660 DEBUG CV Batch 52/1900 loss 50.036438 loss_att 39.276001 loss_ctc 73.500740 loss_rnnt 48.880207 hw_loss 0.337016 history loss 6.766982 rank 0
+2023-03-01 15:42:35,325 DEBUG CV Batch 52/1900 loss 50.036438 loss_att 39.276001 loss_ctc 73.500740 loss_rnnt 48.880207 hw_loss 0.337016 history loss 6.766982 rank 7
+2023-03-01 15:42:36,292 DEBUG CV Batch 52/1900 loss 50.036438 loss_att 39.276001 loss_ctc 73.500740 loss_rnnt 48.880207 hw_loss 0.337016 history loss 6.766982 rank 5
+2023-03-01 15:42:39,568 DEBUG CV Batch 52/2000 loss 4.439982 loss_att 4.133756 loss_ctc 6.618896 loss_rnnt 4.068539 hw_loss 0.266562 history loss 6.600695 rank 3
+2023-03-01 15:42:41,822 DEBUG CV Batch 52/2000 loss 4.439982 loss_att 4.133756 loss_ctc 6.618896 loss_rnnt 4.068539 hw_loss 0.266562 history loss 6.600695 rank 4
+2023-03-01 15:42:41,979 DEBUG CV Batch 52/2000 loss 4.439982 loss_att 4.133756 loss_ctc 6.618896 loss_rnnt 4.068539 hw_loss 0.266562 history loss 6.600695 rank 1
+2023-03-01 15:42:42,501 DEBUG CV Batch 52/2000 loss 4.439982 loss_att 4.133756 loss_ctc 6.618896 loss_rnnt 4.068539 hw_loss 0.266562 history loss 6.600695 rank 2
+2023-03-01 15:42:43,614 DEBUG CV Batch 52/2000 loss 4.439982 loss_att 4.133756 loss_ctc 6.618896 loss_rnnt 4.068539 hw_loss 0.266562 history loss 6.600695 rank 6
+2023-03-01 15:42:45,283 DEBUG CV Batch 52/2000 loss 4.439982 loss_att 4.133756 loss_ctc 6.618896 loss_rnnt 4.068539 hw_loss 0.266562 history loss 6.600695 rank 0
+2023-03-01 15:42:46,911 DEBUG CV Batch 52/2000 loss 4.439982 loss_att 4.133756 loss_ctc 6.618896 loss_rnnt 4.068539 hw_loss 0.266562 history loss 6.600695 rank 7
+2023-03-01 15:42:48,071 DEBUG CV Batch 52/2000 loss 4.439982 loss_att 4.133756 loss_ctc 6.618896 loss_rnnt 4.068539 hw_loss 0.266562 history loss 6.600695 rank 5
+2023-03-01 15:42:49,775 DEBUG CV Batch 52/2100 loss 5.789835 loss_att 8.963135 loss_ctc 26.098259 loss_rnnt 2.292933 hw_loss 0.289599 history loss 6.589389 rank 3
+2023-03-01 15:42:52,348 DEBUG CV Batch 52/2100 loss 5.789835 loss_att 8.963135 loss_ctc 26.098259 loss_rnnt 2.292933 hw_loss 0.289599 history loss 6.589389 rank 4
+2023-03-01 15:42:52,447 DEBUG CV Batch 52/2100 loss 5.789835 loss_att 8.963135 loss_ctc 26.098259 loss_rnnt 2.292933 hw_loss 0.289599 history loss 6.589389 rank 1
+2023-03-01 15:42:52,819 DEBUG CV Batch 52/2100 loss 5.789835 loss_att 8.963135 loss_ctc 26.098259 loss_rnnt 2.292933 hw_loss 0.289599 history loss 6.589389 rank 2
+2023-03-01 15:42:54,122 DEBUG CV Batch 52/2100 loss 5.789835 loss_att 8.963135 loss_ctc 26.098259 loss_rnnt 2.292933 hw_loss 0.289599 history loss 6.589389 rank 6
+2023-03-01 15:42:55,805 DEBUG CV Batch 52/2100 loss 5.789835 loss_att 8.963135 loss_ctc 26.098259 loss_rnnt 2.292933 hw_loss 0.289599 history loss 6.589389 rank 0
+2023-03-01 15:42:58,039 DEBUG CV Batch 52/2100 loss 5.789835 loss_att 8.963135 loss_ctc 26.098259 loss_rnnt 2.292933 hw_loss 0.289599 history loss 6.589389 rank 7
+2023-03-01 15:42:58,703 DEBUG CV Batch 52/2100 loss 5.789835 loss_att 8.963135 loss_ctc 26.098259 loss_rnnt 2.292933 hw_loss 0.289599 history loss 6.589389 rank 5
+2023-03-01 15:43:00,368 DEBUG CV Batch 52/2200 loss 0.909309 loss_att 1.671238 loss_ctc 0.406805 loss_rnnt 0.784970 hw_loss 0.073039 history loss 6.338416 rank 3
+2023-03-01 15:43:03,240 DEBUG CV Batch 52/2200 loss 0.909309 loss_att 1.671238 loss_ctc 0.406805 loss_rnnt 0.784970 hw_loss 0.073039 history loss 6.338416 rank 1
+2023-03-01 15:43:03,322 DEBUG CV Batch 52/2200 loss 0.909309 loss_att 1.671238 loss_ctc 0.406805 loss_rnnt 0.784970 hw_loss 0.073039 history loss 6.338416 rank 4
+2023-03-01 15:43:03,403 DEBUG CV Batch 52/2200 loss 0.909309 loss_att 1.671238 loss_ctc 0.406805 loss_rnnt 0.784970 hw_loss 0.073039 history loss 6.338416 rank 2
+2023-03-01 15:43:05,055 DEBUG CV Batch 52/2200 loss 0.909309 loss_att 1.671238 loss_ctc 0.406805 loss_rnnt 0.784970 hw_loss 0.073039 history loss 6.338416 rank 6
+2023-03-01 15:43:06,613 DEBUG CV Batch 52/2200 loss 0.909309 loss_att 1.671238 loss_ctc 0.406805 loss_rnnt 0.784970 hw_loss 0.073039 history loss 6.338416 rank 0
+2023-03-01 15:43:08,822 DEBUG CV Batch 52/2200 loss 0.909309 loss_att 1.671238 loss_ctc 0.406805 loss_rnnt 0.784970 hw_loss 0.073039 history loss 6.338416 rank 7
+2023-03-01 15:43:09,918 DEBUG CV Batch 52/2200 loss 0.909309 loss_att 1.671238 loss_ctc 0.406805 loss_rnnt 0.784970 hw_loss 0.073039 history loss 6.338416 rank 5
+2023-03-01 15:43:13,198 DEBUG CV Batch 52/2300 loss 1.647077 loss_att 2.081808 loss_ctc 3.828764 loss_rnnt 1.035291 hw_loss 0.438652 history loss 6.322822 rank 3
+2023-03-01 15:43:16,028 DEBUG CV Batch 52/2300 loss 1.647077 loss_att 2.081808 loss_ctc 3.828764 loss_rnnt 1.035291 hw_loss 0.438652 history loss 6.322822 rank 1
+2023-03-01 15:43:16,149 DEBUG CV Batch 52/2300 loss 1.647077 loss_att 2.081808 loss_ctc 3.828764 loss_rnnt 1.035291 hw_loss 0.438652 history loss 6.322822 rank 2
+2023-03-01 15:43:16,325 DEBUG CV Batch 52/2300 loss 1.647077 loss_att 2.081808 loss_ctc 3.828764 loss_rnnt 1.035291 hw_loss 0.438652 history loss 6.322822 rank 4
+2023-03-01 15:43:17,873 DEBUG CV Batch 52/2300 loss 1.647077 loss_att 2.081808 loss_ctc 3.828764 loss_rnnt 1.035291 hw_loss 0.438652 history loss 6.322822 rank 6
+2023-03-01 15:43:19,708 DEBUG CV Batch 52/2300 loss 1.647077 loss_att 2.081808 loss_ctc 3.828764 loss_rnnt 1.035291 hw_loss 0.438652 history loss 6.322822 rank 0
+2023-03-01 15:43:21,636 DEBUG CV Batch 52/2300 loss 1.647077 loss_att 2.081808 loss_ctc 3.828764 loss_rnnt 1.035291 hw_loss 0.438652 history loss 6.322822 rank 7
+2023-03-01 15:43:22,068 DEBUG CV Batch 52/2400 loss 5.962316 loss_att 4.892309 loss_ctc 6.956665 loss_rnnt 5.868462 hw_loss 0.328642 history loss 6.153529 rank 3
+2023-03-01 15:43:22,718 DEBUG CV Batch 52/2300 loss 1.647077 loss_att 2.081808 loss_ctc 3.828764 loss_rnnt 1.035291 hw_loss 0.438652 history loss 6.322822 rank 5
+2023-03-01 15:43:24,764 DEBUG CV Batch 52/2400 loss 5.962316 loss_att 4.892309 loss_ctc 6.956665 loss_rnnt 5.868462 hw_loss 0.328642 history loss 6.153529 rank 1
+2023-03-01 15:43:25,283 DEBUG CV Batch 52/2400 loss 5.962316 loss_att 4.892309 loss_ctc 6.956665 loss_rnnt 5.868462 hw_loss 0.328642 history loss 6.153529 rank 2
+2023-03-01 15:43:25,327 DEBUG CV Batch 52/2400 loss 5.962316 loss_att 4.892309 loss_ctc 6.956665 loss_rnnt 5.868462 hw_loss 0.328642 history loss 6.153529 rank 4
+2023-03-01 15:43:27,113 DEBUG CV Batch 52/2400 loss 5.962316 loss_att 4.892309 loss_ctc 6.956665 loss_rnnt 5.868462 hw_loss 0.328642 history loss 6.153529 rank 6
+2023-03-01 15:43:28,901 DEBUG CV Batch 52/2400 loss 5.962316 loss_att 4.892309 loss_ctc 6.956665 loss_rnnt 5.868462 hw_loss 0.328642 history loss 6.153529 rank 0
+2023-03-01 15:43:30,847 DEBUG CV Batch 52/2400 loss 5.962316 loss_att 4.892309 loss_ctc 6.956665 loss_rnnt 5.868462 hw_loss 0.328642 history loss 6.153529 rank 7
+2023-03-01 15:43:32,123 DEBUG CV Batch 52/2400 loss 5.962316 loss_att 4.892309 loss_ctc 6.956665 loss_rnnt 5.868462 hw_loss 0.328642 history loss 6.153529 rank 5
+2023-03-01 15:43:37,059 DEBUG CV Batch 52/2500 loss 14.190636 loss_att 59.582314 loss_ctc 15.565724 loss_rnnt 4.807996 hw_loss 0.226799 history loss 6.176789 rank 3
+2023-03-01 15:43:39,805 DEBUG CV Batch 52/2500 loss 14.190636 loss_att 59.582314 loss_ctc 15.565724 loss_rnnt 4.807996 hw_loss 0.226799 history loss 6.176789 rank 1
+2023-03-01 15:43:40,463 DEBUG CV Batch 52/2500 loss 14.190636 loss_att 59.582314 loss_ctc 15.565724 loss_rnnt 4.807996 hw_loss 0.226799 history loss 6.176789 rank 2
+2023-03-01 15:43:40,562 DEBUG CV Batch 52/2500 loss 14.190636 loss_att 59.582314 loss_ctc 15.565724 loss_rnnt 4.807996 hw_loss 0.226799 history loss 6.176789 rank 4
+2023-03-01 15:43:42,129 DEBUG CV Batch 52/2500 loss 14.190636 loss_att 59.582314 loss_ctc 15.565724 loss_rnnt 4.807996 hw_loss 0.226799 history loss 6.176789 rank 6
+2023-03-01 15:43:44,058 DEBUG CV Batch 52/2500 loss 14.190636 loss_att 59.582314 loss_ctc 15.565724 loss_rnnt 4.807996 hw_loss 0.226799 history loss 6.176789 rank 0
+2023-03-01 15:43:45,626 DEBUG CV Batch 52/2600 loss 0.461842 loss_att 1.741568 loss_ctc 0.196198 loss_rnnt 0.094226 hw_loss 0.275795 history loss 6.039225 rank 3
+2023-03-01 15:43:46,062 DEBUG CV Batch 52/2500 loss 14.190636 loss_att 59.582314 loss_ctc 15.565724 loss_rnnt 4.807996 hw_loss 0.226799 history loss 6.176789 rank 7
+2023-03-01 15:43:47,415 DEBUG CV Batch 52/2500 loss 14.190636 loss_att 59.582314 loss_ctc 15.565724 loss_rnnt 4.807996 hw_loss 0.226799 history loss 6.176789 rank 5
+2023-03-01 15:43:48,612 DEBUG CV Batch 52/2600 loss 0.461842 loss_att 1.741568 loss_ctc 0.196198 loss_rnnt 0.094226 hw_loss 0.275795 history loss 6.039225 rank 1
+2023-03-01 15:43:49,385 DEBUG CV Batch 52/2600 loss 0.461842 loss_att 1.741568 loss_ctc 0.196198 loss_rnnt 0.094226 hw_loss 0.275795 history loss 6.039225 rank 2
+2023-03-01 15:43:49,548 DEBUG CV Batch 52/2600 loss 0.461842 loss_att 1.741568 loss_ctc 0.196198 loss_rnnt 0.094226 hw_loss 0.275795 history loss 6.039225 rank 4
+2023-03-01 15:43:51,299 DEBUG CV Batch 52/2600 loss 0.461842 loss_att 1.741568 loss_ctc 0.196198 loss_rnnt 0.094226 hw_loss 0.275795 history loss 6.039225 rank 6
+2023-03-01 15:43:52,829 DEBUG CV Batch 52/2600 loss 0.461842 loss_att 1.741568 loss_ctc 0.196198 loss_rnnt 0.094226 hw_loss 0.275795 history loss 6.039225 rank 0
+2023-03-01 15:43:55,240 DEBUG CV Batch 52/2600 loss 0.461842 loss_att 1.741568 loss_ctc 0.196198 loss_rnnt 0.094226 hw_loss 0.275795 history loss 6.039225 rank 7
+2023-03-01 15:43:56,751 DEBUG CV Batch 52/2600 loss 0.461842 loss_att 1.741568 loss_ctc 0.196198 loss_rnnt 0.094226 hw_loss 0.275795 history loss 6.039225 rank 5
+2023-03-01 15:43:59,418 DEBUG CV Batch 52/2700 loss 11.086535 loss_att 8.274100 loss_ctc 9.218177 loss_rnnt 11.693128 hw_loss 0.384389 history loss 6.017113 rank 3
+2023-03-01 15:44:02,423 DEBUG CV Batch 52/2700 loss 11.086535 loss_att 8.274100 loss_ctc 9.218177 loss_rnnt 11.693128 hw_loss 0.384389 history loss 6.017113 rank 1
+2023-03-01 15:44:03,149 DEBUG CV Batch 52/2700 loss 11.086535 loss_att 8.274100 loss_ctc 9.218177 loss_rnnt 11.693128 hw_loss 0.384389 history loss 6.017113 rank 2
+2023-03-01 15:44:03,453 DEBUG CV Batch 52/2700 loss 11.086535 loss_att 8.274100 loss_ctc 9.218177 loss_rnnt 11.693128 hw_loss 0.384389 history loss 6.017113 rank 4
+2023-03-01 15:44:04,801 DEBUG CV Batch 52/2700 loss 11.086535 loss_att 8.274100 loss_ctc 9.218177 loss_rnnt 11.693128 hw_loss 0.384389 history loss 6.017113 rank 6
+2023-03-01 15:44:06,577 DEBUG CV Batch 52/2700 loss 11.086535 loss_att 8.274100 loss_ctc 9.218177 loss_rnnt 11.693128 hw_loss 0.384389 history loss 6.017113 rank 0
+2023-03-01 15:44:08,272 DEBUG CV Batch 52/2800 loss 4.031676 loss_att 3.997941 loss_ctc 7.756408 loss_rnnt 3.425206 hw_loss 0.218598 history loss 5.944213 rank 3
+2023-03-01 15:44:09,554 DEBUG CV Batch 52/2700 loss 11.086535 loss_att 8.274100 loss_ctc 9.218177 loss_rnnt 11.693128 hw_loss 0.384388 history loss 6.017113 rank 7
+2023-03-01 15:44:10,608 DEBUG CV Batch 52/2700 loss 11.086535 loss_att 8.274100 loss_ctc 9.218177 loss_rnnt 11.693128 hw_loss 0.384389 history loss 6.017113 rank 5
+2023-03-01 15:44:11,175 DEBUG CV Batch 52/2800 loss 4.031676 loss_att 3.997941 loss_ctc 7.756408 loss_rnnt 3.425206 hw_loss 0.218598 history loss 5.944213 rank 1
+2023-03-01 15:44:12,439 DEBUG CV Batch 52/2800 loss 4.031676 loss_att 3.997941 loss_ctc 7.756408 loss_rnnt 3.425206 hw_loss 0.218598 history loss 5.944213 rank 2
+2023-03-01 15:44:12,606 DEBUG CV Batch 52/2800 loss 4.031676 loss_att 3.997941 loss_ctc 7.756408 loss_rnnt 3.425206 hw_loss 0.218598 history loss 5.944213 rank 4
+2023-03-01 15:44:14,075 DEBUG CV Batch 52/2800 loss 4.031676 loss_att 3.997941 loss_ctc 7.756408 loss_rnnt 3.425206 hw_loss 0.218598 history loss 5.944213 rank 6
+2023-03-01 15:44:15,771 DEBUG CV Batch 52/2800 loss 4.031676 loss_att 3.997941 loss_ctc 7.756408 loss_rnnt 3.425206 hw_loss 0.218598 history loss 5.944213 rank 0
+2023-03-01 15:44:18,796 DEBUG CV Batch 52/2800 loss 4.031676 loss_att 3.997941 loss_ctc 7.756408 loss_rnnt 3.425206 hw_loss 0.218598 history loss 5.944213 rank 7
+2023-03-01 15:44:18,988 DEBUG CV Batch 52/2900 loss 2.311958 loss_att 3.478763 loss_ctc 6.240360 loss_rnnt 1.473387 hw_loss 0.152668 history loss 5.884611 rank 3
+2023-03-01 15:44:19,801 DEBUG CV Batch 52/2800 loss 4.031676 loss_att 3.997941 loss_ctc 7.756408 loss_rnnt 3.425206 hw_loss 0.218598 history loss 5.944213 rank 5
+2023-03-01 15:44:22,250 DEBUG CV Batch 52/2900 loss 2.311958 loss_att 3.478763 loss_ctc 6.240360 loss_rnnt 1.473387 hw_loss 0.152668 history loss 5.884611 rank 1
+2023-03-01 15:44:23,364 DEBUG CV Batch 52/2900 loss 2.311958 loss_att 3.478763 loss_ctc 6.240360 loss_rnnt 1.473387 hw_loss 0.152668 history loss 5.884611 rank 4
+2023-03-01 15:44:23,471 DEBUG CV Batch 52/2900 loss 2.311958 loss_att 3.478763 loss_ctc 6.240360 loss_rnnt 1.473387 hw_loss 0.152668 history loss 5.884611 rank 2
+2023-03-01 15:44:25,005 DEBUG CV Batch 52/2900 loss 2.311958 loss_att 3.478763 loss_ctc 6.240360 loss_rnnt 1.473387 hw_loss 0.152668 history loss 5.884611 rank 6
+2023-03-01 15:44:26,690 DEBUG CV Batch 52/2900 loss 2.311958 loss_att 3.478763 loss_ctc 6.240360 loss_rnnt 1.473387 hw_loss 0.152668 history loss 5.884611 rank 0
+2023-03-01 15:44:28,025 DEBUG CV Batch 52/3000 loss 23.761997 loss_att 19.087603 loss_ctc 31.206839 loss_rnnt 23.704147 hw_loss 0.000159 history loss 5.895876 rank 3
+2023-03-01 15:44:29,690 DEBUG CV Batch 52/2900 loss 2.311958 loss_att 3.478763 loss_ctc 6.240360 loss_rnnt 1.473387 hw_loss 0.152668 history loss 5.884611 rank 7
+2023-03-01 15:44:30,530 DEBUG CV Batch 52/2900 loss 2.311958 loss_att 3.478763 loss_ctc 6.240360 loss_rnnt 1.473387 hw_loss 0.152668 history loss 5.884611 rank 5
+2023-03-01 15:44:31,678 DEBUG CV Batch 52/3000 loss 23.761997 loss_att 19.087603 loss_ctc 31.206839 loss_rnnt 23.704147 hw_loss 0.000159 history loss 5.895876 rank 1
+2023-03-01 15:44:32,892 DEBUG CV Batch 52/3000 loss 23.761997 loss_att 19.087603 loss_ctc 31.206839 loss_rnnt 23.704147 hw_loss 0.000159 history loss 5.895876 rank 4
+2023-03-01 15:44:32,957 DEBUG CV Batch 52/3000 loss 23.761997 loss_att 19.087603 loss_ctc 31.206839 loss_rnnt 23.704147 hw_loss 0.000159 history loss 5.895876 rank 2
+2023-03-01 15:44:34,378 DEBUG CV Batch 52/3000 loss 23.761997 loss_att 19.087603 loss_ctc 31.206839 loss_rnnt 23.704147 hw_loss 0.000159 history loss 5.895876 rank 6
+2023-03-01 15:44:36,247 DEBUG CV Batch 52/3000 loss 23.761997 loss_att 19.087603 loss_ctc 31.206839 loss_rnnt 23.704147 hw_loss 0.000159 history loss 5.895876 rank 0
+2023-03-01 15:44:38,662 DEBUG CV Batch 52/3100 loss 11.933313 loss_att 11.785170 loss_ctc 14.601303 loss_rnnt 11.390613 hw_loss 0.406121 history loss 6.005900 rank 3
+2023-03-01 15:44:39,328 DEBUG CV Batch 52/3000 loss 23.761997 loss_att 19.087603 loss_ctc 31.206839 loss_rnnt 23.704147 hw_loss 0.000159 history loss 5.895876 rank 7
+2023-03-01 15:44:40,535 DEBUG CV Batch 52/3000 loss 23.761997 loss_att 19.087603 loss_ctc 31.206839 loss_rnnt 23.704147 hw_loss 0.000159 history loss 5.895876 rank 5
+2023-03-01 15:44:42,675 DEBUG CV Batch 52/3100 loss 11.933313 loss_att 11.785170 loss_ctc 14.601303 loss_rnnt 11.390613 hw_loss 0.406121 history loss 6.005900 rank 1
+2023-03-01 15:44:43,765 DEBUG CV Batch 52/3100 loss 11.933313 loss_att 11.785170 loss_ctc 14.601303 loss_rnnt 11.390613 hw_loss 0.406121 history loss 6.005900 rank 4
+2023-03-01 15:44:43,960 DEBUG CV Batch 52/3100 loss 11.933313 loss_att 11.785170 loss_ctc 14.601303 loss_rnnt 11.390613 hw_loss 0.406121 history loss 6.005900 rank 2
+2023-03-01 15:44:45,114 DEBUG CV Batch 52/3100 loss 11.933313 loss_att 11.785170 loss_ctc 14.601303 loss_rnnt 11.390613 hw_loss 0.406121 history loss 6.005900 rank 6
+2023-03-01 15:44:46,964 DEBUG CV Batch 52/3100 loss 11.933313 loss_att 11.785170 loss_ctc 14.601303 loss_rnnt 11.390613 hw_loss 0.406121 history loss 6.005900 rank 0
+2023-03-01 15:44:48,887 DEBUG CV Batch 52/3200 loss 37.466965 loss_att 32.872318 loss_ctc 55.534435 loss_rnnt 35.883011 hw_loss 0.176043 history loss 6.215944 rank 3
+2023-03-01 15:44:50,420 DEBUG CV Batch 52/3100 loss 11.933313 loss_att 11.785170 loss_ctc 14.601303 loss_rnnt 11.390613 hw_loss 0.406121 history loss 6.005900 rank 7
+2023-03-01 15:44:51,895 DEBUG CV Batch 52/3100 loss 11.933313 loss_att 11.785170 loss_ctc 14.601303 loss_rnnt 11.390613 hw_loss 0.406121 history loss 6.005900 rank 5
+2023-03-01 15:44:52,989 DEBUG CV Batch 52/3200 loss 37.466965 loss_att 32.872318 loss_ctc 55.534435 loss_rnnt 35.883011 hw_loss 0.176043 history loss 6.215944 rank 1
+2023-03-01 15:44:54,091 DEBUG CV Batch 52/3200 loss 37.466965 loss_att 32.872318 loss_ctc 55.534435 loss_rnnt 35.883011 hw_loss 0.176043 history loss 6.215944 rank 4
+2023-03-01 15:44:54,341 DEBUG CV Batch 52/3200 loss 37.466965 loss_att 32.872318 loss_ctc 55.534435 loss_rnnt 35.883011 hw_loss 0.176043 history loss 6.215944 rank 2
+2023-03-01 15:44:55,320 DEBUG CV Batch 52/3200 loss 37.466965 loss_att 32.872318 loss_ctc 55.534435 loss_rnnt 35.883011 hw_loss 0.176043 history loss 6.215944 rank 6
+2023-03-01 15:44:57,319 DEBUG CV Batch 52/3200 loss 37.466965 loss_att 32.872318 loss_ctc 55.534435 loss_rnnt 35.883011 hw_loss 0.176043 history loss 6.215944 rank 0
+2023-03-01 15:44:58,698 DEBUG CV Batch 52/3300 loss 0.857118 loss_att 1.508030 loss_ctc 2.276050 loss_rnnt 0.335054 hw_loss 0.380047 history loss 6.189957 rank 3
+2023-03-01 15:45:01,254 DEBUG CV Batch 52/3200 loss 37.466965 loss_att 32.872318 loss_ctc 55.534435 loss_rnnt 35.883011 hw_loss 0.176043 history loss 6.215944 rank 7
+2023-03-01 15:45:02,294 DEBUG CV Batch 52/3200 loss 37.466965 loss_att 32.872318 loss_ctc 55.534435 loss_rnnt 35.883011 hw_loss 0.176043 history loss 6.215944 rank 5
+2023-03-01 15:45:02,927 DEBUG CV Batch 52/3300 loss 0.857118 loss_att 1.508030 loss_ctc 2.276050 loss_rnnt 0.335054 hw_loss 0.380047 history loss 6.189957 rank 1
+2023-03-01 15:45:04,157 DEBUG CV Batch 52/3300 loss 0.857118 loss_att 1.508030 loss_ctc 2.276050 loss_rnnt 0.335054 hw_loss 0.380047 history loss 6.189957 rank 4
+2023-03-01 15:45:04,601 DEBUG CV Batch 52/3300 loss 0.857118 loss_att 1.508030 loss_ctc 2.276050 loss_rnnt 0.335054 hw_loss 0.380047 history loss 6.189957 rank 2
+2023-03-01 15:45:05,387 DEBUG CV Batch 52/3300 loss 0.857118 loss_att 1.508030 loss_ctc 2.276050 loss_rnnt 0.335054 hw_loss 0.380047 history loss 6.189957 rank 6
+2023-03-01 15:45:07,444 DEBUG CV Batch 52/3300 loss 0.857118 loss_att 1.508030 loss_ctc 2.276050 loss_rnnt 0.335054 hw_loss 0.380047 history loss 6.189957 rank 0
+2023-03-01 15:45:10,406 DEBUG CV Batch 52/3400 loss 2.260274 loss_att 2.053066 loss_ctc 1.432971 loss_rnnt 2.184508 hw_loss 0.426591 history loss 6.225036 rank 3
+2023-03-01 15:45:11,406 DEBUG CV Batch 52/3300 loss 0.857118 loss_att 1.508030 loss_ctc 2.276050 loss_rnnt 0.335054 hw_loss 0.380047 history loss 6.189957 rank 7
+2023-03-01 15:45:12,464 DEBUG CV Batch 52/3300 loss 0.857118 loss_att 1.508030 loss_ctc 2.276050 loss_rnnt 0.335054 hw_loss 0.380047 history loss 6.189957 rank 5
+2023-03-01 15:45:14,814 DEBUG CV Batch 52/3400 loss 2.260274 loss_att 2.053066 loss_ctc 1.432971 loss_rnnt 2.184508 hw_loss 0.426591 history loss 6.225036 rank 1
+2023-03-01 15:45:16,215 DEBUG CV Batch 52/3400 loss 2.260274 loss_att 2.053066 loss_ctc 1.432971 loss_rnnt 2.184508 hw_loss 0.426591 history loss 6.225036 rank 4
+2023-03-01 15:45:16,380 DEBUG CV Batch 52/3400 loss 2.260274 loss_att 2.053066 loss_ctc 1.432971 loss_rnnt 2.184508 hw_loss 0.426591 history loss 6.225036 rank 2
+2023-03-01 15:45:17,255 DEBUG CV Batch 52/3400 loss 2.260274 loss_att 2.053066 loss_ctc 1.432971 loss_rnnt 2.184508 hw_loss 0.426591 history loss 6.225036 rank 6
+2023-03-01 15:45:19,230 DEBUG CV Batch 52/3500 loss 29.275862 loss_att 24.399578 loss_ctc 39.951485 loss_rnnt 28.691862 hw_loss 0.254701 history loss 6.380910 rank 3
+2023-03-01 15:45:19,455 DEBUG CV Batch 52/3400 loss 2.260274 loss_att 2.053066 loss_ctc 1.432971 loss_rnnt 2.184508 hw_loss 0.426591 history loss 6.225036 rank 0
+2023-03-01 15:45:23,853 DEBUG CV Batch 52/3500 loss 29.275862 loss_att 24.399578 loss_ctc 39.951485 loss_rnnt 28.691862 hw_loss 0.254701 history loss 6.380910 rank 1
+2023-03-01 15:45:24,209 DEBUG CV Batch 52/3400 loss 2.260274 loss_att 2.053066 loss_ctc 1.432971 loss_rnnt 2.184508 hw_loss 0.426591 history loss 6.225036 rank 7
+2023-03-01 15:45:24,213 DEBUG CV Batch 52/3400 loss 2.260274 loss_att 2.053066 loss_ctc 1.432971 loss_rnnt 2.184508 hw_loss 0.426591 history loss 6.225036 rank 5
+2023-03-01 15:45:25,328 DEBUG CV Batch 52/3500 loss 29.275862 loss_att 24.399578 loss_ctc 39.951485 loss_rnnt 28.691862 hw_loss 0.254701 history loss 6.380910 rank 4
+2023-03-01 15:45:25,538 DEBUG CV Batch 52/3500 loss 29.275862 loss_att 24.399578 loss_ctc 39.951485 loss_rnnt 28.691862 hw_loss 0.254701 history loss 6.380910 rank 2
+2023-03-01 15:45:26,265 DEBUG CV Batch 52/3500 loss 29.275862 loss_att 24.399578 loss_ctc 39.951485 loss_rnnt 28.691862 hw_loss 0.254701 history loss 6.380910 rank 6
+2023-03-01 15:45:28,719 DEBUG CV Batch 52/3500 loss 29.275862 loss_att 24.399578 loss_ctc 39.951485 loss_rnnt 28.691862 hw_loss 0.254701 history loss 6.380910 rank 0
+2023-03-01 15:45:30,211 DEBUG CV Batch 52/3600 loss 9.881544 loss_att 8.896446 loss_ctc 11.126760 loss_rnnt 9.867005 hw_loss 0.085367 history loss 6.501928 rank 3
+2023-03-01 15:45:33,159 DEBUG CV Batch 52/3500 loss 29.275862 loss_att 24.399578 loss_ctc 39.951485 loss_rnnt 28.691862 hw_loss 0.254701 history loss 6.380910 rank 5
+2023-03-01 15:45:33,333 DEBUG CV Batch 52/3500 loss 29.275862 loss_att 24.399578 loss_ctc 39.951485 loss_rnnt 28.691862 hw_loss 0.254701 history loss 6.380910 rank 7
+2023-03-01 15:45:34,982 DEBUG CV Batch 52/3600 loss 9.881544 loss_att 8.896446 loss_ctc 11.126760 loss_rnnt 9.867005 hw_loss 0.085367 history loss 6.501928 rank 1
+2023-03-01 15:45:36,491 DEBUG CV Batch 52/3600 loss 9.881544 loss_att 8.896446 loss_ctc 11.126760 loss_rnnt 9.867005 hw_loss 0.085367 history loss 6.501928 rank 4
+2023-03-01 15:45:36,902 DEBUG CV Batch 52/3600 loss 9.881544 loss_att 8.896446 loss_ctc 11.126760 loss_rnnt 9.867005 hw_loss 0.085367 history loss 6.501928 rank 2
+2023-03-01 15:45:37,541 DEBUG CV Batch 52/3600 loss 9.881544 loss_att 8.896446 loss_ctc 11.126760 loss_rnnt 9.867005 hw_loss 0.085367 history loss 6.501928 rank 6
+2023-03-01 15:45:39,271 DEBUG CV Batch 52/3700 loss 1.830796 loss_att 6.412537 loss_ctc 3.095884 loss_rnnt 0.705006 hw_loss 0.076433 history loss 6.665521 rank 3
+2023-03-01 15:45:39,984 DEBUG CV Batch 52/3600 loss 9.881544 loss_att 8.896446 loss_ctc 11.126760 loss_rnnt 9.867005 hw_loss 0.085367 history loss 6.501928 rank 0
+2023-03-01 15:45:44,346 DEBUG CV Batch 52/3600 loss 9.881544 loss_att 8.896446 loss_ctc 11.126760 loss_rnnt 9.867005 hw_loss 0.085367 history loss 6.501928 rank 5
+2023-03-01 15:45:44,527 DEBUG CV Batch 52/3700 loss 1.830796 loss_att 6.412537 loss_ctc 3.095884 loss_rnnt 0.705006 hw_loss 0.076433 history loss 6.665521 rank 1
+2023-03-01 15:45:44,563 DEBUG CV Batch 52/3600 loss 9.881544 loss_att 8.896446 loss_ctc 11.126760 loss_rnnt 9.867005 hw_loss 0.085367 history loss 6.501928 rank 7
+2023-03-01 15:45:46,008 DEBUG CV Batch 52/3700 loss 1.830796 loss_att 6.412537 loss_ctc 3.095884 loss_rnnt 0.705006 hw_loss 0.076433 history loss 6.665521 rank 4
+2023-03-01 15:45:46,194 DEBUG CV Batch 52/3700 loss 1.830796 loss_att 6.412537 loss_ctc 3.095884 loss_rnnt 0.705006 hw_loss 0.076433 history loss 6.665521 rank 2
+2023-03-01 15:45:47,054 DEBUG CV Batch 52/3700 loss 1.830796 loss_att 6.412537 loss_ctc 3.095884 loss_rnnt 0.705006 hw_loss 0.076433 history loss 6.665521 rank 6
+2023-03-01 15:45:49,377 DEBUG CV Batch 52/3800 loss 13.404437 loss_att 12.640292 loss_ctc 26.400114 loss_rnnt 11.679465 hw_loss 0.271958 history loss 6.711979 rank 3
+2023-03-01 15:45:49,569 DEBUG CV Batch 52/3700 loss 1.830796 loss_att 6.412537 loss_ctc 3.095884 loss_rnnt 0.705006 hw_loss 0.076433 history loss 6.665521 rank 0
+2023-03-01 15:45:53,844 DEBUG CV Batch 52/3700 loss 1.830796 loss_att 6.412537 loss_ctc 3.095884 loss_rnnt 0.705006 hw_loss 0.076433 history loss 6.665521 rank 7
+2023-03-01 15:45:53,921 DEBUG CV Batch 52/3700 loss 1.830796 loss_att 6.412537 loss_ctc 3.095884 loss_rnnt 0.705006 hw_loss 0.076433 history loss 6.665521 rank 5
+2023-03-01 15:45:54,766 DEBUG CV Batch 52/3800 loss 13.404437 loss_att 12.640292 loss_ctc 26.400114 loss_rnnt 11.679465 hw_loss 0.271958 history loss 6.711979 rank 1
+2023-03-01 15:45:56,346 DEBUG CV Batch 52/3800 loss 13.404437 loss_att 12.640292 loss_ctc 26.400114 loss_rnnt 11.679465 hw_loss 0.271958 history loss 6.711979 rank 4
+2023-03-01 15:45:56,679 DEBUG CV Batch 52/3800 loss 13.404437 loss_att 12.640292 loss_ctc 26.400114 loss_rnnt 11.679465 hw_loss 0.271958 history loss 6.711979 rank 2
+2023-03-01 15:45:57,566 DEBUG CV Batch 52/3800 loss 13.404437 loss_att 12.640292 loss_ctc 26.400114 loss_rnnt 11.679465 hw_loss 0.271958 history loss 6.711979 rank 6
+2023-03-01 15:45:59,736 DEBUG CV Batch 52/3800 loss 13.404437 loss_att 12.640292 loss_ctc 26.400114 loss_rnnt 11.679465 hw_loss 0.271958 history loss 6.711979 rank 0
+2023-03-01 15:46:00,977 DEBUG CV Batch 52/3900 loss 3.676897 loss_att 3.516104 loss_ctc 6.318099 loss_rnnt 3.168581 hw_loss 0.353089 history loss 6.734111 rank 3
+2023-03-01 15:46:04,007 DEBUG CV Batch 52/3800 loss 13.404437 loss_att 12.640292 loss_ctc 26.400114 loss_rnnt 11.679465 hw_loss 0.271958 history loss 6.711979 rank 7
+2023-03-01 15:46:04,465 DEBUG CV Batch 52/3800 loss 13.404437 loss_att 12.640292 loss_ctc 26.400114 loss_rnnt 11.679465 hw_loss 0.271958 history loss 6.711979 rank 5
+2023-03-01 15:46:06,597 DEBUG CV Batch 52/3900 loss 3.676897 loss_att 3.516104 loss_ctc 6.318099 loss_rnnt 3.168581 hw_loss 0.353089 history loss 6.734111 rank 1
+2023-03-01 15:46:08,137 DEBUG CV Batch 52/3900 loss 3.676897 loss_att 3.516104 loss_ctc 6.318099 loss_rnnt 3.168581 hw_loss 0.353089 history loss 6.734111 rank 4
+2023-03-01 15:46:08,513 DEBUG CV Batch 52/3900 loss 3.676897 loss_att 3.516104 loss_ctc 6.318099 loss_rnnt 3.168581 hw_loss 0.353089 history loss 6.734111 rank 2
+2023-03-01 15:46:09,289 DEBUG CV Batch 52/3900 loss 3.676897 loss_att 3.516104 loss_ctc 6.318099 loss_rnnt 3.168581 hw_loss 0.353089 history loss 6.734111 rank 6
+2023-03-01 15:46:09,885 DEBUG CV Batch 52/4000 loss 6.243008 loss_att 12.991899 loss_ctc 19.807566 loss_rnnt 2.881067 hw_loss 0.381665 history loss 6.728219 rank 3
+2023-03-01 15:46:11,191 DEBUG CV Batch 52/3900 loss 3.676897 loss_att 3.516104 loss_ctc 6.318099 loss_rnnt 3.168581 hw_loss 0.353089 history loss 6.734111 rank 0
+2023-03-01 15:46:15,524 DEBUG CV Batch 52/3900 loss 3.676897 loss_att 3.516104 loss_ctc 6.318099 loss_rnnt 3.168581 hw_loss 0.353089 history loss 6.734111 rank 7
+2023-03-01 15:46:15,723 DEBUG CV Batch 52/4000 loss 6.243008 loss_att 12.991899 loss_ctc 19.807566 loss_rnnt 2.881067 hw_loss 0.381665 history loss 6.728219 rank 1
+2023-03-01 15:46:16,377 DEBUG CV Batch 52/3900 loss 3.676897 loss_att 3.516104 loss_ctc 6.318099 loss_rnnt 3.168581 hw_loss 0.353089 history loss 6.734111 rank 5
+2023-03-01 15:46:17,057 DEBUG CV Batch 52/4000 loss 6.243008 loss_att 12.991899 loss_ctc 19.807566 loss_rnnt 2.881067 hw_loss 0.381665 history loss 6.728219 rank 4
+2023-03-01 15:46:17,681 DEBUG CV Batch 52/4000 loss 6.243008 loss_att 12.991899 loss_ctc 19.807566 loss_rnnt 2.881067 hw_loss 0.381665 history loss 6.728219 rank 2
+2023-03-01 15:46:18,549 DEBUG CV Batch 52/4000 loss 6.243008 loss_att 12.991899 loss_ctc 19.807566 loss_rnnt 2.881067 hw_loss 0.381665 history loss 6.728219 rank 6
+2023-03-01 15:46:20,177 DEBUG CV Batch 52/4000 loss 6.243008 loss_att 12.991899 loss_ctc 19.807566 loss_rnnt 2.881067 hw_loss 0.381665 history loss 6.728219 rank 0
+2023-03-01 15:46:21,508 DEBUG CV Batch 52/4100 loss 4.043947 loss_att 3.700917 loss_ctc 4.287853 loss_rnnt 3.933939 hw_loss 0.273926 history loss 6.658562 rank 3
+2023-03-01 15:46:24,559 DEBUG CV Batch 52/4000 loss 6.243008 loss_att 12.991899 loss_ctc 19.807566 loss_rnnt 2.881067 hw_loss 0.381665 history loss 6.728219 rank 7
+2023-03-01 15:46:25,705 DEBUG CV Batch 52/4000 loss 6.243008 loss_att 12.991899 loss_ctc 19.807566 loss_rnnt 2.881067 hw_loss 0.381665 history loss 6.728219 rank 5
+2023-03-01 15:46:27,266 DEBUG CV Batch 52/4100 loss 4.043947 loss_att 3.700917 loss_ctc 4.287853 loss_rnnt 3.933939 hw_loss 0.273926 history loss 6.658562 rank 1
+2023-03-01 15:46:28,575 DEBUG CV Batch 52/4100 loss 4.043947 loss_att 3.700917 loss_ctc 4.287853 loss_rnnt 3.933939 hw_loss 0.273926 history loss 6.658562 rank 4
+2023-03-01 15:46:29,274 DEBUG CV Batch 52/4100 loss 4.043947 loss_att 3.700917 loss_ctc 4.287853 loss_rnnt 3.933939 hw_loss 0.273926 history loss 6.658562 rank 2
+2023-03-01 15:46:30,000 DEBUG CV Batch 52/4100 loss 4.043947 loss_att 3.700917 loss_ctc 4.287853 loss_rnnt 3.933939 hw_loss 0.273926 history loss 6.658562 rank 6
+2023-03-01 15:46:31,197 DEBUG CV Batch 52/4200 loss 4.536892 loss_att 6.810356 loss_ctc 3.999366 loss_rnnt 4.066546 hw_loss 0.163731 history loss 6.653873 rank 3
+2023-03-01 15:46:31,569 DEBUG CV Batch 52/4100 loss 4.043947 loss_att 3.700917 loss_ctc 4.287853 loss_rnnt 3.933939 hw_loss 0.273926 history loss 6.658562 rank 0
+2023-03-01 15:46:35,914 DEBUG CV Batch 52/4100 loss 4.043947 loss_att 3.700917 loss_ctc 4.287853 loss_rnnt 3.933939 hw_loss 0.273926 history loss 6.658562 rank 7
+2023-03-01 15:46:37,245 DEBUG CV Batch 52/4200 loss 4.536892 loss_att 6.810356 loss_ctc 3.999366 loss_rnnt 4.066546 hw_loss 0.163731 history loss 6.653873 rank 1
+2023-03-01 15:46:37,370 DEBUG CV Batch 52/4100 loss 4.043947 loss_att 3.700917 loss_ctc 4.287853 loss_rnnt 3.933939 hw_loss 0.273926 history loss 6.658562 rank 5
+2023-03-01 15:46:38,435 DEBUG CV Batch 52/4200 loss 4.536892 loss_att 6.810356 loss_ctc 3.999366 loss_rnnt 4.066546 hw_loss 0.163731 history loss 6.653873 rank 4
+2023-03-01 15:46:39,178 DEBUG CV Batch 52/4200 loss 4.536892 loss_att 6.810356 loss_ctc 3.999366 loss_rnnt 4.066546 hw_loss 0.163731 history loss 6.653873 rank 2
+2023-03-01 15:46:39,845 DEBUG CV Batch 52/4200 loss 4.536892 loss_att 6.810356 loss_ctc 3.999366 loss_rnnt 4.066546 hw_loss 0.163731 history loss 6.653873 rank 6
+2023-03-01 15:46:41,581 DEBUG CV Batch 52/4200 loss 4.536892 loss_att 6.810356 loss_ctc 3.999366 loss_rnnt 4.066546 hw_loss 0.163731 history loss 6.653873 rank 0
+2023-03-01 15:46:43,248 DEBUG CV Batch 52/4300 loss 9.499353 loss_att 5.041811 loss_ctc 8.487547 loss_rnnt 10.285298 hw_loss 0.450883 history loss 6.583742 rank 3
+2023-03-01 15:46:45,757 DEBUG CV Batch 52/4200 loss 4.536892 loss_att 6.810356 loss_ctc 3.999366 loss_rnnt 4.066546 hw_loss 0.163731 history loss 6.653873 rank 7
+2023-03-01 15:46:47,319 DEBUG CV Batch 52/4200 loss 4.536892 loss_att 6.810356 loss_ctc 3.999366 loss_rnnt 4.066546 hw_loss 0.163731 history loss 6.653873 rank 5
+2023-03-01 15:46:49,073 DEBUG CV Batch 52/4300 loss 9.499353 loss_att 5.041811 loss_ctc 8.487547 loss_rnnt 10.285298 hw_loss 0.450883 history loss 6.583742 rank 1
+2023-03-01 15:46:50,423 DEBUG CV Batch 52/4300 loss 9.499353 loss_att 5.041811 loss_ctc 8.487547 loss_rnnt 10.285298 hw_loss 0.450883 history loss 6.583742 rank 4
+2023-03-01 15:46:51,308 DEBUG CV Batch 52/4300 loss 9.499353 loss_att 5.041811 loss_ctc 8.487547 loss_rnnt 10.285298 hw_loss 0.450883 history loss 6.583742 rank 2
+2023-03-01 15:46:51,898 DEBUG CV Batch 52/4300 loss 9.499353 loss_att 5.041811 loss_ctc 8.487547 loss_rnnt 10.285298 hw_loss 0.450883 history loss 6.583742 rank 6
+2023-03-01 15:46:52,855 DEBUG CV Batch 52/4400 loss 0.662982 loss_att 3.623057 loss_ctc 0.164430 loss_rnnt 0.033461 hw_loss 0.194962 history loss 6.595732 rank 3
+2023-03-01 15:46:54,564 DEBUG CV Batch 52/4300 loss 9.499353 loss_att 5.041811 loss_ctc 8.487547 loss_rnnt 10.285298 hw_loss 0.450883 history loss 6.583742 rank 0
+2023-03-01 15:46:57,960 DEBUG CV Batch 52/4300 loss 9.499353 loss_att 5.041811 loss_ctc 8.487547 loss_rnnt 10.285298 hw_loss 0.450883 history loss 6.583742 rank 7
+2023-03-01 15:46:58,440 DEBUG CV Batch 52/4400 loss 0.662982 loss_att 3.623057 loss_ctc 0.164430 loss_rnnt 0.033461 hw_loss 0.194962 history loss 6.595732 rank 1
+2023-03-01 15:46:59,358 DEBUG CV Batch 52/4300 loss 9.499353 loss_att 5.041811 loss_ctc 8.487547 loss_rnnt 10.285298 hw_loss 0.450883 history loss 6.583742 rank 5
+2023-03-01 15:47:00,091 DEBUG CV Batch 52/4400 loss 0.662982 loss_att 3.623057 loss_ctc 0.164430 loss_rnnt 0.033461 hw_loss 0.194962 history loss 6.595732 rank 4
+2023-03-01 15:47:01,027 DEBUG CV Batch 52/4400 loss 0.662982 loss_att 3.623057 loss_ctc 0.164430 loss_rnnt 0.033461 hw_loss 0.194962 history loss 6.595732 rank 2
+2023-03-01 15:47:01,637 DEBUG CV Batch 52/4400 loss 0.662982 loss_att 3.623057 loss_ctc 0.164430 loss_rnnt 0.033461 hw_loss 0.194962 history loss 6.595732 rank 6
+2023-03-01 15:47:04,195 DEBUG CV Batch 52/4400 loss 0.662982 loss_att 3.623057 loss_ctc 0.164430 loss_rnnt 0.033461 hw_loss 0.194962 history loss 6.595732 rank 0
+2023-03-01 15:47:07,224 DEBUG CV Batch 52/4500 loss 12.473039 loss_att 11.723195 loss_ctc 22.293530 loss_rnnt 11.130011 hw_loss 0.344248 history loss 6.553796 rank 3
+2023-03-01 15:47:07,730 DEBUG CV Batch 52/4400 loss 0.662982 loss_att 3.623057 loss_ctc 0.164430 loss_rnnt 0.033461 hw_loss 0.194962 history loss 6.595732 rank 7
+2023-03-01 15:47:09,037 DEBUG CV Batch 52/4400 loss 0.662982 loss_att 3.623057 loss_ctc 0.164430 loss_rnnt 0.033461 hw_loss 0.194962 history loss 6.595732 rank 5
+2023-03-01 15:47:13,151 DEBUG CV Batch 52/4500 loss 12.473039 loss_att 11.723195 loss_ctc 22.293530 loss_rnnt 11.130011 hw_loss 0.344248 history loss 6.553796 rank 1
+2023-03-01 15:47:14,681 DEBUG CV Batch 52/4500 loss 12.473039 loss_att 11.723195 loss_ctc 22.293530 loss_rnnt 11.130011 hw_loss 0.344248 history loss 6.553796 rank 4
+2023-03-01 15:47:15,752 DEBUG CV Batch 52/4500 loss 12.473039 loss_att 11.723195 loss_ctc 22.293530 loss_rnnt 11.130011 hw_loss 0.344248 history loss 6.553796 rank 2
+2023-03-01 15:47:16,172 DEBUG CV Batch 52/4500 loss 12.473039 loss_att 11.723195 loss_ctc 22.293530 loss_rnnt 11.130011 hw_loss 0.344248 history loss 6.553796 rank 6
+2023-03-01 15:47:17,167 DEBUG CV Batch 52/4600 loss 0.804104 loss_att 3.223997 loss_ctc 1.890433 loss_rnnt 0.099708 hw_loss 0.141700 history loss 6.554885 rank 3
+2023-03-01 15:47:18,915 DEBUG CV Batch 52/4500 loss 12.473039 loss_att 11.723195 loss_ctc 22.293530 loss_rnnt 11.130011 hw_loss 0.344248 history loss 6.553796 rank 0
+2023-03-01 15:47:22,531 DEBUG CV Batch 52/4500 loss 12.473039 loss_att 11.723195 loss_ctc 22.293530 loss_rnnt 11.130011 hw_loss 0.344248 history loss 6.553796 rank 7
+2023-03-01 15:47:23,204 DEBUG CV Batch 52/4600 loss 0.804104 loss_att 3.223997 loss_ctc 1.890433 loss_rnnt 0.099708 hw_loss 0.141700 history loss 6.554885 rank 1
+2023-03-01 15:47:23,626 DEBUG CV Batch 52/4500 loss 12.473039 loss_att 11.723195 loss_ctc 22.293530 loss_rnnt 11.130011 hw_loss 0.344248 history loss 6.553796 rank 5
+2023-03-01 15:47:24,937 DEBUG CV Batch 52/4600 loss 0.804104 loss_att 3.223997 loss_ctc 1.890433 loss_rnnt 0.099708 hw_loss 0.141700 history loss 6.554885 rank 4
+2023-03-01 15:47:26,037 DEBUG CV Batch 52/4600 loss 0.804104 loss_att 3.223997 loss_ctc 1.890433 loss_rnnt 0.099708 hw_loss 0.141700 history loss 6.554885 rank 2
+2023-03-01 15:47:26,171 DEBUG CV Batch 52/4600 loss 0.804104 loss_att 3.223997 loss_ctc 1.890433 loss_rnnt 0.099708 hw_loss 0.141700 history loss 6.554885 rank 6
+2023-03-01 15:47:29,284 DEBUG CV Batch 52/4600 loss 0.804104 loss_att 3.223997 loss_ctc 1.890433 loss_rnnt 0.099708 hw_loss 0.141700 history loss 6.554885 rank 0
+2023-03-01 15:47:29,532 DEBUG CV Batch 52/4700 loss 9.462078 loss_att 9.645252 loss_ctc 21.810616 loss_rnnt 7.614048 hw_loss 0.309231 history loss 6.532678 rank 3
+2023-03-01 15:47:32,804 DEBUG CV Batch 52/4600 loss 0.804104 loss_att 3.223997 loss_ctc 1.890433 loss_rnnt 0.099708 hw_loss 0.141700 history loss 6.554885 rank 7
+2023-03-01 15:47:34,047 DEBUG CV Batch 52/4600 loss 0.804104 loss_att 3.223997 loss_ctc 1.890433 loss_rnnt 0.099708 hw_loss 0.141700 history loss 6.554885 rank 5
+2023-03-01 15:47:35,440 DEBUG CV Batch 52/4700 loss 9.462078 loss_att 9.645252 loss_ctc 21.810616 loss_rnnt 7.614048 hw_loss 0.309231 history loss 6.532678 rank 1
+2023-03-01 15:47:37,373 DEBUG CV Batch 52/4700 loss 9.462078 loss_att 9.645252 loss_ctc 21.810616 loss_rnnt 7.614048 hw_loss 0.309231 history loss 6.532678 rank 4
+2023-03-01 15:47:38,411 DEBUG CV Batch 52/4700 loss 9.462078 loss_att 9.645252 loss_ctc 21.810616 loss_rnnt 7.614048 hw_loss 0.309231 history loss 6.532678 rank 6
+2023-03-01 15:47:38,637 DEBUG CV Batch 52/4700 loss 9.462078 loss_att 9.645252 loss_ctc 21.810616 loss_rnnt 7.614048 hw_loss 0.309231 history loss 6.532678 rank 2
+2023-03-01 15:47:40,118 DEBUG CV Batch 52/4800 loss 3.097724 loss_att 2.512575 loss_ctc 3.132459 loss_rnnt 3.083303 hw_loss 0.237786 history loss 6.519523 rank 3
+2023-03-01 15:47:41,753 DEBUG CV Batch 52/4700 loss 9.462078 loss_att 9.645252 loss_ctc 21.810616 loss_rnnt 7.614048 hw_loss 0.309231 history loss 6.532678 rank 0
+2023-03-01 15:47:45,224 DEBUG CV Batch 52/4700 loss 9.462078 loss_att 9.645252 loss_ctc 21.810616 loss_rnnt 7.614048 hw_loss 0.309231 history loss 6.532678 rank 7
+2023-03-01 15:47:46,131 DEBUG CV Batch 52/4800 loss 3.097724 loss_att 2.512575 loss_ctc 3.132459 loss_rnnt 3.083303 hw_loss 0.237786 history loss 6.519523 rank 1
+2023-03-01 15:47:46,683 DEBUG CV Batch 52/4700 loss 9.462078 loss_att 9.645252 loss_ctc 21.810616 loss_rnnt 7.614048 hw_loss 0.309231 history loss 6.532678 rank 5
+2023-03-01 15:47:48,099 DEBUG CV Batch 52/4800 loss 3.097724 loss_att 2.512575 loss_ctc 3.132459 loss_rnnt 3.083303 hw_loss 0.237786 history loss 6.519523 rank 4
+2023-03-01 15:47:48,745 DEBUG CV Batch 52/4900 loss 7.510733 loss_att 7.799940 loss_ctc 9.359948 loss_rnnt 6.997280 hw_loss 0.391969 history loss 6.504082 rank 3
+2023-03-01 15:47:48,903 DEBUG CV Batch 52/4800 loss 3.097724 loss_att 2.512575 loss_ctc 3.132459 loss_rnnt 3.083303 hw_loss 0.237786 history loss 6.519523 rank 6
+2023-03-01 15:47:49,380 DEBUG CV Batch 52/4800 loss 3.097724 loss_att 2.512575 loss_ctc 3.132459 loss_rnnt 3.083303 hw_loss 0.237786 history loss 6.519523 rank 2
+2023-03-01 15:47:51,042 INFO Epoch 52 CV info cv_loss 6.511987156013797
+2023-03-01 15:47:51,043 INFO Epoch 53 TRAIN info lr 0.0002485781599156343
+2023-03-01 15:47:51,047 INFO using accumulate grad, new batch size is 2 times larger than before
+2023-03-01 15:47:52,447 DEBUG CV Batch 52/4800 loss 3.097724 loss_att 2.512575 loss_ctc 3.132459 loss_rnnt 3.083303 hw_loss 0.237786 history loss 6.519523 rank 0
+2023-03-01 15:47:54,958 DEBUG CV Batch 52/4900 loss 7.510733 loss_att 7.799940 loss_ctc 9.359948 loss_rnnt 6.997280 hw_loss 0.391969 history loss 6.504082 rank 1
+2023-03-01 15:47:55,805 DEBUG CV Batch 52/4800 loss 3.097724 loss_att 2.512575 loss_ctc 3.132459 loss_rnnt 3.083303 hw_loss 0.237786 history loss 6.519523 rank 7
+2023-03-01 15:47:56,974 DEBUG CV Batch 52/4900 loss 7.510733 loss_att 7.799940 loss_ctc 9.359948 loss_rnnt 6.997280 hw_loss 0.391969 history loss 6.504082 rank 4
+2023-03-01 15:47:57,275 INFO Epoch 52 CV info cv_loss 6.511987155033882
+2023-03-01 15:47:57,276 INFO Epoch 53 TRAIN info lr 0.00024859382851366346
+2023-03-01 15:47:57,281 INFO using accumulate grad, new batch size is 2 times larger than before
+2023-03-01 15:47:57,388 DEBUG CV Batch 52/4800 loss 3.097724 loss_att 2.512575 loss_ctc 3.132459 loss_rnnt 3.083303 hw_loss 0.237786 history loss 6.519523 rank 5
+2023-03-01 15:47:57,617 DEBUG CV Batch 52/4900 loss 7.510733 loss_att 7.799940 loss_ctc 9.359948 loss_rnnt 6.997280 hw_loss 0.391969 history loss 6.504082 rank 6
+2023-03-01 15:47:58,225 DEBUG CV Batch 52/4900 loss 7.510733 loss_att 7.799940 loss_ctc 9.359948 loss_rnnt 6.997280 hw_loss 0.391969 history loss 6.504082 rank 2
+2023-03-01 15:47:59,305 INFO Epoch 52 CV info cv_loss 6.511987155536762
+2023-03-01 15:47:59,305 INFO Epoch 53 TRAIN info lr 0.0002486310148876818
+2023-03-01 15:47:59,309 INFO using accumulate grad, new batch size is 2 times larger than before
+2023-03-01 15:47:59,941 INFO Epoch 52 CV info cv_loss 6.511987155020961
+2023-03-01 15:47:59,941 INFO Epoch 53 TRAIN info lr 0.0002486181053298119
+2023-03-01 15:47:59,944 INFO using accumulate grad, new batch size is 2 times larger than before
+2023-03-01 15:48:00,545 INFO Epoch 52 CV info cv_loss 6.511987155713362
+2023-03-01 15:48:00,546 INFO Epoch 53 TRAIN info lr 0.00024863593334348554
+2023-03-01 15:48:00,552 INFO using accumulate grad, new batch size is 2 times larger than before
+2023-03-01 15:48:01,405 DEBUG CV Batch 52/4900 loss 7.510733 loss_att 7.799940 loss_ctc 9.359948 loss_rnnt 6.997280 hw_loss 0.391969 history loss 6.504082 rank 0
+2023-03-01 15:48:03,724 INFO Epoch 52 CV info cv_loss 6.511987154987579
+2023-03-01 15:48:03,724 INFO Checkpoint: save to checkpoint exp/2_20_rnnt_bias_loss_2_class_0-3word_22/52.pt
+2023-03-01 15:48:04,420 INFO Epoch 53 TRAIN info lr 0.00024864208182373413
+2023-03-01 15:48:04,424 INFO using accumulate grad, new batch size is 2 times larger than before
+2023-03-01 15:48:04,705 DEBUG CV Batch 52/4900 loss 7.510733 loss_att 7.799940 loss_ctc 9.359948 loss_rnnt 6.997280 hw_loss 0.391969 history loss 6.504082 rank 7
+2023-03-01 15:48:06,550 DEBUG CV Batch 52/4900 loss 7.510733 loss_att 7.799940 loss_ctc 9.359948 loss_rnnt 6.997280 hw_loss 0.391969 history loss 6.504082 rank 5
+2023-03-01 15:48:07,020 INFO Epoch 52 CV info cv_loss 6.511987155981492
+2023-03-01 15:48:07,020 INFO Epoch 53 TRAIN info lr 0.000248590141518157
+2023-03-01 15:48:07,024 INFO using accumulate grad, new batch size is 2 times larger than before
+2023-03-01 15:48:08,914 INFO Epoch 52 CV info cv_loss 6.511987155948111
+2023-03-01 15:48:08,915 INFO Epoch 53 TRAIN info lr 0.0002486257893481987
+2023-03-01 15:48:08,918 INFO using accumulate grad, new batch size is 2 times larger than before
+2023-03-01 15:49:26,353 DEBUG TRAIN Batch 53/0 loss 5.454342 loss_att 5.162743 loss_ctc 7.328168 loss_rnnt 5.060087 hw_loss 0.380122 lr 0.00024864 rank 2
+2023-03-01 15:49:26,353 DEBUG TRAIN Batch 53/0 loss 5.093607 loss_att 5.532834 loss_ctc 8.087767 loss_rnnt 4.355544 hw_loss 0.470618 lr 0.00024859 rank 7
+2023-03-01 15:49:26,354 DEBUG TRAIN Batch 53/0 loss 6.719796 loss_att 6.957870 loss_ctc 8.162538 loss_rnnt 6.182860 hw_loss 0.556792 lr 0.00024863 rank 4
+2023-03-01 15:49:26,354 DEBUG TRAIN Batch 53/0 loss 9.170208 loss_att 9.368128 loss_ctc 13.263140 loss_rnnt 8.311242 hw_loss 0.513107 lr 0.00024859 rank 1
+2023-03-01 15:49:26,360 DEBUG TRAIN Batch 53/0 loss 2.723312 loss_att 3.472855 loss_ctc 4.145860 loss_rnnt 2.118871 hw_loss 0.496611 lr 0.00024858 rank 3
+2023-03-01 15:49:26,376 DEBUG TRAIN Batch 53/0 loss 5.666536 loss_att 5.740775 loss_ctc 8.732895 loss_rnnt 5.058196 hw_loss 0.346207 lr 0.00024862 rank 6
+2023-03-01 15:49:26,419 DEBUG TRAIN Batch 53/0 loss 6.354492 loss_att 5.466284 loss_ctc 9.126850 loss_rnnt 5.899516 hw_loss 0.493070 lr 0.00024864 rank 0
+2023-03-01 15:49:26,447 DEBUG TRAIN Batch 53/0 loss 4.461387 loss_att 4.353241 loss_ctc 5.862319 loss_rnnt 4.085189 hw_loss 0.395693 lr 0.00024863 rank 5
+2023-03-01 15:50:20,326 DEBUG TRAIN Batch 53/100 loss 2.263595 loss_att 6.688232 loss_ctc 7.429292 loss_rnnt 0.689825 hw_loss 0.000156 lr 0.00024858 rank 1
+2023-03-01 15:50:20,328 DEBUG TRAIN Batch 53/100 loss 12.404617 loss_att 13.421128 loss_ctc 10.917465 loss_rnnt 12.205646 hw_loss 0.363669 lr 0.00024862 rank 4
+2023-03-01 15:50:20,329 DEBUG TRAIN Batch 53/100 loss 0.947011 loss_att 2.931314 loss_ctc 3.103486 loss_rnnt 0.130577 hw_loss 0.247582 lr 0.00024856 rank 3
+2023-03-01 15:50:20,331 DEBUG TRAIN Batch 53/100 loss 9.443065 loss_att 9.727002 loss_ctc 17.503729 loss_rnnt 8.119863 hw_loss 0.359360 lr 0.00024863 rank 0
+2023-03-01 15:50:20,332 DEBUG TRAIN Batch 53/100 loss 6.600575 loss_att 7.354086 loss_ctc 7.998110 loss_rnnt 6.263430 hw_loss 0.000197 lr 0.00024861 rank 5
+2023-03-01 15:50:20,336 DEBUG TRAIN Batch 53/100 loss 8.300476 loss_att 12.730029 loss_ctc 11.030932 loss_rnnt 7.012895 hw_loss 0.070520 lr 0.00024860 rank 6
+2023-03-01 15:50:20,338 DEBUG TRAIN Batch 53/100 loss 10.497295 loss_att 14.591486 loss_ctc 16.924992 loss_rnnt 8.586052 hw_loss 0.441336 lr 0.00024862 rank 2
+2023-03-01 15:50:20,393 DEBUG TRAIN Batch 53/100 loss 7.931588 loss_att 11.386253 loss_ctc 15.212543 loss_rnnt 6.269595 hw_loss 0.000497 lr 0.00024857 rank 7
+2023-03-01 15:51:13,049 DEBUG TRAIN Batch 53/200 loss 14.114447 loss_att 16.029118 loss_ctc 18.677202 loss_rnnt 12.959454 hw_loss 0.306922 lr 0.00024856 rank 7
+2023-03-01 15:51:13,054 DEBUG TRAIN Batch 53/200 loss 8.132828 loss_att 8.404678 loss_ctc 7.468279 loss_rnnt 7.999659 hw_loss 0.313883 lr 0.00024856 rank 1
+2023-03-01 15:51:13,057 DEBUG TRAIN Batch 53/200 loss 0.882050 loss_att 1.692470 loss_ctc 0.438525 loss_rnnt 0.779073 hw_loss 0.000054 lr 0.00024860 rank 4
+2023-03-01 15:51:13,058 DEBUG TRAIN Batch 53/200 loss 1.817982 loss_att 5.450856 loss_ctc 1.677433 loss_rnnt 1.036904 hw_loss 0.137333 lr 0.00024859 rank 6
+2023-03-01 15:51:13,059 DEBUG TRAIN Batch 53/200 loss 5.462925 loss_att 7.517274 loss_ctc 7.984000 loss_rnnt 4.509738 hw_loss 0.386577 lr 0.00024861 rank 0
+2023-03-01 15:51:13,058 DEBUG TRAIN Batch 53/200 loss 2.187063 loss_att 3.973457 loss_ctc 3.798373 loss_rnnt 1.415242 hw_loss 0.374440 lr 0.00024855 rank 3
+2023-03-01 15:51:13,060 DEBUG TRAIN Batch 53/200 loss 13.907743 loss_att 20.074682 loss_ctc 24.875832 loss_rnnt 10.993313 hw_loss 0.409931 lr 0.00024860 rank 2
+2023-03-01 15:51:13,114 DEBUG TRAIN Batch 53/200 loss 1.201203 loss_att 3.618196 loss_ctc 1.285446 loss_rnnt 0.475616 hw_loss 0.433043 lr 0.00024859 rank 5
+2023-03-01 15:52:07,036 DEBUG TRAIN Batch 53/300 loss 13.248736 loss_att 15.709554 loss_ctc 14.674229 loss_rnnt 12.397512 hw_loss 0.316868 lr 0.00024855 rank 1
+2023-03-01 15:52:07,043 DEBUG TRAIN Batch 53/300 loss 1.592807 loss_att 3.734753 loss_ctc 2.410944 loss_rnnt 1.055152 hw_loss 0.000339 lr 0.00024858 rank 4
+2023-03-01 15:52:07,044 DEBUG TRAIN Batch 53/300 loss 4.774698 loss_att 6.709875 loss_ctc 9.111724 loss_rnnt 3.621869 hw_loss 0.351608 lr 0.00024858 rank 5
+2023-03-01 15:52:07,044 DEBUG TRAIN Batch 53/300 loss 0.953040 loss_att 3.391916 loss_ctc 2.227051 loss_rnnt 0.209398 hw_loss 0.161246 lr 0.00024859 rank 2
+2023-03-01 15:52:07,044 DEBUG TRAIN Batch 53/300 loss 17.349361 loss_att 14.707821 loss_ctc 22.702713 loss_rnnt 17.033237 hw_loss 0.244971 lr 0.00024854 rank 7
+2023-03-01 15:52:07,048 DEBUG TRAIN Batch 53/300 loss 1.906142 loss_att 4.024642 loss_ctc 4.665820 loss_rnnt 0.924074 hw_loss 0.357020 lr 0.00024860 rank 0
+2023-03-01 15:52:07,050 DEBUG TRAIN Batch 53/300 loss 6.516673 loss_att 9.333900 loss_ctc 7.812088 loss_rnnt 5.623026 hw_loss 0.295273 lr 0.00024853 rank 3
+2023-03-01 15:52:07,052 DEBUG TRAIN Batch 53/300 loss 25.687508 loss_att 37.028751 loss_ctc 80.239609 loss_rnnt 15.955903 hw_loss 0.355770 lr 0.00024857 rank 6
+2023-03-01 15:53:03,290 DEBUG TRAIN Batch 53/400 loss 7.710248 loss_att 8.669167 loss_ctc 12.384497 loss_rnnt 6.797851 hw_loss 0.182587 lr 0.00024857 rank 4
+2023-03-01 15:53:03,295 DEBUG TRAIN Batch 53/400 loss 2.605837 loss_att 3.700191 loss_ctc 5.011405 loss_rnnt 1.998760 hw_loss 0.126496 lr 0.00024857 rank 2
+2023-03-01 15:53:03,296 DEBUG TRAIN Batch 53/400 loss 13.592352 loss_att 15.230324 loss_ctc 20.954601 loss_rnnt 12.059893 hw_loss 0.418559 lr 0.00024853 rank 7
+2023-03-01 15:53:03,299 DEBUG TRAIN Batch 53/400 loss 11.674313 loss_att 14.520036 loss_ctc 18.429766 loss_rnnt 10.103554 hw_loss 0.189164 lr 0.00024856 rank 6
+2023-03-01 15:53:03,301 DEBUG TRAIN Batch 53/400 loss 17.800461 loss_att 19.277002 loss_ctc 27.651821 loss_rnnt 15.972252 hw_loss 0.411346 lr 0.00024856 rank 5
+2023-03-01 15:53:03,302 DEBUG TRAIN Batch 53/400 loss 3.265264 loss_att 5.300783 loss_ctc 6.006345 loss_rnnt 2.358763 hw_loss 0.251099 lr 0.00024853 rank 1
+2023-03-01 15:53:03,305 DEBUG TRAIN Batch 53/400 loss 8.629751 loss_att 8.755195 loss_ctc 9.026808 loss_rnnt 8.469456 hw_loss 0.154248 lr 0.00024852 rank 3
+2023-03-01 15:53:03,354 DEBUG TRAIN Batch 53/400 loss 2.805665 loss_att 4.573765 loss_ctc 4.056535 loss_rnnt 2.225179 hw_loss 0.112656 lr 0.00024858 rank 0
+2023-03-01 15:53:57,603 DEBUG TRAIN Batch 53/500 loss 3.557261 loss_att 7.107186 loss_ctc 1.761333 loss_rnnt 3.026377 hw_loss 0.113167 lr 0.00024852 rank 1
+2023-03-01 15:53:57,603 DEBUG TRAIN Batch 53/500 loss 12.336906 loss_att 12.363466 loss_ctc 14.538269 loss_rnnt 11.864263 hw_loss 0.325906 lr 0.00024856 rank 2
+2023-03-01 15:53:57,606 DEBUG TRAIN Batch 53/500 loss 2.652313 loss_att 7.904743 loss_ctc 7.053050 loss_rnnt 0.938903 hw_loss 0.142799 lr 0.00024854 rank 6
+2023-03-01 15:53:57,607 DEBUG TRAIN Batch 53/500 loss 6.273702 loss_att 11.272084 loss_ctc 11.074615 loss_rnnt 4.519219 hw_loss 0.215034 lr 0.00024855 rank 5
+2023-03-01 15:53:57,608 DEBUG TRAIN Batch 53/500 loss 8.873428 loss_att 9.553875 loss_ctc 8.961169 loss_rnnt 8.725492 hw_loss 0.000278 lr 0.00024851 rank 7
+2023-03-01 15:53:57,612 DEBUG TRAIN Batch 53/500 loss 10.598712 loss_att 12.266157 loss_ctc 15.560507 loss_rnnt 9.603520 hw_loss 0.000244 lr 0.00024856 rank 0
+2023-03-01 15:53:57,618 DEBUG TRAIN Batch 53/500 loss 5.535145 loss_att 9.835771 loss_ctc 11.302011 loss_rnnt 3.809996 hw_loss 0.180202 lr 0.00024855 rank 4
+2023-03-01 15:53:57,623 DEBUG TRAIN Batch 53/500 loss 10.985712 loss_att 13.509948 loss_ctc 16.329456 loss_rnnt 9.768331 hw_loss 0.000065 lr 0.00024850 rank 3
+2023-03-01 15:54:51,713 DEBUG TRAIN Batch 53/600 loss 1.963238 loss_att 5.957592 loss_ctc 6.350242 loss_rnnt 0.577785 hw_loss 0.003089 lr 0.00024850 rank 1
+2023-03-01 15:54:51,717 DEBUG TRAIN Batch 53/600 loss 3.992362 loss_att 3.884946 loss_ctc 3.038571 loss_rnnt 4.052012 hw_loss 0.166884 lr 0.00024855 rank 0
+2023-03-01 15:54:51,717 DEBUG TRAIN Batch 53/600 loss 2.956460 loss_att 6.464786 loss_ctc 6.568549 loss_rnnt 1.773130 hw_loss 0.000099 lr 0.00024849 rank 3
+2023-03-01 15:54:51,720 DEBUG TRAIN Batch 53/600 loss 20.248924 loss_att 43.815701 loss_ctc 42.423084 loss_rnnt 12.393534 hw_loss 0.347776 lr 0.00024854 rank 4
+2023-03-01 15:54:51,721 DEBUG TRAIN Batch 53/600 loss 5.231289 loss_att 8.219546 loss_ctc 13.346758 loss_rnnt 3.467292 hw_loss 0.158031 lr 0.00024850 rank 7
+2023-03-01 15:54:51,721 DEBUG TRAIN Batch 53/600 loss 3.689142 loss_att 11.079542 loss_ctc 8.277388 loss_rnnt 1.599252 hw_loss 0.000083 lr 0.00024853 rank 6
+2023-03-01 15:54:51,723 DEBUG TRAIN Batch 53/600 loss 1.236887 loss_att 3.462879 loss_ctc 3.094527 loss_rnnt 0.543862 hw_loss 0.000267 lr 0.00024854 rank 2
+2023-03-01 15:54:51,730 DEBUG TRAIN Batch 53/600 loss 8.453687 loss_att 14.323562 loss_ctc 22.530987 loss_rnnt 5.258440 hw_loss 0.270560 lr 0.00024853 rank 5
+2023-03-01 15:55:45,920 DEBUG TRAIN Batch 53/700 loss 2.599855 loss_att 5.606854 loss_ctc 2.934113 loss_rnnt 1.866328 hw_loss 0.164174 lr 0.00024853 rank 2
+2023-03-01 15:55:45,920 DEBUG TRAIN Batch 53/700 loss 7.495842 loss_att 11.515910 loss_ctc 16.780979 loss_rnnt 5.453779 hw_loss 0.000057 lr 0.00024853 rank 0
+2023-03-01 15:55:45,924 DEBUG TRAIN Batch 53/700 loss 12.436846 loss_att 16.254265 loss_ctc 15.958516 loss_rnnt 11.086056 hw_loss 0.220781 lr 0.00024852 rank 5
+2023-03-01 15:55:45,924 DEBUG TRAIN Batch 53/700 loss 3.593718 loss_att 7.982144 loss_ctc 2.508828 loss_rnnt 2.813836 hw_loss 0.087841 lr 0.00024847 rank 3
+2023-03-01 15:55:45,927 DEBUG TRAIN Batch 53/700 loss 2.121765 loss_att 7.608660 loss_ctc 1.340729 loss_rnnt 1.128500 hw_loss 0.000047 lr 0.00024851 rank 6
+2023-03-01 15:55:45,928 DEBUG TRAIN Batch 53/700 loss 8.555845 loss_att 16.064100 loss_ctc 25.626925 loss_rnnt 4.778009 hw_loss 0.000077 lr 0.00024849 rank 1
+2023-03-01 15:55:45,933 DEBUG TRAIN Batch 53/700 loss 7.142763 loss_att 8.936637 loss_ctc 8.786162 loss_rnnt 6.436732 hw_loss 0.240255 lr 0.00024852 rank 4
+2023-03-01 15:55:45,981 DEBUG TRAIN Batch 53/700 loss 0.978710 loss_att 2.896778 loss_ctc 1.724387 loss_rnnt 0.495632 hw_loss 0.000077 lr 0.00024848 rank 7
+2023-03-01 15:56:40,977 DEBUG TRAIN Batch 53/800 loss 12.655947 loss_att 14.710428 loss_ctc 21.356972 loss_rnnt 10.837570 hw_loss 0.463768 lr 0.00024852 rank 0
+2023-03-01 15:56:40,978 DEBUG TRAIN Batch 53/800 loss 8.437545 loss_att 12.686964 loss_ctc 18.001553 loss_rnnt 6.169765 hw_loss 0.267557 lr 0.00024847 rank 1
+2023-03-01 15:56:40,979 DEBUG TRAIN Batch 53/800 loss 8.975176 loss_att 9.923750 loss_ctc 10.962550 loss_rnnt 8.290881 hw_loss 0.430493 lr 0.00024851 rank 2
+2023-03-01 15:56:40,983 DEBUG TRAIN Batch 53/800 loss 17.692070 loss_att 17.532694 loss_ctc 19.110418 loss_rnnt 17.397123 hw_loss 0.258201 lr 0.00024846 rank 3
+2023-03-01 15:56:40,984 DEBUG TRAIN Batch 53/800 loss 2.984130 loss_att 4.093040 loss_ctc 5.098305 loss_rnnt 2.323740 hw_loss 0.293847 lr 0.00024847 rank 7
+2023-03-01 15:56:40,983 DEBUG TRAIN Batch 53/800 loss 11.025167 loss_att 10.708456 loss_ctc 17.915485 loss_rnnt 10.028430 hw_loss 0.265067 lr 0.00024849 rank 6
+2023-03-01 15:56:40,984 DEBUG TRAIN Batch 53/800 loss 10.074560 loss_att 13.135005 loss_ctc 14.119232 loss_rnnt 8.771042 hw_loss 0.285261 lr 0.00024850 rank 5
+2023-03-01 15:56:40,985 DEBUG TRAIN Batch 53/800 loss 8.886966 loss_att 8.978953 loss_ctc 12.843176 loss_rnnt 8.094508 hw_loss 0.462311 lr 0.00024851 rank 4
+2023-03-01 15:57:34,286 DEBUG TRAIN Batch 53/900 loss 1.366049 loss_att 5.340286 loss_ctc 1.691022 loss_rnnt 0.245721 hw_loss 0.529033 lr 0.00024846 rank 1
+2023-03-01 15:57:34,294 DEBUG TRAIN Batch 53/900 loss 2.423968 loss_att 4.188688 loss_ctc 2.690691 loss_rnnt 1.857609 hw_loss 0.333472 lr 0.00024845 rank 7
+2023-03-01 15:57:34,296 DEBUG TRAIN Batch 53/900 loss 7.738904 loss_att 10.108781 loss_ctc 9.239043 loss_rnnt 6.997089 hw_loss 0.127166 lr 0.00024850 rank 0
+2023-03-01 15:57:34,297 DEBUG TRAIN Batch 53/900 loss 3.665885 loss_att 4.254319 loss_ctc 5.270498 loss_rnnt 3.204332 hw_loss 0.243597 lr 0.00024849 rank 5
+2023-03-01 15:57:34,297 DEBUG TRAIN Batch 53/900 loss 19.200583 loss_att 15.762519 loss_ctc 24.707026 loss_rnnt 18.947533 hw_loss 0.387128 lr 0.00024848 rank 6
+2023-03-01 15:57:34,301 DEBUG TRAIN Batch 53/900 loss 0.463922 loss_att 2.173568 loss_ctc 0.295919 loss_rnnt 0.144360 hw_loss 0.000061 lr 0.00024850 rank 2
+2023-03-01 15:57:34,334 DEBUG TRAIN Batch 53/900 loss 5.536571 loss_att 11.030980 loss_ctc 13.083165 loss_rnnt 3.431192 hw_loss 0.000531 lr 0.00024844 rank 3
+2023-03-01 15:57:34,345 DEBUG TRAIN Batch 53/900 loss 0.813840 loss_att 1.755281 loss_ctc 0.513116 loss_rnnt 0.665525 hw_loss 0.000233 lr 0.00024849 rank 4
+2023-03-01 15:58:28,085 DEBUG TRAIN Batch 53/1000 loss 6.230298 loss_att 10.309991 loss_ctc 9.317483 loss_rnnt 5.002710 hw_loss 0.000044 lr 0.00024844 rank 1
+2023-03-01 15:58:28,086 DEBUG TRAIN Batch 53/1000 loss 2.511591 loss_att 6.325031 loss_ctc 7.818681 loss_rnnt 1.041267 hw_loss 0.000045 lr 0.00024847 rank 5
+2023-03-01 15:58:28,087 DEBUG TRAIN Batch 53/1000 loss 17.601799 loss_att 16.486904 loss_ctc 26.991537 loss_rnnt 16.454466 hw_loss 0.221900 lr 0.00024848 rank 2
+2023-03-01 15:58:28,089 DEBUG TRAIN Batch 53/1000 loss 13.689972 loss_att 14.727135 loss_ctc 26.023655 loss_rnnt 11.791268 hw_loss 0.087713 lr 0.00024846 rank 6
+2023-03-01 15:58:28,090 DEBUG TRAIN Batch 53/1000 loss 3.069929 loss_att 6.689540 loss_ctc 7.991977 loss_rnnt 1.452637 hw_loss 0.444556 lr 0.00024848 rank 4
+2023-03-01 15:58:28,090 DEBUG TRAIN Batch 53/1000 loss 6.245236 loss_att 8.451528 loss_ctc 10.907535 loss_rnnt 5.018530 hw_loss 0.307138 lr 0.00024849 rank 0
+2023-03-01 15:58:28,094 DEBUG TRAIN Batch 53/1000 loss 2.952238 loss_att 6.002951 loss_ctc 4.231573 loss_rnnt 2.171492 hw_loss 0.000050 lr 0.00024842 rank 3
+2023-03-01 15:58:28,144 DEBUG TRAIN Batch 53/1000 loss 24.574427 loss_att 27.129059 loss_ctc 38.383392 loss_rnnt 22.128204 hw_loss 0.176440 lr 0.00024844 rank 7
+2023-03-01 15:59:23,131 DEBUG TRAIN Batch 53/1100 loss 16.147245 loss_att 20.642418 loss_ctc 33.482571 loss_rnnt 12.782870 hw_loss 0.288681 lr 0.00024846 rank 4
+2023-03-01 15:59:23,132 DEBUG TRAIN Batch 53/1100 loss 11.891865 loss_att 13.392586 loss_ctc 17.936419 loss_rnnt 10.690182 hw_loss 0.179246 lr 0.00024846 rank 5
+2023-03-01 15:59:23,137 DEBUG TRAIN Batch 53/1100 loss 2.326826 loss_att 5.120296 loss_ctc 5.132694 loss_rnnt 1.136363 hw_loss 0.483098 lr 0.00024842 rank 1
+2023-03-01 15:59:23,141 DEBUG TRAIN Batch 53/1100 loss 3.549363 loss_att 5.780782 loss_ctc 5.090668 loss_rnnt 2.781116 hw_loss 0.218355 lr 0.00024845 rank 6
+2023-03-01 15:59:23,144 DEBUG TRAIN Batch 53/1100 loss 7.590435 loss_att 9.620001 loss_ctc 12.082458 loss_rnnt 6.406515 hw_loss 0.335755 lr 0.00024847 rank 2
+2023-03-01 15:59:23,145 DEBUG TRAIN Batch 53/1100 loss 16.360897 loss_att 16.737576 loss_ctc 22.328808 loss_rnnt 15.489755 hw_loss 0.000162 lr 0.00024847 rank 0
+2023-03-01 15:59:23,172 DEBUG TRAIN Batch 53/1100 loss 0.664307 loss_att 3.356069 loss_ctc 0.738471 loss_rnnt 0.061808 hw_loss 0.101734 lr 0.00024841 rank 3
+2023-03-01 15:59:23,193 DEBUG TRAIN Batch 53/1100 loss 1.283539 loss_att 5.147016 loss_ctc 3.346376 loss_rnnt 0.191217 hw_loss 0.083590 lr 0.00024842 rank 7
+2023-03-01 16:00:43,037 DEBUG TRAIN Batch 53/1200 loss 4.757965 loss_att 3.522166 loss_ctc 3.942092 loss_rnnt 4.987526 hw_loss 0.236965 lr 0.00024845 rank 4
+2023-03-01 16:00:43,041 DEBUG TRAIN Batch 53/1200 loss 7.711354 loss_att 8.115440 loss_ctc 8.334493 loss_rnnt 7.374298 hw_loss 0.324662 lr 0.00024846 rank 0
+2023-03-01 16:00:43,041 DEBUG TRAIN Batch 53/1200 loss 8.442872 loss_att 9.251501 loss_ctc 13.511837 loss_rnnt 7.541917 hw_loss 0.118814 lr 0.00024841 rank 1
+2023-03-01 16:00:43,044 DEBUG TRAIN Batch 53/1200 loss 12.103145 loss_att 13.586593 loss_ctc 14.761243 loss_rnnt 11.237339 hw_loss 0.402567 lr 0.00024839 rank 3
+2023-03-01 16:00:43,047 DEBUG TRAIN Batch 53/1200 loss 11.860641 loss_att 13.349148 loss_ctc 16.649721 loss_rnnt 10.655788 hw_loss 0.503638 lr 0.00024844 rank 5
+2023-03-01 16:00:43,048 DEBUG TRAIN Batch 53/1200 loss 11.213267 loss_att 11.005536 loss_ctc 15.834999 loss_rnnt 10.466927 hw_loss 0.321855 lr 0.00024845 rank 2
+2023-03-01 16:00:43,051 DEBUG TRAIN Batch 53/1200 loss 4.859205 loss_att 6.517858 loss_ctc 7.294706 loss_rnnt 4.036886 hw_loss 0.310977 lr 0.00024843 rank 6
+2023-03-01 16:00:43,100 DEBUG TRAIN Batch 53/1200 loss 2.905101 loss_att 4.324026 loss_ctc 3.657734 loss_rnnt 2.380225 hw_loss 0.263886 lr 0.00024841 rank 7
+2023-03-01 16:01:36,338 DEBUG TRAIN Batch 53/1300 loss 10.804034 loss_att 15.331689 loss_ctc 17.193695 loss_rnnt 8.844584 hw_loss 0.378683 lr 0.00024839 rank 7
+2023-03-01 16:01:36,343 DEBUG TRAIN Batch 53/1300 loss 0.480656 loss_att 1.879477 loss_ctc 0.386124 loss_rnnt 0.213148 hw_loss 0.000651 lr 0.00024844 rank 2
+2023-03-01 16:01:36,343 DEBUG TRAIN Batch 53/1300 loss 5.444949 loss_att 6.620906 loss_ctc 6.406636 loss_rnnt 4.997733 hw_loss 0.157123 lr 0.00024839 rank 1
+2023-03-01 16:01:36,346 DEBUG TRAIN Batch 53/1300 loss 16.275002 loss_att 20.418795 loss_ctc 20.193552 loss_rnnt 14.756913 hw_loss 0.312858 lr 0.00024844 rank 0
+2023-03-01 16:01:36,346 DEBUG TRAIN Batch 53/1300 loss 1.847612 loss_att 7.097029 loss_ctc 1.926362 loss_rnnt 0.787193 hw_loss 0.000065 lr 0.00024838 rank 3
+2023-03-01 16:01:36,346 DEBUG TRAIN Batch 53/1300 loss 3.427184 loss_att 7.020378 loss_ctc 8.441267 loss_rnnt 1.804095 hw_loss 0.442324 lr 0.00024843 rank 4
+2023-03-01 16:01:36,347 DEBUG TRAIN Batch 53/1300 loss 18.316780 loss_att 21.137680 loss_ctc 24.984419 loss_rnnt 16.773335 hw_loss 0.169216 lr 0.00024843 rank 5
+2023-03-01 16:01:36,348 DEBUG TRAIN Batch 53/1300 loss 15.714898 loss_att 15.288988 loss_ctc 17.956770 loss_rnnt 15.501089 hw_loss 0.000141 lr 0.00024842 rank 6
+2023-03-01 16:02:29,556 DEBUG TRAIN Batch 53/1400 loss 5.162668 loss_att 9.162321 loss_ctc 12.661128 loss_rnnt 3.362914 hw_loss 0.000053 lr 0.00024838 rank 1
+2023-03-01 16:02:29,557 DEBUG TRAIN Batch 53/1400 loss 0.725096 loss_att 2.634536 loss_ctc 1.790803 loss_rnnt 0.201053 hw_loss 0.000114 lr 0.00024842 rank 2
+2023-03-01 16:02:29,560 DEBUG TRAIN Batch 53/1400 loss 0.800353 loss_att 3.193368 loss_ctc 1.054422 loss_rnnt 0.287838 hw_loss 0.000067 lr 0.00024841 rank 5
+2023-03-01 16:02:29,560 DEBUG TRAIN Batch 53/1400 loss 21.789368 loss_att 29.909161 loss_ctc 42.738556 loss_rnnt 17.196739 hw_loss 0.328960 lr 0.00024842 rank 4
+2023-03-01 16:02:29,561 DEBUG TRAIN Batch 53/1400 loss 1.694926 loss_att 5.903245 loss_ctc 2.918457 loss_rnnt 0.651890 hw_loss 0.071691 lr 0.00024838 rank 7
+2023-03-01 16:02:29,562 DEBUG TRAIN Batch 53/1400 loss 0.568882 loss_att 1.827563 loss_ctc 1.340850 loss_rnnt 0.127131 hw_loss 0.163285 lr 0.00024843 rank 0
+2023-03-01 16:02:29,567 DEBUG TRAIN Batch 53/1400 loss 11.795568 loss_att 18.437193 loss_ctc 17.889343 loss_rnnt 9.532012 hw_loss 0.230113 lr 0.00024836 rank 3
+2023-03-01 16:02:29,572 DEBUG TRAIN Batch 53/1400 loss 7.049924 loss_att 10.530212 loss_ctc 13.750399 loss_rnnt 5.460450 hw_loss 0.000036 lr 0.00024840 rank 6
+2023-03-01 16:03:23,815 DEBUG TRAIN Batch 53/1500 loss 4.844868 loss_att 5.326371 loss_ctc 7.592922 loss_rnnt 4.162703 hw_loss 0.411481 lr 0.00024836 rank 1
+2023-03-01 16:03:23,817 DEBUG TRAIN Batch 53/1500 loss 3.925515 loss_att 7.415193 loss_ctc 8.702924 loss_rnnt 2.439847 hw_loss 0.282646 lr 0.00024841 rank 2
+2023-03-01 16:03:23,819 DEBUG TRAIN Batch 53/1500 loss 1.733981 loss_att 5.085604 loss_ctc 5.082829 loss_rnnt 0.475276 hw_loss 0.266001 lr 0.00024839 rank 6
+2023-03-01 16:03:23,820 DEBUG TRAIN Batch 53/1500 loss 14.992416 loss_att 17.686481 loss_ctc 23.542650 loss_rnnt 13.230533 hw_loss 0.155699 lr 0.00024836 rank 7
+2023-03-01 16:03:23,820 DEBUG TRAIN Batch 53/1500 loss 1.995293 loss_att 4.916923 loss_ctc 2.408370 loss_rnnt 1.267149 hw_loss 0.166391 lr 0.00024840 rank 4
+2023-03-01 16:03:23,822 DEBUG TRAIN Batch 53/1500 loss 3.292423 loss_att 9.938288 loss_ctc 5.594395 loss_rnnt 1.473385 hw_loss 0.343004 lr 0.00024835 rank 3
+2023-03-01 16:03:23,826 DEBUG TRAIN Batch 53/1500 loss 2.010329 loss_att 6.746153 loss_ctc 4.840853 loss_rnnt 0.685742 hw_loss 0.000036 lr 0.00024841 rank 0
+2023-03-01 16:03:23,877 DEBUG TRAIN Batch 53/1500 loss 0.788360 loss_att 3.393131 loss_ctc 1.629122 loss_rnnt 0.155276 hw_loss 0.000052 lr 0.00024840 rank 5
+2023-03-01 16:04:20,046 DEBUG TRAIN Batch 53/1600 loss 4.228964 loss_att 6.335382 loss_ctc 7.017162 loss_rnnt 3.369115 hw_loss 0.125262 lr 0.00024834 rank 7
+2023-03-01 16:04:20,048 DEBUG TRAIN Batch 53/1600 loss 6.441234 loss_att 6.602300 loss_ctc 8.646782 loss_rnnt 5.892529 hw_loss 0.417036 lr 0.00024835 rank 1
+2023-03-01 16:04:20,048 DEBUG TRAIN Batch 53/1600 loss 10.276389 loss_att 11.046399 loss_ctc 17.054022 loss_rnnt 9.032507 hw_loss 0.349118 lr 0.00024839 rank 4
+2023-03-01 16:04:20,052 DEBUG TRAIN Batch 53/1600 loss 6.224000 loss_att 7.129678 loss_ctc 7.415536 loss_rnnt 5.714866 hw_loss 0.317114 lr 0.00024840 rank 0
+2023-03-01 16:04:20,053 DEBUG TRAIN Batch 53/1600 loss 8.550821 loss_att 8.571767 loss_ctc 13.134562 loss_rnnt 7.768388 hw_loss 0.313272 lr 0.00024839 rank 2
+2023-03-01 16:04:20,054 DEBUG TRAIN Batch 53/1600 loss 7.976093 loss_att 11.185181 loss_ctc 14.157869 loss_rnnt 6.461464 hw_loss 0.091078 lr 0.00024833 rank 3
+2023-03-01 16:04:20,057 DEBUG TRAIN Batch 53/1600 loss 5.405576 loss_att 7.577216 loss_ctc 9.594906 loss_rnnt 4.196089 hw_loss 0.406091 lr 0.00024838 rank 5
+2023-03-01 16:04:20,062 DEBUG TRAIN Batch 53/1600 loss 12.444826 loss_att 14.365654 loss_ctc 19.167950 loss_rnnt 10.976974 hw_loss 0.351131 lr 0.00024837 rank 6
+2023-03-01 16:05:13,215 DEBUG TRAIN Batch 53/1700 loss 3.047646 loss_att 10.183409 loss_ctc 5.202653 loss_rnnt 1.221164 hw_loss 0.209992 lr 0.00024833 rank 7
+2023-03-01 16:05:13,217 DEBUG TRAIN Batch 53/1700 loss 6.278764 loss_att 9.138661 loss_ctc 6.643690 loss_rnnt 5.658105 hw_loss 0.000042 lr 0.00024836 rank 5
+2023-03-01 16:05:13,217 DEBUG TRAIN Batch 53/1700 loss 8.146388 loss_att 12.436365 loss_ctc 18.499817 loss_rnnt 5.824059 hw_loss 0.157266 lr 0.00024837 rank 4
+2023-03-01 16:05:13,218 DEBUG TRAIN Batch 53/1700 loss 14.176329 loss_att 21.885530 loss_ctc 30.013643 loss_rnnt 10.396877 hw_loss 0.236192 lr 0.00024837 rank 2
+2023-03-01 16:05:13,219 DEBUG TRAIN Batch 53/1700 loss 5.166614 loss_att 6.309623 loss_ctc 1.706124 loss_rnnt 5.399330 hw_loss 0.000153 lr 0.00024838 rank 0
+2023-03-01 16:05:13,222 DEBUG TRAIN Batch 53/1700 loss 7.298308 loss_att 11.318390 loss_ctc 12.618137 loss_rnnt 5.784950 hw_loss 0.000058 lr 0.00024833 rank 1
+2023-03-01 16:05:13,223 DEBUG TRAIN Batch 53/1700 loss 15.195528 loss_att 16.133699 loss_ctc 26.694580 loss_rnnt 13.346632 hw_loss 0.240103 lr 0.00024832 rank 3
+2023-03-01 16:05:13,235 DEBUG TRAIN Batch 53/1700 loss 1.794445 loss_att 3.641955 loss_ctc 2.649282 loss_rnnt 1.310928 hw_loss 0.000069 lr 0.00024836 rank 6
+2023-03-01 16:06:07,068 DEBUG TRAIN Batch 53/1800 loss 2.311724 loss_att 3.544277 loss_ctc 4.863918 loss_rnnt 1.624478 hw_loss 0.188330 lr 0.00024830 rank 3
+2023-03-01 16:06:07,069 DEBUG TRAIN Batch 53/1800 loss 5.517442 loss_att 8.743509 loss_ctc 6.727340 loss_rnnt 4.572451 hw_loss 0.259606 lr 0.00024832 rank 1
+2023-03-01 16:06:07,073 DEBUG TRAIN Batch 53/1800 loss 11.257729 loss_att 13.672857 loss_ctc 24.884480 loss_rnnt 8.752665 hw_loss 0.384635 lr 0.00024836 rank 2
+2023-03-01 16:06:07,076 DEBUG TRAIN Batch 53/1800 loss 11.595146 loss_att 12.020962 loss_ctc 18.067310 loss_rnnt 10.646989 hw_loss 0.000072 lr 0.00024835 rank 4
+2023-03-01 16:06:07,078 DEBUG TRAIN Batch 53/1800 loss 9.494019 loss_att 14.373026 loss_ctc 19.082197 loss_rnnt 7.239741 hw_loss 0.000099 lr 0.00024831 rank 7
+2023-03-01 16:06:07,082 DEBUG TRAIN Batch 53/1800 loss 3.426955 loss_att 9.981367 loss_ctc 6.458234 loss_rnnt 1.571413 hw_loss 0.263416 lr 0.00024835 rank 5
+2023-03-01 16:06:07,084 DEBUG TRAIN Batch 53/1800 loss 8.434016 loss_att 8.475618 loss_ctc 8.340882 loss_rnnt 8.295417 hw_loss 0.267556 lr 0.00024834 rank 6
+2023-03-01 16:06:07,136 DEBUG TRAIN Batch 53/1800 loss 6.628999 loss_att 14.114164 loss_ctc 14.592528 loss_rnnt 3.969756 hw_loss 0.188261 lr 0.00024837 rank 0
+2023-03-01 16:07:02,268 DEBUG TRAIN Batch 53/1900 loss 2.555384 loss_att 9.516932 loss_ctc 2.555403 loss_rnnt 1.020525 hw_loss 0.267274 lr 0.00024834 rank 4
+2023-03-01 16:07:02,272 DEBUG TRAIN Batch 53/1900 loss 20.153112 loss_att 18.737244 loss_ctc 38.341576 loss_rnnt 18.011101 hw_loss 0.000104 lr 0.00024830 rank 1
+2023-03-01 16:07:02,278 DEBUG TRAIN Batch 53/1900 loss 17.151796 loss_att 17.676058 loss_ctc 21.154602 loss_rnnt 16.390831 hw_loss 0.229510 lr 0.00024834 rank 2
+2023-03-01 16:07:02,278 DEBUG TRAIN Batch 53/1900 loss 21.602509 loss_att 28.626738 loss_ctc 36.217575 loss_rnnt 18.248962 hw_loss 0.000046 lr 0.00024833 rank 6
+2023-03-01 16:07:02,278 DEBUG TRAIN Batch 53/1900 loss 19.473009 loss_att 22.702072 loss_ctc 24.183407 loss_rnnt 18.199116 hw_loss 0.000053 lr 0.00024835 rank 0
+2023-03-01 16:07:02,278 DEBUG TRAIN Batch 53/1900 loss 24.189842 loss_att 27.482933 loss_ctc 51.425545 loss_rnnt 19.899776 hw_loss 0.000039 lr 0.00024830 rank 7
+2023-03-01 16:07:02,284 DEBUG TRAIN Batch 53/1900 loss 0.980366 loss_att 3.671113 loss_ctc 1.697125 loss_rnnt 0.337674 hw_loss 0.016829 lr 0.00024829 rank 3
+2023-03-01 16:07:02,334 DEBUG TRAIN Batch 53/1900 loss 3.343235 loss_att 8.361710 loss_ctc 11.095201 loss_rnnt 1.115314 hw_loss 0.357431 lr 0.00024833 rank 5
+2023-03-01 16:07:58,767 DEBUG TRAIN Batch 53/2000 loss 5.015721 loss_att 6.799379 loss_ctc 9.708535 loss_rnnt 3.910203 hw_loss 0.230772 lr 0.00024828 rank 7
+2023-03-01 16:07:58,771 DEBUG TRAIN Batch 53/2000 loss 15.604819 loss_att 15.353104 loss_ctc 21.137753 loss_rnnt 14.738516 hw_loss 0.335482 lr 0.00024832 rank 4
+2023-03-01 16:07:58,772 DEBUG TRAIN Batch 53/2000 loss 8.046629 loss_att 8.928599 loss_ctc 13.529404 loss_rnnt 6.978560 hw_loss 0.301196 lr 0.00024832 rank 5
+2023-03-01 16:07:58,774 DEBUG TRAIN Batch 53/2000 loss 8.024950 loss_att 9.766748 loss_ctc 12.474392 loss_rnnt 7.047083 hw_loss 0.067964 lr 0.00024831 rank 6
+2023-03-01 16:07:58,775 DEBUG TRAIN Batch 53/2000 loss 2.509511 loss_att 5.078977 loss_ctc 9.532456 loss_rnnt 0.915643 hw_loss 0.269216 lr 0.00024829 rank 1
+2023-03-01 16:07:58,779 DEBUG TRAIN Batch 53/2000 loss 2.872042 loss_att 4.937875 loss_ctc 6.845110 loss_rnnt 1.849280 hw_loss 0.149726 lr 0.00024827 rank 3
+2023-03-01 16:07:58,781 DEBUG TRAIN Batch 53/2000 loss 6.836831 loss_att 8.679095 loss_ctc 11.740131 loss_rnnt 5.575871 hw_loss 0.447626 lr 0.00024833 rank 0
+2023-03-01 16:07:58,791 DEBUG TRAIN Batch 53/2000 loss 9.190973 loss_att 9.749469 loss_ctc 14.019053 loss_rnnt 8.289392 hw_loss 0.274007 lr 0.00024833 rank 2
+2023-03-01 16:08:51,983 DEBUG TRAIN Batch 53/2100 loss 12.119959 loss_att 18.018105 loss_ctc 30.642569 loss_rnnt 8.470599 hw_loss 0.000093 lr 0.00024832 rank 0
+2023-03-01 16:08:51,984 DEBUG TRAIN Batch 53/2100 loss 6.050060 loss_att 8.535432 loss_ctc 6.643386 loss_rnnt 5.342452 hw_loss 0.246418 lr 0.00024831 rank 2
+2023-03-01 16:08:51,986 DEBUG TRAIN Batch 53/2100 loss 1.077574 loss_att 2.120368 loss_ctc 1.635570 loss_rnnt 0.615005 hw_loss 0.336770 lr 0.00024826 rank 3
+2023-03-01 16:08:51,986 DEBUG TRAIN Batch 53/2100 loss 12.409410 loss_att 15.185242 loss_ctc 17.616007 loss_rnnt 11.029998 hw_loss 0.243813 lr 0.00024827 rank 1
+2023-03-01 16:08:51,987 DEBUG TRAIN Batch 53/2100 loss 4.614616 loss_att 6.287690 loss_ctc 4.809773 loss_rnnt 4.209880 hw_loss 0.082688 lr 0.00024831 rank 4
+2023-03-01 16:08:51,988 DEBUG TRAIN Batch 53/2100 loss 5.489966 loss_att 4.617565 loss_ctc 4.610103 loss_rnnt 5.520192 hw_loss 0.490444 lr 0.00024827 rank 7
+2023-03-01 16:08:51,991 DEBUG TRAIN Batch 53/2100 loss 4.759106 loss_att 6.889968 loss_ctc 5.621379 loss_rnnt 4.217933 hw_loss 0.000057 lr 0.00024830 rank 6
+2023-03-01 16:08:52,046 DEBUG TRAIN Batch 53/2100 loss 3.740925 loss_att 4.842025 loss_ctc 3.798786 loss_rnnt 3.384907 hw_loss 0.240155 lr 0.00024830 rank 5
+2023-03-01 16:09:44,596 DEBUG TRAIN Batch 53/2200 loss 3.557163 loss_att 8.570856 loss_ctc 5.713437 loss_rnnt 2.176230 hw_loss 0.170045 lr 0.00024826 rank 1
+2023-03-01 16:09:44,600 DEBUG TRAIN Batch 53/2200 loss 4.694156 loss_att 5.095416 loss_ctc 10.012865 loss_rnnt 3.689444 hw_loss 0.403684 lr 0.00024829 rank 5
+2023-03-01 16:09:44,600 DEBUG TRAIN Batch 53/2200 loss 13.058915 loss_att 16.995955 loss_ctc 10.944828 loss_rnnt 12.391358 hw_loss 0.303800 lr 0.00024829 rank 4
+2023-03-01 16:09:44,602 DEBUG TRAIN Batch 53/2200 loss 23.087954 loss_att 25.937450 loss_ctc 43.375965 loss_rnnt 19.731375 hw_loss 0.153023 lr 0.00024824 rank 3
+2023-03-01 16:09:44,603 DEBUG TRAIN Batch 53/2200 loss 1.085621 loss_att 2.638922 loss_ctc 1.943349 loss_rnnt 0.397589 hw_loss 0.493140 lr 0.00024828 rank 6
+2023-03-01 16:09:44,604 DEBUG TRAIN Batch 53/2200 loss 7.471921 loss_att 10.711761 loss_ctc 10.596691 loss_rnnt 6.288514 hw_loss 0.222754 lr 0.00024830 rank 0
+2023-03-01 16:09:44,605 DEBUG TRAIN Batch 53/2200 loss 1.788090 loss_att 3.030425 loss_ctc 0.886282 loss_rnnt 1.659786 hw_loss 0.000146 lr 0.00024825 rank 7
+2023-03-01 16:09:44,613 DEBUG TRAIN Batch 53/2200 loss 0.882405 loss_att 2.560961 loss_ctc 1.614270 loss_rnnt 0.449046 hw_loss 0.000124 lr 0.00024830 rank 2
+2023-03-01 16:10:39,922 DEBUG TRAIN Batch 53/2300 loss 4.113048 loss_att 11.656938 loss_ctc 5.511395 loss_rnnt 2.294064 hw_loss 0.232048 lr 0.00024824 rank 7
+2023-03-01 16:10:39,923 DEBUG TRAIN Batch 53/2300 loss 3.809568 loss_att 7.699907 loss_ctc 11.232046 loss_rnnt 1.840460 hw_loss 0.377579 lr 0.00024824 rank 1
+2023-03-01 16:10:39,929 DEBUG TRAIN Batch 53/2300 loss 6.134897 loss_att 12.423861 loss_ctc 8.690858 loss_rnnt 4.536255 hw_loss 0.000101 lr 0.00024827 rank 5
+2023-03-01 16:10:39,931 DEBUG TRAIN Batch 53/2300 loss 15.654239 loss_att 18.910275 loss_ctc 25.486206 loss_rnnt 13.653272 hw_loss 0.072807 lr 0.00024828 rank 4
+2023-03-01 16:10:39,932 DEBUG TRAIN Batch 53/2300 loss 2.578400 loss_att 5.247992 loss_ctc 1.715471 loss_rnnt 1.995108 hw_loss 0.308309 lr 0.00024827 rank 6
+2023-03-01 16:10:39,934 DEBUG TRAIN Batch 53/2300 loss 9.630205 loss_att 11.775184 loss_ctc 10.255047 loss_rnnt 9.117574 hw_loss 0.000605 lr 0.00024828 rank 2
+2023-03-01 16:10:39,949 DEBUG TRAIN Batch 53/2300 loss 6.861642 loss_att 9.536982 loss_ctc 9.638340 loss_rnnt 5.852228 hw_loss 0.195225 lr 0.00024823 rank 3
+2023-03-01 16:10:39,996 DEBUG TRAIN Batch 53/2300 loss 6.062270 loss_att 7.168105 loss_ctc 7.030474 loss_rnnt 5.711890 hw_loss 0.000223 lr 0.00024829 rank 0
+2023-03-01 16:12:00,160 DEBUG TRAIN Batch 53/2400 loss 3.137518 loss_att 4.444373 loss_ctc 4.538664 loss_rnnt 2.511997 hw_loss 0.332492 lr 0.00024823 rank 1
+2023-03-01 16:12:00,162 DEBUG TRAIN Batch 53/2400 loss 14.328243 loss_att 14.803589 loss_ctc 26.759581 loss_rnnt 12.326977 hw_loss 0.466288 lr 0.00024827 rank 0
+2023-03-01 16:12:00,164 DEBUG TRAIN Batch 53/2400 loss 11.668959 loss_att 17.631842 loss_ctc 16.022558 loss_rnnt 9.732400 hw_loss 0.306566 lr 0.00024827 rank 2
+2023-03-01 16:12:00,165 DEBUG TRAIN Batch 53/2400 loss 1.678267 loss_att 5.308672 loss_ctc 2.603446 loss_rnnt 0.666206 hw_loss 0.304918 lr 0.00024822 rank 7
+2023-03-01 16:12:00,170 DEBUG TRAIN Batch 53/2400 loss 7.557822 loss_att 7.840970 loss_ctc 9.688677 loss_rnnt 7.152320 hw_loss 0.121422 lr 0.00024826 rank 5
+2023-03-01 16:12:00,172 DEBUG TRAIN Batch 53/2400 loss 8.929504 loss_att 10.961804 loss_ctc 13.150341 loss_rnnt 7.920632 hw_loss 0.074312 lr 0.00024821 rank 3
+2023-03-01 16:12:00,173 DEBUG TRAIN Batch 53/2400 loss 6.579041 loss_att 6.979592 loss_ctc 10.569492 loss_rnnt 5.861386 hw_loss 0.197783 lr 0.00024826 rank 4
+2023-03-01 16:12:00,174 DEBUG TRAIN Batch 53/2400 loss 0.598156 loss_att 2.312508 loss_ctc 0.494750 loss_rnnt 0.211112 hw_loss 0.108676 lr 0.00024825 rank 6
+2023-03-01 16:12:53,333 DEBUG TRAIN Batch 53/2500 loss 8.282395 loss_att 9.222868 loss_ctc 14.369676 loss_rnnt 7.199249 hw_loss 0.156404 lr 0.00024821 rank 1
+2023-03-01 16:12:53,334 DEBUG TRAIN Batch 53/2500 loss 0.813525 loss_att 3.884836 loss_ctc 0.686870 loss_rnnt 0.093341 hw_loss 0.230269 lr 0.00024819 rank 3
+2023-03-01 16:12:53,336 DEBUG TRAIN Batch 53/2500 loss 14.551752 loss_att 20.600796 loss_ctc 39.797405 loss_rnnt 9.860325 hw_loss 0.216620 lr 0.00024821 rank 7
+2023-03-01 16:12:53,336 DEBUG TRAIN Batch 53/2500 loss 1.623993 loss_att 4.083551 loss_ctc 6.212304 loss_rnnt 0.409753 hw_loss 0.207287 lr 0.00024826 rank 0
+2023-03-01 16:12:53,339 DEBUG TRAIN Batch 53/2500 loss 2.041600 loss_att 5.153992 loss_ctc 6.416984 loss_rnnt 0.636942 hw_loss 0.372742 lr 0.00024824 rank 5
+2023-03-01 16:12:53,341 DEBUG TRAIN Batch 53/2500 loss 13.660389 loss_att 23.163799 loss_ctc 33.759003 loss_rnnt 9.079797 hw_loss 0.000177 lr 0.00024825 rank 4
+2023-03-01 16:12:53,342 DEBUG TRAIN Batch 53/2500 loss 8.624407 loss_att 15.555888 loss_ctc 15.363171 loss_rnnt 6.110226 hw_loss 0.430094 lr 0.00024825 rank 2
+2023-03-01 16:12:53,343 DEBUG TRAIN Batch 53/2500 loss 6.001788 loss_att 10.731714 loss_ctc 16.774725 loss_rnnt 3.414427 hw_loss 0.384346 lr 0.00024823 rank 6
+2023-03-01 16:13:47,027 DEBUG TRAIN Batch 53/2600 loss 2.311085 loss_att 5.529323 loss_ctc 2.296373 loss_rnnt 1.563089 hw_loss 0.199332 lr 0.00024820 rank 1
+2023-03-01 16:13:47,034 DEBUG TRAIN Batch 53/2600 loss 22.411921 loss_att 31.540611 loss_ctc 41.320450 loss_rnnt 17.969193 hw_loss 0.179720 lr 0.00024824 rank 2
+2023-03-01 16:13:47,033 DEBUG TRAIN Batch 53/2600 loss 18.580086 loss_att 22.381474 loss_ctc 33.614563 loss_rnnt 15.549169 hw_loss 0.498829 lr 0.00024819 rank 7
+2023-03-01 16:13:47,035 DEBUG TRAIN Batch 53/2600 loss 3.251721 loss_att 5.906994 loss_ctc 2.037917 loss_rnnt 2.590655 hw_loss 0.547223 lr 0.00024823 rank 5
+2023-03-01 16:13:47,037 DEBUG TRAIN Batch 53/2600 loss 2.499484 loss_att 5.972501 loss_ctc 4.327120 loss_rnnt 1.513665 hw_loss 0.089120 lr 0.00024818 rank 3
+2023-03-01 16:13:47,041 DEBUG TRAIN Batch 53/2600 loss 1.307827 loss_att 4.403041 loss_ctc 1.361318 loss_rnnt 0.681612 hw_loss 0.000073 lr 0.00024823 rank 4
+2023-03-01 16:13:47,042 DEBUG TRAIN Batch 53/2600 loss 2.226434 loss_att 5.334537 loss_ctc 4.818387 loss_rnnt 1.099945 hw_loss 0.298640 lr 0.00024822 rank 6
+2023-03-01 16:13:47,043 DEBUG TRAIN Batch 53/2600 loss 21.250542 loss_att 17.336861 loss_ctc 30.759207 loss_rnnt 20.671368 hw_loss 0.176417 lr 0.00024824 rank 0
+2023-03-01 16:14:41,050 DEBUG TRAIN Batch 53/2700 loss 6.786861 loss_att 15.267231 loss_ctc 14.592663 loss_rnnt 3.817396 hw_loss 0.436158 lr 0.00024818 rank 1
+2023-03-01 16:14:41,053 DEBUG TRAIN Batch 53/2700 loss 9.314133 loss_att 12.752575 loss_ctc 10.589080 loss_rnnt 8.327917 hw_loss 0.241001 lr 0.00024816 rank 3
+2023-03-01 16:14:41,055 DEBUG TRAIN Batch 53/2700 loss 1.864661 loss_att 4.798512 loss_ctc 5.638418 loss_rnnt 0.519793 hw_loss 0.477994 lr 0.00024821 rank 5
+2023-03-01 16:14:41,059 DEBUG TRAIN Batch 53/2700 loss 4.830784 loss_att 8.225987 loss_ctc 12.952637 loss_rnnt 2.929783 hw_loss 0.260713 lr 0.00024823 rank 0
+2023-03-01 16:14:41,063 DEBUG TRAIN Batch 53/2700 loss 1.519648 loss_att 4.035304 loss_ctc 5.810589 loss_rnnt 0.444333 hw_loss 0.000109 lr 0.00024818 rank 7
+2023-03-01 16:14:41,064 DEBUG TRAIN Batch 53/2700 loss 12.394391 loss_att 17.481022 loss_ctc 17.163185 loss_rnnt 10.570604 hw_loss 0.319914 lr 0.00024822 rank 2
+2023-03-01 16:14:41,071 DEBUG TRAIN Batch 53/2700 loss 4.912530 loss_att 11.720252 loss_ctc 12.587037 loss_rnnt 2.200286 hw_loss 0.613935 lr 0.00024820 rank 6
+2023-03-01 16:14:41,071 DEBUG TRAIN Batch 53/2700 loss 2.527251 loss_att 5.431510 loss_ctc 4.951227 loss_rnnt 1.435728 hw_loss 0.351515 lr 0.00024822 rank 4
+2023-03-01 16:15:37,277 DEBUG TRAIN Batch 53/2800 loss 10.027291 loss_att 17.527264 loss_ctc 28.027306 loss_rnnt 6.064598 hw_loss 0.117556 lr 0.00024816 rank 1
+2023-03-01 16:15:37,289 DEBUG TRAIN Batch 53/2800 loss 4.429810 loss_att 5.140035 loss_ctc 8.232219 loss_rnnt 3.614492 hw_loss 0.311784 lr 0.00024821 rank 2
+2023-03-01 16:15:37,289 DEBUG TRAIN Batch 53/2800 loss 0.448232 loss_att 1.846791 loss_ctc 0.292527 loss_rnnt 0.189274 hw_loss 0.000012 lr 0.00024815 rank 3
+2023-03-01 16:15:37,289 DEBUG TRAIN Batch 53/2800 loss 9.927357 loss_att 11.558247 loss_ctc 17.782766 loss_rnnt 8.401640 hw_loss 0.285282 lr 0.00024821 rank 0
+2023-03-01 16:15:37,291 DEBUG TRAIN Batch 53/2800 loss 14.800702 loss_att 17.050467 loss_ctc 24.077034 loss_rnnt 13.113891 hw_loss 0.000027 lr 0.00024820 rank 4
+2023-03-01 16:15:37,293 DEBUG TRAIN Batch 53/2800 loss 6.831321 loss_att 14.070959 loss_ctc 21.881931 loss_rnnt 3.167567 hw_loss 0.392021 lr 0.00024816 rank 7
+2023-03-01 16:15:37,296 DEBUG TRAIN Batch 53/2800 loss 9.547052 loss_att 14.562984 loss_ctc 22.627956 loss_rnnt 6.745351 hw_loss 0.101992 lr 0.00024819 rank 6
+2023-03-01 16:15:37,298 DEBUG TRAIN Batch 53/2800 loss 10.058249 loss_att 9.584182 loss_ctc 17.208218 loss_rnnt 9.086217 hw_loss 0.212844 lr 0.00024820 rank 5
+2023-03-01 16:16:29,659 DEBUG TRAIN Batch 53/2900 loss 7.739703 loss_att 7.941138 loss_ctc 8.660123 loss_rnnt 7.576671 hw_loss 0.000044 lr 0.00024815 rank 1
+2023-03-01 16:16:29,661 DEBUG TRAIN Batch 53/2900 loss 1.420058 loss_att 4.664644 loss_ctc 3.474742 loss_rnnt 0.400346 hw_loss 0.181568 lr 0.00024815 rank 7
+2023-03-01 16:16:29,665 DEBUG TRAIN Batch 53/2900 loss 15.615719 loss_att 22.213108 loss_ctc 21.493811 loss_rnnt 13.350057 hw_loss 0.304570 lr 0.00024819 rank 2
+2023-03-01 16:16:29,668 DEBUG TRAIN Batch 53/2900 loss 4.204086 loss_att 5.609795 loss_ctc 9.089064 loss_rnnt 3.086401 hw_loss 0.347275 lr 0.00024819 rank 4
+2023-03-01 16:16:29,674 DEBUG TRAIN Batch 53/2900 loss 8.428081 loss_att 12.185586 loss_ctc 15.720069 loss_rnnt 6.584450 hw_loss 0.224745 lr 0.00024813 rank 3
+2023-03-01 16:16:29,686 DEBUG TRAIN Batch 53/2900 loss 2.046303 loss_att 5.285566 loss_ctc 5.766004 loss_rnnt 0.799361 hw_loss 0.193367 lr 0.00024817 rank 6
+2023-03-01 16:16:29,706 DEBUG TRAIN Batch 53/2900 loss 3.195498 loss_att 7.919972 loss_ctc 5.822147 loss_rnnt 1.780585 hw_loss 0.224620 lr 0.00024820 rank 0
+2023-03-01 16:16:29,711 DEBUG TRAIN Batch 53/2900 loss 13.440457 loss_att 17.045483 loss_ctc 16.666754 loss_rnnt 12.230247 hw_loss 0.110686 lr 0.00024818 rank 5
+2023-03-01 16:17:22,485 DEBUG TRAIN Batch 53/3000 loss 3.217889 loss_att 6.589048 loss_ctc 6.461162 loss_rnnt 2.019084 hw_loss 0.172756 lr 0.00024818 rank 2
+2023-03-01 16:17:22,486 DEBUG TRAIN Batch 53/3000 loss 11.091727 loss_att 13.553957 loss_ctc 16.256571 loss_rnnt 9.815217 hw_loss 0.178909 lr 0.00024812 rank 3
+2023-03-01 16:17:22,489 DEBUG TRAIN Batch 53/3000 loss 0.542155 loss_att 2.147518 loss_ctc 0.301745 loss_rnnt 0.079302 hw_loss 0.325942 lr 0.00024817 rank 5
+2023-03-01 16:17:22,490 DEBUG TRAIN Batch 53/3000 loss 3.772775 loss_att 10.095223 loss_ctc 11.654936 loss_rnnt 1.340377 hw_loss 0.219289 lr 0.00024813 rank 7
+2023-03-01 16:17:22,491 DEBUG TRAIN Batch 53/3000 loss 0.517603 loss_att 2.135395 loss_ctc 0.344515 loss_rnnt 0.055457 hw_loss 0.303123 lr 0.00024817 rank 4
+2023-03-01 16:17:22,492 DEBUG TRAIN Batch 53/3000 loss 4.742840 loss_att 6.123017 loss_ctc 5.752677 loss_rnnt 4.332124 hw_loss 0.000067 lr 0.00024813 rank 1
+2023-03-01 16:17:22,495 DEBUG TRAIN Batch 53/3000 loss 16.215248 loss_att 13.625973 loss_ctc 31.624756 loss_rnnt 14.438040 hw_loss 0.450867 lr 0.00024818 rank 0
+2023-03-01 16:17:22,496 DEBUG TRAIN Batch 53/3000 loss 5.615584 loss_att 23.139359 loss_ctc 6.321949 loss_rnnt 1.913936 hw_loss 0.192585 lr 0.00024816 rank 6
+2023-03-01 16:18:17,376 DEBUG TRAIN Batch 53/3100 loss 10.666581 loss_att 10.755032 loss_ctc 12.804760 loss_rnnt 10.363730 hw_loss 0.000133 lr 0.00024812 rank 1
+2023-03-01 16:18:17,382 DEBUG TRAIN Batch 53/3100 loss 5.409064 loss_att 6.932666 loss_ctc 10.405225 loss_rnnt 4.438095 hw_loss 0.000176 lr 0.00024816 rank 4
+2023-03-01 16:18:17,381 DEBUG TRAIN Batch 53/3100 loss 3.446170 loss_att 6.053188 loss_ctc 8.072102 loss_rnnt 2.171376 hw_loss 0.256123 lr 0.00024816 rank 2
+2023-03-01 16:18:17,382 DEBUG TRAIN Batch 53/3100 loss 3.548316 loss_att 6.896001 loss_ctc 9.251485 loss_rnnt 2.074428 hw_loss 0.082365 lr 0.00024811 rank 7
+2023-03-01 16:18:17,383 DEBUG TRAIN Batch 53/3100 loss 2.657227 loss_att 3.557922 loss_ctc 2.836682 loss_rnnt 2.453084 hw_loss 0.000143 lr 0.00024810 rank 3
+2023-03-01 16:18:17,384 DEBUG TRAIN Batch 53/3100 loss 7.616378 loss_att 12.714728 loss_ctc 6.993849 loss_rnnt 6.679666 hw_loss 0.000086 lr 0.00024814 rank 6
+2023-03-01 16:18:17,394 DEBUG TRAIN Batch 53/3100 loss 13.810087 loss_att 16.340549 loss_ctc 22.743740 loss_rnnt 12.112758 hw_loss 0.000158 lr 0.00024815 rank 5
+2023-03-01 16:18:17,442 DEBUG TRAIN Batch 53/3100 loss 3.125486 loss_att 7.776411 loss_ctc 13.504290 loss_rnnt 0.576858 hw_loss 0.439879 lr 0.00024817 rank 0
+2023-03-01 16:19:12,532 DEBUG TRAIN Batch 53/3200 loss 7.948226 loss_att 9.885963 loss_ctc 15.458794 loss_rnnt 6.417717 hw_loss 0.265411 lr 0.00024814 rank 4
+2023-03-01 16:19:12,532 DEBUG TRAIN Batch 53/3200 loss 3.513160 loss_att 8.033011 loss_ctc 4.917387 loss_rnnt 2.358737 hw_loss 0.118543 lr 0.00024810 rank 7
+2023-03-01 16:19:12,534 DEBUG TRAIN Batch 53/3200 loss 12.125073 loss_att 13.357288 loss_ctc 22.614649 loss_rnnt 10.435322 hw_loss 0.083809 lr 0.00024815 rank 0
+2023-03-01 16:19:12,536 DEBUG TRAIN Batch 53/3200 loss 6.021453 loss_att 9.255711 loss_ctc 7.841359 loss_rnnt 4.956834 hw_loss 0.328337 lr 0.00024810 rank 1
+2023-03-01 16:19:12,540 DEBUG TRAIN Batch 53/3200 loss 5.811864 loss_att 9.643311 loss_ctc 15.293119 loss_rnnt 3.714305 hw_loss 0.125816 lr 0.00024813 rank 6
+2023-03-01 16:19:12,541 DEBUG TRAIN Batch 53/3200 loss 0.916413 loss_att 2.831528 loss_ctc 0.446436 loss_rnnt 0.408701 hw_loss 0.351286 lr 0.00024809 rank 3
+2023-03-01 16:19:12,542 DEBUG TRAIN Batch 53/3200 loss 3.603114 loss_att 4.221076 loss_ctc 5.128609 loss_rnnt 3.276108 hw_loss 0.000027 lr 0.00024814 rank 5
+2023-03-01 16:19:12,585 DEBUG TRAIN Batch 53/3200 loss 4.531420 loss_att 5.407838 loss_ctc 8.965624 loss_rnnt 3.632731 hw_loss 0.247833 lr 0.00024815 rank 2
+2023-03-01 16:20:06,195 DEBUG TRAIN Batch 53/3300 loss 6.907927 loss_att 22.907240 loss_ctc 13.139605 loss_rnnt 2.629388 hw_loss 0.464598 lr 0.00024814 rank 0
+2023-03-01 16:20:06,196 DEBUG TRAIN Batch 53/3300 loss 1.649652 loss_att 2.738829 loss_ctc 1.892492 loss_rnnt 1.399371 hw_loss 0.000127 lr 0.00024807 rank 3
+2023-03-01 16:20:06,199 DEBUG TRAIN Batch 53/3300 loss 3.177850 loss_att 5.968386 loss_ctc 5.152536 loss_rnnt 2.356325 hw_loss 0.000236 lr 0.00024808 rank 7
+2023-03-01 16:20:06,198 DEBUG TRAIN Batch 53/3300 loss 18.167562 loss_att 17.478769 loss_ctc 19.391964 loss_rnnt 18.069130 hw_loss 0.136756 lr 0.00024812 rank 5
+2023-03-01 16:20:06,200 DEBUG TRAIN Batch 53/3300 loss 23.944555 loss_att 26.611263 loss_ctc 38.640419 loss_rnnt 21.360317 hw_loss 0.171465 lr 0.00024813 rank 2
+2023-03-01 16:20:06,200 DEBUG TRAIN Batch 53/3300 loss 6.850502 loss_att 5.729577 loss_ctc 6.387027 loss_rnnt 7.038867 hw_loss 0.183032 lr 0.00024809 rank 1
+2023-03-01 16:20:06,202 DEBUG TRAIN Batch 53/3300 loss 10.101241 loss_att 15.199578 loss_ctc 27.560696 loss_rnnt 6.690745 hw_loss 0.117938 lr 0.00024813 rank 4
+2023-03-01 16:20:06,203 DEBUG TRAIN Batch 53/3300 loss 13.860915 loss_att 15.123260 loss_ctc 25.852322 loss_rnnt 11.875973 hw_loss 0.250535 lr 0.00024811 rank 6
+2023-03-01 16:20:59,767 DEBUG TRAIN Batch 53/3400 loss 6.976825 loss_att 7.353268 loss_ctc 9.032912 loss_rnnt 6.583931 hw_loss 0.081489 lr 0.00024810 rank 5
+2023-03-01 16:20:59,769 DEBUG TRAIN Batch 53/3400 loss 11.407351 loss_att 16.830269 loss_ctc 25.351248 loss_rnnt 8.179792 hw_loss 0.532102 lr 0.00024807 rank 1
+2023-03-01 16:20:59,774 DEBUG TRAIN Batch 53/3400 loss 10.359440 loss_att 9.119667 loss_ctc 11.147693 loss_rnnt 10.342078 hw_loss 0.300404 lr 0.00024812 rank 0
+2023-03-01 16:20:59,774 DEBUG TRAIN Batch 53/3400 loss 4.814654 loss_att 8.583097 loss_ctc 9.512826 loss_rnnt 3.255617 hw_loss 0.335485 lr 0.00024807 rank 7
+2023-03-01 16:20:59,774 DEBUG TRAIN Batch 53/3400 loss 0.834535 loss_att 3.896751 loss_ctc 1.817002 loss_rnnt 0.090975 hw_loss 0.000227 lr 0.00024811 rank 2
+2023-03-01 16:20:59,777 DEBUG TRAIN Batch 53/3400 loss 5.192405 loss_att 11.271845 loss_ctc 13.008330 loss_rnnt 2.934354 hw_loss 0.000075 lr 0.00024806 rank 3
+2023-03-01 16:20:59,777 DEBUG TRAIN Batch 53/3400 loss 12.678316 loss_att 13.081899 loss_ctc 20.036089 loss_rnnt 11.616529 hw_loss 0.000065 lr 0.00024810 rank 6
+2023-03-01 16:20:59,777 DEBUG TRAIN Batch 53/3400 loss 4.389045 loss_att 9.252115 loss_ctc 19.125345 loss_rnnt 1.451523 hw_loss 0.000125 lr 0.00024811 rank 4
+2023-03-01 16:21:56,307 DEBUG TRAIN Batch 53/3500 loss 2.393954 loss_att 4.767664 loss_ctc 11.987137 loss_rnnt 0.541803 hw_loss 0.184346 lr 0.00024806 rank 1
+2023-03-01 16:21:56,309 DEBUG TRAIN Batch 53/3500 loss 4.114285 loss_att 5.634696 loss_ctc 4.990845 loss_rnnt 3.646544 hw_loss 0.087721 lr 0.00024804 rank 3
+2023-03-01 16:21:56,312 DEBUG TRAIN Batch 53/3500 loss 3.652524 loss_att 6.416139 loss_ctc 4.076715 loss_rnnt 3.043033 hw_loss 0.000392 lr 0.00024810 rank 2
+2023-03-01 16:21:56,317 DEBUG TRAIN Batch 53/3500 loss 1.234125 loss_att 3.621264 loss_ctc 2.125752 loss_rnnt 0.388806 hw_loss 0.466889 lr 0.00024808 rank 6
+2023-03-01 16:21:56,319 DEBUG TRAIN Batch 53/3500 loss 6.258022 loss_att 7.184546 loss_ctc 9.118298 loss_rnnt 5.583782 hw_loss 0.201684 lr 0.00024811 rank 0
+2023-03-01 16:21:56,320 DEBUG TRAIN Batch 53/3500 loss 8.299065 loss_att 4.736540 loss_ctc 10.057618 loss_rnnt 8.649220 hw_loss 0.239768 lr 0.00024805 rank 7
+2023-03-01 16:21:56,322 DEBUG TRAIN Batch 53/3500 loss 4.077704 loss_att 10.306387 loss_ctc 14.543061 loss_rnnt 1.251718 hw_loss 0.346628 lr 0.00024809 rank 4
+2023-03-01 16:21:56,374 DEBUG TRAIN Batch 53/3500 loss 0.917124 loss_att 2.749518 loss_ctc 0.994392 loss_rnnt 0.417178 hw_loss 0.230935 lr 0.00024809 rank 5
