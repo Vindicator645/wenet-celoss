@@ -20610,6 +20610,7 @@ the number of model params: 58499370
 2023-02-26 21:57:14,502 DEBUG TRAIN Batch 52/6900 loss 2.448309 loss_att 3.732295 loss_ctc 3.473801 loss_rnnt 2.043003 hw_loss 0.022082 lr 0.00023822 rank 1
 2023-02-26 21:57:14,504 DEBUG TRAIN Batch 52/6900 loss 5.684392 loss_att 6.420206 loss_ctc 7.774769 loss_rnnt 5.257423 hw_loss 0.002045 lr 0.00023819 rank 6
 2023-02-26 21:57:14,505 DEBUG TRAIN Batch 52/6900 loss 5.825404 loss_att 8.936796 loss_ctc 9.099535 loss_rnnt 4.715130 hw_loss 0.096458 lr 0.00023820 rank 3
+<<<<<<< HEAD
 2023-02-26 21:58:25,979 DEBUG TRAIN Batch 52/7000 loss 8.630089 loss_att 9.979113 loss_ctc 11.355146 loss_rnnt 7.945574 hw_loss 0.096316 lr 0.00023816 rank 7
 2023-02-26 21:58:25,983 DEBUG TRAIN Batch 52/7000 loss 7.708059 loss_att 11.204206 loss_ctc 10.417565 loss_rnnt 6.602067 hw_loss 0.085302 lr 0.00023816 rank 6
 2023-02-26 21:58:25,983 DEBUG TRAIN Batch 52/7000 loss 6.180984 loss_att 7.203837 loss_ctc 10.262568 loss_rnnt 5.388994 hw_loss 0.081014 lr 0.00023817 rank 0
@@ -27776,3 +27777,5 @@ Traceback (most recent call last):
   File "/home/environment/tyxu/anaconda3/envs/wenet/lib/python3.8/site-packages/torch/autograd/__init__.py", line 154, in backward
     Variable._execution_engine.run_backward(
 RuntimeError: [/opt/conda/conda-bld/pytorch_1634272172048/work/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [192.168.0.37]:11654
+=======
+>>>>>>> d7c98c4afa6071078e6c41ec2f66780c1c293190
