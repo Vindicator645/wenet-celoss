@@ -517,10 +517,7 @@ class Transducer(ASRModel):
         context_list: torch.Tensor = torch.IntTensor([0]),
         context_lengths: torch.Tensor = torch.IntTensor([0]),
         context_filter_state: str ='on',
-<<<<<<< HEAD
         context_decoder_labels_padded: torch.Tensor = torch.IntTensor([0]),
-=======
->>>>>>> d7c98c4afa6071078e6c41ec2f66780c1c293190
     ) -> List[List[int]]:
         """ greedy search
 
@@ -560,10 +557,7 @@ class Transducer(ASRModel):
                                     context_lengths,
                                     n_steps=n_steps,
                                     context_filter_state=context_filter_state,
-<<<<<<< HEAD
                                     context_decoder_labels_padded=context_decoder_labels_padded
-=======
->>>>>>> d7c98c4afa6071078e6c41ec2f66780c1c293190
                                     )
         elif self.loss_mode=='both':
             hyps = basic_greedy_search_both(self,

@@ -34,23 +34,14 @@ cmvn=true
 do_delta=false
 # use average_checkpoint will get better result
 average_checkpoint=false
-<<<<<<< HEAD
 decode_checkpoint=$dir/60.pt
-=======
-decode_checkpoint=$dir/51.pt
->>>>>>> d7c98c4afa6071078e6c41ec2f66780c1c293190
 # maybe you can try to adjust it if you can not get close results as README.md
 average_num=8
 #decode_modes="attention_rescoring ctc_greedy_search ctc_prefix_beam_search attention"
 decode_modes="rnnt_greedy_search"
-<<<<<<< HEAD
-context_modes="4"
-context_filter_state="on off"
-cdict=100
-=======
 context_modes="1 2 3 4"
 context_filter_state="on off"
->>>>>>> d7c98c4afa6071078e6c41ec2f66780c1c293190
+cdict=50
 . tools/parse_options.sh || exit 1;
 
 # bpemode (unigram or bpe)
@@ -214,11 +205,7 @@ if [ ${stage} -le 5 ] && [ ${stop_stage} -ge 5 ]; then
 
             test_tag=mode1dict100ep10large_off
             # context_mode=1
-<<<<<<< HEAD
-            test_dir=$dir/new2_${test}_${mode}_${decode_checkpoint}_context${context_mode}_small_${cf_state}_${cdict}
-=======
-            test_dir=$dir/${test}_${mode}_${decode_checkpoint}_context${context_mode}_small_${cf_state}
->>>>>>> d7c98c4afa6071078e6c41ec2f66780c1c293190
+            test_dir=$dir/new2_${test}_${mode}_${decode_checkpoint}_context${context_mode}_${cf_state}_${cdict}
             mkdir -p $test_dir
             gpu_id=$(echo $CUDA_VISIBLE_DEVICES | cut -d',' -f$[$idx+1])
             python wenet/bin/recognize.py --gpu $gpu_id \
@@ -236,10 +223,7 @@ if [ ${stage} -le 5 ] && [ ${stop_stage} -ge 5 ]; then
               --ctc_weight $ctc_weight \
               --context_mode $context_mode\
               --context_filter_state $cf_state\
-<<<<<<< HEAD
               --context_dic $cdict\
-=======
->>>>>>> d7c98c4afa6071078e6c41ec2f66780c1c293190
               # --context_list_path /home/work_nfs5_ssd/kxhuang/buffer/librispeech_context_bpe_list.txt \
               # --context_filter_mode "" \
               ${decoding_chunk_size:+--decoding_chunk_size $decoding_chunk_size} 
