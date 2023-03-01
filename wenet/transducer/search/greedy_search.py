@@ -96,7 +96,7 @@ def basic_greedy_search(
                 # if 1:
                 if (int (indices.item()))==0:
                     pred_out_step, predictor_out_bias_step = model.context_bias.forward_predictor_bias(bias_hidden_empty, pred_out_step)
-                    encoder_out_step=encoder_out_step_empty
+                    # encoder_out_step=encoder_out_step_empty
                     prev_out_hw=0
                 else:
                     pred_out_step, predictor_out_bias_step = model.context_bias.forward_predictor_bias(bias_hidden, pred_out_step)
