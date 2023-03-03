@@ -561,13 +561,15 @@ class Transducer(ASRModel):
                                     context_decoder_labels_padded=context_decoder_labels_padded
                                     )
         elif self.loss_mode=='both':
-            hyps = basic_greedy_search_both(self,
+            hyps,dist = basic_greedy_search_both(self,
                                     encoder_out,
                                     encoder_out_lens,
                                     context_list,
                                     context_lengths,
                                     n_steps=n_steps,
                                     context_filter_state=context_filter_state,
+                                    context_decoder_labels_padded=context_decoder_labels_padded
+
                                     )
         else:
             hyps = basic_greedy_search_both(self,

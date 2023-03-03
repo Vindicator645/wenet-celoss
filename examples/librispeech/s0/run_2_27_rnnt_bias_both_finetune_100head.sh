@@ -26,7 +26,7 @@ dir=exp/2_27_rnnt_bias_loss_2_class_both_finetune_100head
 train_config=conf/encoder_bias_conformer_rnnt_4_head_bi_1_layer_2_Labels_both_100head.yaml
 
 #checkpoint=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/exp/1116_encoder_bias_30_0.1/44.pt
-checkpoint=$dir/54.pt
+checkpoint=$dir/10.pt
 # checkpoint=
 cmvn=true
 do_delta=false

@@ -26,7 +26,7 @@ dir=exp/2_25_rnnt_bias_sepeate_2_class_3word_finetune
 # 1. conf/train_transformer_large.yaml: Standard transformer
 train_config=conf/encoder_bias_conformer_rnnt_4_head_bi_1_layer_seperate.yaml
 #checkpoint=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/exp/1116_encoder_bias_30_0.1/44.pt
-checkpoint=$dir/44.pt
+checkpoint=$dir/56.pt
 # checkpoint=
 cmvn=true
 do_delta=false

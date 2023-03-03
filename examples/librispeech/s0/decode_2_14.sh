@@ -33,15 +33,15 @@ checkpoint=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeec
 cmvn=true
 do_delta=false
 # use average_checkpoint will get better result
-average_checkpoint=false
+average_checkpoint=true
 decode_checkpoint=$dir/60.pt
 # maybe you can try to adjust it if you can not get close results as README.md
-average_num=8
+average_num=10
 #decode_modes="attention_rescoring ctc_greedy_search ctc_prefix_beam_search attention"
 decode_modes="rnnt_greedy_search"
 context_modes="1 2 3 4"
 context_filter_state="on off"
-cdict=50
+cdict=20
 . tools/parse_options.sh || exit 1;
 
 # bpemode (unigram or bpe)
@@ -55,7 +55,7 @@ set -o pipefail
 train_set=train_960
 dev_set=dev
 # recog_set="test_clean test_other test_clean_context test_clean_nocontext test_other_context test_other_nocontext"
-recog_set="test_other"
+recog_set="test_clean test_other"
 
 if [ ${stage} -le -1 ] && [ ${stop_stage} -ge -1 ]; then
   echo "stage -1: Data Download"
@@ -214,7 +214,7 @@ if [ ${stage} -le 5 ] && [ ${stop_stage} -ge 5 ]; then
               --data_type raw \
               --dict $dict \
               --bpe_model ${bpemodel}.model \
-              --test_data $wave_data/$test/data_small.list \
+              --test_data $wave_data/$test/data.list \
               --checkpoint $decode_checkpoint \
               --beam_size 10 \
               --batch_size 1 \

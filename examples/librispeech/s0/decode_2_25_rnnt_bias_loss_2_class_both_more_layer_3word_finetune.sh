@@ -18,7 +18,9 @@ data_url=www.openslr.org/resources/12
 datadir=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/data
 # wav data dir
 wave_data=/home/work_nfs5_ssd/kxhuang/wenet-encoder_decoder_bias/examples/librispeech/s0/data
-dir=exp/2_14_rnnt_bias_loss_2_class_finetune
+# dir=exp/2_27_rnnt_bias_loss_2_class_both_finetune
+dir=exp/3_2_rnnt_bias_loss_2_class_both_finetune
+dir=exp/2_27_rnnt_bias_loss_2_class_both_finetune_100head
 
 # dir=exp/sp_CIP_encoder_bias_ctcloss
 # Optional train_config
@@ -39,8 +41,8 @@ decode_checkpoint=$dir/51.pt
 average_num=8
 #decode_modes="attention_rescoring ctc_greedy_search ctc_prefix_beam_search attention"
 decode_modes="rnnt_greedy_search"
-context_modes="1 2 3 4"
-context_filter_state="on off"
+context_modes="4 "
+context_filter_state="on"
 . tools/parse_options.sh || exit 1;
 
 # bpemode (unigram or bpe)

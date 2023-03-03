@@ -55,6 +55,8 @@ def basic_greedy_search(
     pred_out_step = None
     per_frame_max_noblk = n_steps
     per_frame_noblk = 0
+    prev_out_hw=1
+
     # print(context_list)
     # quit()
     bias_hidden = model.context_bias.forward_bias_hidden(context_list, context_lengths)
@@ -67,7 +69,8 @@ def basic_greedy_search(
     encoder_out_unbiased=encoder_out.clone()
     encoder_out , encoder_out_bias= model.context_bias.forward_encoder_bias(bias_hidden, encoder_out)
     encoder_out_empty , encoder_out_bias_empty= model.context_bias.forward_encoder_bias(bias_hidden_empty,encoder_out_unbiased)
-
+    print(context_lengths_empty)
+    print(context_lengths)
     # print(encoder_out- encoder_out_empty)
     # print(torch.eq(bias_hidden, bias_hidden_empty))
 
@@ -75,7 +78,6 @@ def basic_greedy_search(
         # quit()
     result=[]
     # print("")
-    prev_out_hw=1
     while t < encoder_out_lens:
         encoder_out_step = encoder_out[:, t:t + 1, :]  # [1, 1, E]
         encoder_out_step_empty = encoder_out_empty[:, t:t + 1, :]# [1, 1, E]
@@ -144,6 +146,7 @@ def basic_greedy_search_both(
     context_lengths: torch.Tensor = torch.IntTensor([0]),
     n_steps: int = 64,
     context_filter_state: str= 'off',
+    context_decoder_labels_padded: torch.Tensor = torch.IntTensor([0]),
 
 ) -> List[List[int]]:
     # fake padding
@@ -156,23 +159,25 @@ def basic_greedy_search_both(
     new_cache: List[torch.Tensor] = []
     t = 0
     hyps = []
+    result=[]
     prev_out_nblk = True
     pred_out_step = None
     per_frame_max_noblk = n_steps
     per_frame_noblk = 0
+    prev_out_hw=1
+
     # print(context_list)
     # quit()
     bias_hidden = model.context_bias.forward_bias_hidden(context_list, context_lengths)
-    context_list_empty=context_list[0]
-    context_list_empty=context_list_empty.unsqueeze(0)
+    context_list_empty=torch.zeros((1, 1), dtype=torch.int)
+ 
+    # context_list_empty=context_list_empty.unsqueeze(0)
     context_lengths_empty=context_lengths[0]
     context_lengths_empty=context_lengths_empty.unsqueeze(0)
-
     bias_hidden_empty = model.context_bias.forward_bias_hidden(context_list_empty, context_lengths_empty)
-
     encoder_out_unbiased=encoder_out.clone()
     encoder_out , encoder_out_bias= model.context_bias.forward_encoder_bias(bias_hidden, encoder_out)
-    encoder_out_empty , encoder_out_bias_empty= model.context_bias.forward_encoder_bias(bias_hidden_empty, encoder_out)
+    encoder_out_empty , encoder_out_bias_empty= model.context_bias.forward_encoder_bias(bias_hidden_empty,encoder_out_unbiased)
     # print("")
     while t < encoder_out_lens:
         encoder_out_step = encoder_out[:, t:t + 1, :]  # [1, 1, E]
@@ -187,12 +192,25 @@ def basic_greedy_search_both(
             hw_output = model.context_bias.forward_hw_pred_both(encoder_out_bias_step,predictor_out_bias_step)
             hw_output=hw_output.squeeze()
             values, indices = hw_output.topk(1)
-            if (int (indices.item()))==0:
-                pred_out_step, predictor_out_bias_step_empty = model.context_bias.forward_predictor_bias(bias_hidden, pred_out_step_unbiased)
-                encoder_out_step=encoder_out_step_empty
-   
-        joint_out_step = model.joint(encoder_out_step,
-                                     pred_out_step)  # [1,1,v]
+            # print(pred_out_step)
+            # print(pred_out_step.shape)
+            print(hw_output)
+            if context_filter_state=='on':
+                if (int (indices.item()))==0:
+                    pred_out_step, predictor_out_bias_step = model.context_bias.forward_predictor_bias(bias_hidden_empty, pred_out_step_unbiased)
+                    # encoder_out_step=encoder_out_step_empty
+                    prev_out_hw=0
+                else:
+                    # pred_out_step, predictor_out_bias_step = model.context_bias.forward_predictor_bias(bias_hidden, pred_out_step)
+                    prev_out_hw=1
+            # else:
+            #     pred_out_step, predictor_out_bias_step = model.context_bias.forward_predictor_bias(bias_hidden, pred_out_step)
+        if prev_out_hw:
+            joint_out_step = model.joint(encoder_out_step,
+                                pred_out_step)  # [1,1,v]
+        else:
+            joint_out_step = model.joint(encoder_out_step_empty,
+                                            pred_out_step)  # [1,1,v]
         # print(joint_out_step.shape)
         joint_out_probs = joint_out_step.log_softmax(dim=-1)
 
@@ -200,6 +218,7 @@ def basic_greedy_search_both(
         if joint_out_max != model.blank:
             hyps.append(joint_out_max.item())
             prev_out_nblk = True
+            result.append(prev_out_hw)
             per_frame_noblk = per_frame_noblk + 1
             pred_input_step = joint_out_max.reshape(1, 1)
             # state_m, state_c =  clstate_out_m, state_out_c
@@ -212,5 +231,8 @@ def basic_greedy_search_both(
             # or t should't be too lang to predict none blank
             t = t + 1
             per_frame_noblk = 0
-
-    return [hyps]
+    context_decoder_labels_padded=context_decoder_labels_padded.squeeze(0)
+    dist=edit_distance(context_decoder_labels_padded,result)
+    print(context_decoder_labels_padded)
+    print(result)
+    return [hyps], dist
