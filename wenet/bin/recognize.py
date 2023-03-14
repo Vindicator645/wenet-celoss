@@ -178,6 +178,7 @@ def main():
     test_conf['shuffle'] = False
     test_conf['sort'] = False
     test_conf['context_mode'] = args.context_mode
+    test_conf['pad_conf']['context_list_test']=test_conf['pad_conf']['context_list_test']+"_"+args.context_dic
     # test_conf['context_filter_state']=args.context_filter_state
     dic = test_conf['context_dict'].split('/')
     dic[-1] = args.context_dic + '.dic'
@@ -224,7 +225,7 @@ def main():
         if test_conf['context_mode'] == 2:
             context_list_file = test_conf['pad_conf']['context_list_valid']
         if test_conf['context_mode'] == 3:
-            context_list_file = test_conf['pad_conf']['context_list_test'] 
+            context_list_file = test_conf['pad_conf']['context_list_test']
         f = open(context_list_file)
         file_obj = f.readlines()
         for item in file_obj:
@@ -370,7 +371,8 @@ def main():
             print(dist)
             print(total_len)
             print(dist/total_len)
-
+    with open(args.result_file+'edit_dist', 'w') as fout2:
+        fout2.write('{} {}\n'.format(dist, total_len))
 
 if __name__ == '__main__':
     main()

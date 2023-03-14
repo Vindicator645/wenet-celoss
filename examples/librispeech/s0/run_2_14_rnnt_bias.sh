@@ -6,7 +6,7 @@
 
 # Use this to control how many gpu you use, It's 1-gpu training if you specify
 # just 1gpu, otherwise it's is multiple gpu training based on DDP in pytorch
-#export CUDA_VISIBLE_DEVICES="0,1,2,3"
+# export CUDA_VISIBLE_DEVICES="0,1"
 export CUDA_VISIBLE_DEVICES="0"
 # export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
 #export CUDA_VISIBLE_DEVICES="-1"
@@ -18,15 +18,15 @@ data_url=www.openslr.org/resources/12
 datadir=./data
 # wav data dir
 wave_data=/home/work_nfs5_ssd/kxhuang/wenet-encoder_decoder_bias/examples/librispeech/s0/data
-wave_data=/home/work_nfs6/tyxu/workspace/wenet-bias-celoss/examples/librispeech/s0/data
+# wave_data=/home/work_nfs6/tyxu/workspace/wenet-bias-celoss/examples/librispeech/s0/data
 # dir=exp/2_16_rnnt_bias_loss_2_class
-dir=exp/2_14_rnnt_bias_loss_2_class_finetune
+dir=exp/3_12_rnnt_bias_loss_2_class_finetune_cut
 # dir=exp/sp_CIP_encoder_bias_ctcloss
 # Optional train_config
 # 1. conf/train_transformer_large.yaml: Standard transformer
 train_config=conf/encoder_bias_conformer_rnnt_4_head_bi_1_layer_pred.yaml
 #checkpoint=/home/work_nfs6/tyxu/workspace/wenet-rnnt-runtime/examples/librispeech/s0/exp/1116_encoder_bias_30_0.1/44.pt
-checkpoint=$dir/60.pt
+checkpoint=$dir/13.pt
 # checkpoint=
 cmvn=true
 do_delta=false
@@ -49,7 +49,7 @@ set -u
 set -o pipefail
 
 train_set=train_960
-train_set=debug_1
+# train_set=debug_1
 dev_set=dev
 # recog_set="test_clean test_other test_clean_context test_clean_nocontext test_other_context test_other_nocontext"
 recog_set="test_other"

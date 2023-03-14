@@ -36,13 +36,13 @@ cmvn=true
 do_delta=false
 # use average_checkpoint will get better result
 average_checkpoint=false
-decode_checkpoint=$dir/51.pt
+decode_checkpoint=$dir/79.pt
 # maybe you can try to adjust it if you can not get close results as README.md
 average_num=8
 #decode_modes="attention_rescoring ctc_greedy_search ctc_prefix_beam_search attention"
 decode_modes="rnnt_greedy_search"
-context_modes="4 "
-context_filter_state="on"
+context_modes="2 3 "
+context_filter_state="on off"
 . tools/parse_options.sh || exit 1;
 
 # bpemode (unigram or bpe)

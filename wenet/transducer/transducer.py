@@ -6,13 +6,13 @@ from torch import nn
 from torch.nn.utils.rnn import pad_sequence
 from typeguard import check_argument_types
 from wenet.transducer.predictor import PredictorBase
-from wenet.transducer.search.greedy_search import basic_greedy_search,basic_greedy_search_both
+from wenet.transducer.search.greedy_search import basic_greedy_search,basic_greedy_search2,basic_greedy_search_both
 from wenet.transducer.search.prefix_beam_search import PrefixBeamSearch
 from wenet.transformer.asr_model import ASRModel
 from wenet.transformer.ctc import CTC
 from wenet.transformer.decoder import BiTransformerDecoder, TransformerDecoder
 from wenet.transformer.label_smoothing_loss import LabelSmoothingLoss
-from wenet.utils.common import (IGNORE_ID, add_blank, add_sos_eos,
+from wenet.utils.common import (IGNORE_ID, add_blank, end_blank,add_sos_eos,
                                 reverse_pad_list)
 
 from wenet.transformer.context_bias import ContextBias
@@ -124,8 +124,10 @@ class Transducer(ASRModel):
         ys_in_pad = add_blank(text, self.blank, self.ignore_id)
         
         predictor_out = self.predictor(ys_in_pad)
-        predictor_out_unbiased = predictor_out.clone()
+        # predictor_out_unbiased = predictor_out.clone()
         predictor_out,  predictor_out_bias = self.context_bias.forward_predictor_bias(bias_hidden, predictor_out)
+        predictor_out_unbiased = predictor_out.clone()
+        
         # joint
         joint_out = self.joint(encoder_out, predictor_out)
         # print(joint_out)
@@ -169,14 +171,21 @@ class Transducer(ASRModel):
         if self.hw_weight !=0.0:
             if self.loss_mode == 'pred':
                 hw_output = self.context_bias.forward_hw_pred(bias_hidden,predictor_out_unbiased)
-                hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
+                # hw_label_pad = end_blank(hw_label, self.blank, self.ignore_id)
                 hw_output = hw_output.permute(0, 2, 1)
+                hw_label_pad = end_blank(hw_label, self.blank, self.ignore_id)
+                hw_label_pad=hw_label_pad[..., :-1]
+                hw_output=hw_output[..., :-1]
+                # print(hw_output.shape)
+                # print(hw_label_pad.shape)
                 hw_loss = self.hw_criterion(hw_output, hw_label_pad)
 
             elif self.loss_mode == 'both':    
                 hw_output = self.context_bias.forward_hw_pred_both(encoder_out_bias,predictor_out_bias)
-                hw_label_pad = add_blank(hw_label, self.blank, self.ignore_id)
                 hw_output = hw_output.permute(0, 2, 1)
+                hw_label_pad = end_blank(hw_label, self.blank, self.ignore_id)
+                hw_label_pad=hw_label_pad[..., :-1]
+                hw_output=hw_output[..., :-1]
                 hw_loss = self.hw_criterion(hw_output, hw_label_pad)
             else:
                 hw_output_enc,hw_output_dec= self.context_bias.forward_hw_pred_both_sep(encoder_out_bias,predictor_out_bias)
@@ -189,28 +198,25 @@ class Transducer(ASRModel):
                 # hw_loss_enc = self.hw_criterion(hw_output_enc, hw_label_pad)
                 hw_loss_dec = self.hw_criterion(hw_output_dec, hw_label_pad)
                 hw_loss=hw_loss_dec
-                # hw_output = self.context_bias.forward_hw_pred_both(encoder_out_bias,predictor_out_bias)
+                hw_output = self.context_bias.forward_hw_pred_both(encoder_out_bias,predictor_out_bias)
 
             # debugflag=1
             # if 1:
-            #     print("-------")
-            #     hw_output = hw_output.permute(0, 2, 1)
-            #     values, indices = hw_output.topk(1)
+            # print("-------")
+            # hw_output = hw_output.permute(0, 2, 1)
+            # values, indices = hw_output.topk(1)
 
-            #     indices=indices.squeeze(-1)
-            #     print("st-------")
-            #     print(encoder_out)
+            # indices=indices.squeeze(-1)
+            # print("st-------")
+            # print(encoder_out)
 
-            #     print(predictor_out_unbiased.shape)
-            #     print(predictor_out_unbiased[0][0])
-            #     print(predictor_out_unbiased)
-            #     print(hw_output)
-            #     print(hw_output.shape) #  6,31,17
-            #     print(hw_label_pad.shape)# 6,17
-            #     print(indices.shape)
-            #     print(hw_label_pad)# 6,17
-            #     print(indices)
-            #     print("ed-------")
+            # print(hw_output)
+            # print(hw_output.shape) #  6,31,17
+            # print(hw_label_pad.shape)# 6,17
+            # print(indices.shape)
+            # print(hw_label_pad)# 6,17
+            # print(indices)
+            # print("ed-------")
 
                 # for batch in range(hw_label_pad.shape[0]):
 
@@ -551,7 +557,7 @@ class Transducer(ASRModel):
         encoder_out_lens = encoder_mask.squeeze(1).sum()
         dist=0
         if self.loss_mode=='pred':
-            hyps ,dist= basic_greedy_search(self,
+            hyps ,dist,result= basic_greedy_search(self,
                                     encoder_out,
                                     encoder_out_lens,
                                     context_list,
@@ -560,6 +566,16 @@ class Transducer(ASRModel):
                                     context_filter_state=context_filter_state,
                                     context_decoder_labels_padded=context_decoder_labels_padded
                                     )
+            # hyps ,dist= basic_greedy_search2(self,
+            #                         encoder_out,
+            #                         encoder_out_lens,
+            #                         context_list,
+            #                         context_lengths,
+            #                         n_steps=n_steps,
+            #                         context_filter_state=context_filter_state,
+            #                         context_decoder_labels_padded=context_decoder_labels_padded,
+            #                         pvresult=result,
+            #                         )
         elif self.loss_mode=='both':
             hyps,dist = basic_greedy_search_both(self,
                                     encoder_out,
@@ -569,7 +585,6 @@ class Transducer(ASRModel):
                                     n_steps=n_steps,
                                     context_filter_state=context_filter_state,
                                     context_decoder_labels_padded=context_decoder_labels_padded
-
                                     )
         else:
             hyps = basic_greedy_search_both(self,

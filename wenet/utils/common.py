@@ -86,6 +86,38 @@ def add_blank(ys_pad: torch.Tensor, blank: int,
     out = torch.cat([_blank, ys_pad], dim=1)  # [bs, Lmax+1]
     return torch.where(out == ignore_id, blank, out)
 
+def end_blank(ys_pad: torch.Tensor, blank: int,
+              ignore_id: int) -> torch.Tensor:
+    """ Prepad blank for transducer predictor
+
+    Args:
+        ys_pad (torch.Tensor): batch of padded target sequences (B, Lmax)
+        blank (int): index of <blank>
+
+    Returns:
+        ys_in (torch.Tensor) : (B, Lmax + 1)
+
+    Examples:
+        >>> blank = 0
+        >>> ignore_id = -1
+        >>> ys_pad
+        tensor([[ 1,  2,  3,   4,   5],
+                [ 4,  5,  6,  -1,  -1],
+                [ 7,  8,  9,  -1,  -1]], dtype=torch.int32)
+        >>> ys_in = add_blank(ys_pad, 0, -1)
+        >>> ys_in
+        tensor([[0,  1,  2,  3,  4,  5],
+                [0,  4,  5,  6,  0,  0],
+                [0,  7,  8,  9,  0,  0]])
+    """
+    bs = ys_pad.size(0)
+    _blank = torch.tensor([blank],
+                          dtype=torch.long,
+                          requires_grad=False,
+                          device=ys_pad.device)
+    _blank = _blank.repeat(bs).unsqueeze(1)  # [bs,1]
+    out = torch.cat([ ys_pad,_blank], dim=1)  # [bs, Lmax+1]
+    return torch.where(out == ignore_id, blank, out)
 
 def add_sos_eos(ys_pad: torch.Tensor, sos: int, eos: int,
                 ignore_id: int) -> Tuple[torch.Tensor, torch.Tensor]:

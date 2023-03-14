@@ -6,7 +6,6 @@ set(decoder_srcs
   ctc_wfst_beam_search.cc
   ctc_endpoint.cc
   rnnt_greedy_search.cc
-  rnnt_prefix_beam_search.cc
 )
 
 if(NOT TORCH AND NOT ONNX)

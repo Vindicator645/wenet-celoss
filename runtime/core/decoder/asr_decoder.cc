@@ -48,7 +48,7 @@ AsrDecoder::AsrDecoder(std::shared_ptr<FeaturePipeline> feature_pipeline,
       // VLOG(1) << "decode using: " << opts_.method;
       searcher_.reset(new RnntGreedySearch());
   }else if (opts_.method == "rnnt_beam_search") {
-      searcher_.reset(new RnntPrefixBeamSearch(opts.rnnt_prefix_search_opts,model_->Copy()));
+      // searcher_.reset(new RnntPrefixBeamSearch(opts.rnnt_prefix_search_opts,model_->Copy()));
   } else if (nullptr == fst_) {
     searcher_.reset(new CtcPrefixBeamSearch(opts.ctc_prefix_search_opts,
                                             resource->context_graph));
@@ -121,9 +121,10 @@ DecodeState AsrDecoder::AdvanceDecoding(bool block) {
     model_->RnntGreedySearch(&hyp);
     searcher_->Search(hyp);
 
-  }else if (searcher_->Type() == SearchType::rnntPrefixBeamSearch) {
-    searcher_->Search(ctc_log_probs,encoder_outs);
-  }else {
+  // }else if (searcher_->Type() == SearchType::rnntPrefixBeamSearch) {
+  //   searcher_->Search(ctc_log_probs,encoder_outs);
+  // }
+  else {
     searcher_->Search(ctc_log_probs);
   }
 
